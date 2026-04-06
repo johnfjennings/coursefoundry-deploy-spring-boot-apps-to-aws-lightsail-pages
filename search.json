@@ -124,77 +124,121 @@
     "href": "modules/01-prerequisites/01-prerequisites-slides.html#overview",
     "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
     "section": "Overview",
-    "text": "Overview\nWhat you’ll need before deploying Spring Boot apps to AWS Lightsail:\n\nAWS Account and Services\nDevelopment Environment Setup\n\nCommand Line Tools\nSpring Boot Knowledge\nLinux and Server Basics\nNetwork and Security Fundamentals\n\n\nThis lesson ensures students have all necessary prerequisites before starting the deployment process. We’ll cover accounts, tools, and foundational knowledge needed for success."
+    "text": "Overview\nWhat you’ll need before deploying Spring Boot apps to AWS Lightsail:\n\nAWS Account and Services\nDevelopment Environment Setup\n\nCommand Line Tools\nSpring Boot Knowledge\nLinux and Server Basics\nNetwork and Security Fundamentals\n\n\nThis lesson ensures students have all necessary prerequisites before starting the deployment process. We’ll cover accounts, tools, and foundational knowledge needed for success.",
+    "crumbs": [
+      "Prerequisites",
+      "Prerequisites Slides"
+    ]
   },
   {
     "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#aws-account-requirements",
     "href": "modules/01-prerequisites/01-prerequisites-slides.html#aws-account-requirements",
     "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
     "section": "AWS Account Requirements",
-    "text": "AWS Account Requirements\nEssential Services\n\nAWS Account with billing information\nLightsail Service access\nOptional: Custom domain from registrar\n\n\n\nSetup Steps:\n\nVisit aws.amazon.com\nCreate account\nAdd payment method\nVerify access\n\n\nFree Tier Benefits:\n\n750 hours/month (first month)\nPerfect for learning\nNo upfront costs\n\n\n\nAWS requires payment information even for free tier services. The Lightsail free tier provides excellent learning opportunities with 750 hours of usage in the first month."
+    "text": "AWS Account Requirements\nEssential Services\n\nAWS Account with billing information\nLightsail Service access\nOptional: Custom domain from registrar\n\n\n\nSetup Steps:\n\nVisit aws.amazon.com\nCreate account\nAdd payment method\nVerify access\n\n\nFree Tier Benefits:\n\n750 hours/month (first month)\nPerfect for learning\nNo upfront costs\n\n\n\nAWS requires payment information even for free tier services. The Lightsail free tier provides excellent learning opportunities with 750 hours of usage in the first month.",
+    "crumbs": [
+      "Prerequisites",
+      "Prerequisites Slides"
+    ]
   },
   {
     "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#java-development-environment",
     "href": "modules/01-prerequisites/01-prerequisites-slides.html#java-development-environment",
     "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
     "section": "Java Development Environment",
-    "text": "Java Development Environment\nCore Requirements\n\nJDK 17 or later\nBuild tool: Maven or Gradle\nIDE: IntelliJ IDEA, VS Code, or Eclipse\n\n# Verify your setup\njava -version\njavac -version\nmvn -version\ngradle -version\n\nStudents should verify their Java environment is properly configured. We recommend JDK 17+ for the latest Spring Boot features and long-term support."
+    "text": "Java Development Environment\nCore Requirements\n\nJDK 17 or later\nBuild tool: Maven or Gradle\nIDE: IntelliJ IDEA, VS Code, or Eclipse\n\n# Verify your setup\njava -version\njavac -version\nmvn -version\ngradle -version\n\nStudents should verify their Java environment is properly configured. We recommend JDK 17+ for the latest Spring Boot features and long-term support.",
+    "crumbs": [
+      "Prerequisites",
+      "Prerequisites Slides"
+    ]
   },
   {
     "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#command-line-tools",
     "href": "modules/01-prerequisites/01-prerequisites-slides.html#command-line-tools",
     "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
     "section": "Command Line Tools",
-    "text": "Command Line Tools\nEssential Tools\n\nSSH Client: Connect to Lightsail instances\nGit: Version control for your project\nAWS CLI: Advanced configurations (recommended)\n\n# Test your tools\nssh -V\ngit --version\naws --version\n\nSSH is critical for server management. Git is essential for project management. AWS CLI provides additional flexibility but isn’t strictly required for basic deployments."
+    "text": "Command Line Tools\nEssential Tools\n\nSSH Client: Connect to Lightsail instances\nGit: Version control for your project\nAWS CLI: Advanced configurations (recommended)\n\n# Test your tools\nssh -V\ngit --version\naws --version\n\nSSH is critical for server management. Git is essential for project management. AWS CLI provides additional flexibility but isn’t strictly required for basic deployments.",
+    "crumbs": [
+      "Prerequisites",
+      "Prerequisites Slides"
+    ]
   },
   {
     "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#spring-boot-knowledge-prerequisites",
     "href": "modules/01-prerequisites/01-prerequisites-slides.html#spring-boot-knowledge-prerequisites",
     "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
     "section": "Spring Boot Knowledge Prerequisites",
-    "text": "Spring Boot Knowledge Prerequisites\nCore Concepts You Need\n\n\nApplication Structure:\n\nSpring Boot Starters\nApplication Properties\nConfiguration Profiles\nAuto-configuration\n\n\nWeb Development:\n\nREST Controllers\nDatabase Integration\nJSON Serialization\nHTTP Methods\n\n\n\nStudents should understand basic Spring Boot concepts. We’ll provide a sample application for those who need it, but familiarity with these concepts is important for troubleshooting."
+    "text": "Spring Boot Knowledge Prerequisites\nCore Concepts You Need\n\n\nApplication Structure:\n\nSpring Boot Starters\nApplication Properties\nConfiguration Profiles\nAuto-configuration\n\n\nWeb Development:\n\nREST Controllers\nDatabase Integration\nJSON Serialization\nHTTP Methods\n\n\n\nStudents should understand basic Spring Boot concepts. We’ll provide a sample application for those who need it, but familiarity with these concepts is important for troubleshooting.",
+    "crumbs": [
+      "Prerequisites",
+      "Prerequisites Slides"
+    ]
   },
   {
     "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#linux-command-line-basics",
     "href": "modules/01-prerequisites/01-prerequisites-slides.html#linux-command-line-basics",
     "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
     "section": "Linux Command Line Basics",
-    "text": "Linux Command Line Basics\nEssential Commands\n# File operations\nls, cd, mkdir, rm, cp, mv\n\n# File viewing/editing  \ncat, less, nano, vi\n\n# Process management\nps, kill, systemctl\n\n# Network utilities\ncurl, wget, netstat\n\nThese Linux commands are essential for server administration. Students will use these regularly when managing their Lightsail instances and troubleshooting deployments."
+    "text": "Linux Command Line Basics\nEssential Commands\n# File operations\nls, cd, mkdir, rm, cp, mv\n\n# File viewing/editing  \ncat, less, nano, vi\n\n# Process management\nps, kill, systemctl\n\n# Network utilities\ncurl, wget, netstat\n\nThese Linux commands are essential for server administration. Students will use these regularly when managing their Lightsail instances and troubleshooting deployments.",
+    "crumbs": [
+      "Prerequisites",
+      "Prerequisites Slides"
+    ]
   },
   {
     "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#file-permissions-and-services",
     "href": "modules/01-prerequisites/01-prerequisites-slides.html#file-permissions-and-services",
     "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
     "section": "File Permissions and Services",
-    "text": "File Permissions and Services\nSystem Administration Basics\n\n\nFile Permissions:\nchmod 755 filename\nsudo chown user:group filename\n\nService Management:\nsudo systemctl start service-name\nsudo systemctl enable service-name\nsudo systemctl status service-name\n\n\nUnderstanding file permissions and systemd services is crucial for Spring Boot deployment. We’ll cover these in detail later, but basic familiarity helps."
+    "text": "File Permissions and Services\nSystem Administration Basics\n\n\nFile Permissions:\nchmod 755 filename\nsudo chown user:group filename\n\nService Management:\nsudo systemctl start service-name\nsudo systemctl enable service-name\nsudo systemctl status service-name\n\n\nUnderstanding file permissions and systemd services is crucial for Spring Boot deployment. We’ll cover these in detail later, but basic familiarity helps.",
+    "crumbs": [
+      "Prerequisites",
+      "Prerequisites Slides"
+    ]
   },
   {
     "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#network-and-security-fundamentals",
     "href": "modules/01-prerequisites/01-prerequisites-slides.html#network-and-security-fundamentals",
     "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
     "section": "Network and Security Fundamentals",
-    "text": "Network and Security Fundamentals\nKey Concepts\nCommon Ports:\n\nHTTP: 80, HTTPS: 443\nSSH: 22, MySQL: 3306\nSpring Boot Default: 8080\n\nSecurity Basics:\n\nInbound vs. Outbound rules\nPort restrictions\nIP-based access control\n\n\nUnderstanding ports and basic firewall concepts is essential for configuring Lightsail security groups and ensuring your application is accessible while remaining secure."
+    "text": "Network and Security Fundamentals\nKey Concepts\nCommon Ports:\n\nHTTP: 80, HTTPS: 443\nSSH: 22, MySQL: 3306\nSpring Boot Default: 8080\n\nSecurity Basics:\n\nInbound vs. Outbound rules\nPort restrictions\nIP-based access control\n\n\nUnderstanding ports and basic firewall concepts is essential for configuring Lightsail security groups and ensuring your application is accessible while remaining secure.",
+    "crumbs": [
+      "Prerequisites",
+      "Prerequisites Slides"
+    ]
   },
   {
     "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#pre-deployment-checklist",
     "href": "modules/01-prerequisites/01-prerequisites-slides.html#pre-deployment-checklist",
     "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
     "section": "Pre-Deployment Checklist",
-    "text": "Pre-Deployment Checklist\nVerify Your Setup ✅\n\nAWS account with billing configured\nJDK 17+ and build tools installed\nGit and SSH client working\nBasic Spring Boot knowledge\nComfortable with command line\nSample application ready (or will use ours)\n\n\nStudents should work through this checklist before proceeding. Having everything ready prevents frustration during the actual deployment process."
+    "text": "Pre-Deployment Checklist\nVerify Your Setup ✅\n\nAWS account with billing configured\nJDK 17+ and build tools installed\nGit and SSH client working\nBasic Spring Boot knowledge\nComfortable with command line\nSample application ready (or will use ours)\n\n\nStudents should work through this checklist before proceeding. Having everything ready prevents frustration during the actual deployment process.",
+    "crumbs": [
+      "Prerequisites",
+      "Prerequisites Slides"
+    ]
   },
   {
     "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#testing-your-environment",
     "href": "modules/01-prerequisites/01-prerequisites-slides.html#testing-your-environment",
     "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
     "section": "Testing Your Environment",
-    "text": "Testing Your Environment\nQuick Validation Test\nCreate and run a simple Spring Boot “Hello World”:\n# Create project\nspring init --dependencies=web my-test-app\n\n# Run locally\ncd my-test-app\n./mvnw spring-boot:run\n\n# Test\ncurl http://localhost:8080\n\nThis quick test validates that the entire development environment is working correctly. Students should be able to create, build, and run a basic Spring Boot application before moving to deployment."
+    "text": "Testing Your Environment\nQuick Validation Test\nCreate and run a simple Spring Boot “Hello World”:\n# Create project\nspring init --dependencies=web my-test-app\n\n# Run locally\ncd my-test-app\n./mvnw spring-boot:run\n\n# Test\ncurl http://localhost:8080\n\nThis quick test validates that the entire development environment is working correctly. Students should be able to create, build, and run a basic Spring Boot application before moving to deployment.",
+    "crumbs": [
+      "Prerequisites",
+      "Prerequisites Slides"
+    ]
   },
   {
-    "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#summary",
-    "href": "modules/01-prerequisites/01-prerequisites-slides.html#summary",
+    "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#summary---ready-for-deployment",
+    "href": "modules/01-prerequisites/01-prerequisites-slides.html#summary---ready-for-deployment",
     "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
-    "section": "Summary",
-    "text": "Summary\nReady for Deployment\nWith these prerequisites in place:\n\nAWS Account: Ready for Lightsail instances\nDevelopment Tools: Complete Java environment\nCommand Line Skills: SSH, Git, Linux basics\nSpring Boot Foundation: Understanding core concepts\nSystem Knowledge: Permissions, services, networking\n\nNext: Configuring Spring Boot profiles for deployment\n\nThis comprehensive preparation ensures students can follow along confidently and troubleshoot independently. Taking time to verify each requirement saves significant time and frustration during deployment."
+    "section": "Summary - Ready for Deployment",
+    "text": "Summary - Ready for Deployment\nWith these prerequisites in place:\n\nAWS Account: Ready for Lightsail instances\nDevelopment Tools: Complete Java environment\nCommand Line Skills: SSH, Git, Linux basics\nSpring Boot Foundation: Understanding core concepts\nSystem Knowledge: Permissions, services, networking\n\nNext: Configuring Spring Boot profiles for deployment\n\nThis comprehensive preparation ensures students can follow along confidently and troubleshoot independently. Taking time to verify each requirement saves significant time and frustration during deployment.",
+    "crumbs": [
+      "Prerequisites",
+      "Prerequisites Slides"
+    ]
   },
   {
     "objectID": "modules/03-troubleshooting/01-troubleshooting.html",
@@ -992,198 +1036,126 @@
     "href": "modules/01-prerequisites/slides.html#what-well-cover-today",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "What We’ll Cover Today",
-    "text": "What We’ll Cover Today\n\n\nAccounts & Services - AWS Account setup - Domain registration options\nDevelopment Environment - Java JDK requirements - Build tools (Maven/Gradle) - IDE recommendations\n\nCommand Line Tools - SSH client setup - Git version control - AWS CLI (optional)\nKnowledge Prerequisites - Spring Boot fundamentals - Basic Linux commands - Network concepts\n\n\nThis lesson establishes the foundation for our deployment journey. We’ll ensure everyone has the necessary tools and knowledge before diving into the actual deployment process.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "What We’ll Cover Today\n\n\nAccounts & Services - AWS Account setup - Domain registration options\nDevelopment Environment - Java JDK requirements - Build tools (Maven/Gradle) - IDE recommendations\n\nCommand Line Tools - SSH client setup - Git version control - AWS CLI (optional)\nKnowledge Prerequisites - Spring Boot fundamentals - Basic Linux commands - Network concepts\n\n\nThis lesson establishes the foundation for our deployment journey. We’ll ensure everyone has the necessary tools and knowledge before diving into the actual deployment process."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#aws-account-setup",
     "href": "modules/01-prerequisites/slides.html#aws-account-setup",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "AWS Account Setup",
-    "text": "AWS Account Setup\n\n\nSteps to get started:\n\nVisit aws.amazon.com\nClick “Create an AWS Account”\nComplete registration process\nAdd payment information (required)\n\nFree Tier Benefits: - 750 hours/month for first month - Perfect for learning and testing\n\n\n\n\nAWS Logo\n\n\n\n\nEven though we mention payment information is required, emphasize that the free tier provides substantial resources for learning. Students won’t incur charges if they stay within free tier limits.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "AWS Account Setup\n\n\nSteps to get started:\n\nVisit aws.amazon.com\nClick “Create an AWS Account”\nComplete registration process\nAdd payment information (required)\n\nFree Tier Benefits: - 750 hours/month for first month - Perfect for learning and testing\n\n\n\n\nAWS Logo\n\n\n\n\nEven though we mention payment information is required, emphasize that the free tier provides substantial resources for learning. Students won’t incur charges if they stay within free tier limits."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#domain-registration-optional",
     "href": "modules/01-prerequisites/slides.html#domain-registration-optional",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "Domain Registration (Optional)",
-    "text": "Domain Registration (Optional)\nRecommended Domain Registrars:\n\nAWS Route 53 (integrated with AWS services)\nNamecheap (popular and affordable)\nGoDaddy (widely recognized)\nCloudflare (includes CDN benefits)\n\nWhy register a domain? - Professional appearance - Easier to remember than IP addresses - SSL certificate setup is simpler\n\nWhile optional, having a custom domain significantly improves the professional appearance of deployed applications and makes SSL certificate management easier.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "Domain Registration (Optional)\nRecommended Domain Registrars:\n\nAWS Route 53 (integrated with AWS services)\nNamecheap (popular and affordable)\nGoDaddy (widely recognized)\nCloudflare (includes CDN benefits)\n\nWhy register a domain? - Professional appearance - Easier to remember than IP addresses - SSL certificate setup is simpler\n\nWhile optional, having a custom domain significantly improves the professional appearance of deployed applications and makes SSL certificate management easier."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#java-development-kit-jdk",
     "href": "modules/01-prerequisites/slides.html#java-development-kit-jdk",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "Java Development Kit (JDK)",
-    "text": "Java Development Kit (JDK)\nRequirements: JDK 17 or later\n# Check your current Java version\njava -version\njavac -version\nInstallation Options: - Oracle JDK: Commercial support available - OpenJDK: Open source, free to use - Package Managers: Easy installation and updates\n\nJDK 17 is the current Long Term Support (LTS) version and is recommended for production deployments. It provides stability and long-term support from the Java community.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "Java Development Kit (JDK)\nRequirements: JDK 17 or later\n# Check your current Java version\njava -version\njavac -version\nInstallation Options: - Oracle JDK: Commercial support available - OpenJDK: Open source, free to use - Package Managers: Easy installation and updates\n\nJDK 17 is the current Long Term Support (LTS) version and is recommended for production deployments. It provides stability and long-term support from the Java community."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#build-tools-maven-vs-gradle",
     "href": "modules/01-prerequisites/slides.html#build-tools-maven-vs-gradle",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "Build Tools: Maven vs Gradle",
-    "text": "Build Tools: Maven vs Gradle\n\n\nMaven\n# Check installation\nmvn -version\n\nXML-based configuration\nExtensive plugin ecosystem\nSpring Boot’s default choice\n\n\nGradle\n# Check installation\ngradle -version\n\nGroovy/Kotlin DSL\nFaster build performance\nFlexible configuration\n\n\nChoose one based on your team’s preference\n\nBoth Maven and Gradle are excellent choices. Maven is more traditional and widely used in enterprise environments, while Gradle offers more flexibility and better performance for complex builds.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "Build Tools: Maven vs Gradle\n\n\nMaven\n# Check installation\nmvn -version\n\nXML-based configuration\nExtensive plugin ecosystem\nSpring Boot’s default choice\n\n\nGradle\n# Check installation\ngradle -version\n\nGroovy/Kotlin DSL\nFaster build performance\nFlexible configuration\n\n\nChoose one based on your team’s preference\n\nBoth Maven and Gradle are excellent choices. Maven is more traditional and widely used in enterprise environments, while Gradle offers more flexibility and better performance for complex builds."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#ide-recommendations",
     "href": "modules/01-prerequisites/slides.html#ide-recommendations",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "IDE Recommendations",
-    "text": "IDE Recommendations\nTop Spring Boot IDEs:\n\nIntelliJ IDEA - Excellent Spring Boot integration\nVisual Studio Code - Lightweight with Java extensions\n\nEclipse + Spring Tools Suite - Free and powerful\nSpring Tool Suite (STS) - Purpose-built for Spring\n\nKey Features to Look For: - Spring Boot run configurations - Application property auto-completion - Built-in Maven/Gradle support\n\nThe choice of IDE is largely personal preference, but having good Spring Boot tooling support will significantly improve your development experience and productivity.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "IDE Recommendations\nTop Spring Boot IDEs:\n\nIntelliJ IDEA - Excellent Spring Boot integration\nVisual Studio Code - Lightweight with Java extensions\n\nEclipse + Spring Tools Suite - Free and powerful\nSpring Tool Suite (STS) - Purpose-built for Spring\n\nKey Features to Look For: - Spring Boot run configurations - Application property auto-completion - Built-in Maven/Gradle support\n\nThe choice of IDE is largely personal preference, but having good Spring Boot tooling support will significantly improve your development experience and productivity."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#ssh-client-setup",
     "href": "modules/01-prerequisites/slides.html#ssh-client-setup",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "SSH Client Setup",
-    "text": "SSH Client Setup\n\n\nWindows: - Built-in OpenSSH (Windows 10+) - PuTTY (traditional option) - Windows Subsystem for Linux\nmacOS/Linux: - Built-in OpenSSH client\n\nTest SSH availability:\nssh -V\nYou’ll use SSH to: - Connect to Lightsail instances - Deploy applications - Monitor server performance\n\n\nSSH is crucial for server management. Modern Windows includes OpenSSH by default, but older versions might need PuTTY or WSL installation.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "SSH Client Setup\n\n\nWindows: - Built-in OpenSSH (Windows 10+) - PuTTY (traditional option) - Windows Subsystem for Linux\nmacOS/Linux: - Built-in OpenSSH client\n\nTest SSH availability:\nssh -V\nYou’ll use SSH to: - Connect to Lightsail instances - Deploy applications - Monitor server performance\n\n\nSSH is crucial for server management. Modern Windows includes OpenSSH by default, but older versions might need PuTTY or WSL installation."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#git-version-control",
     "href": "modules/01-prerequisites/slides.html#git-version-control",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "Git Version Control",
-    "text": "Git Version Control\nEssential for project management:\n# Check Git installation\ngit --version\n\n# Basic Git workflow you'll use\ngit add .\ngit commit -m \"Deploy ready\"\ngit push origin main\nInstallation: - Windows: Download from git-scm.com - macOS: Homebrew or Xcode Command Line Tools - Linux: Package manager (apt install git)\n\nGit isn’t just for code storage—we’ll use it to deploy code to our servers and manage different versions of our applications across environments.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "Git Version Control\nEssential for project management:\n# Check Git installation\ngit --version\n\n# Basic Git workflow you'll use\ngit add .\ngit commit -m \"Deploy ready\"\ngit push origin main\nInstallation: - Windows: Download from git-scm.com - macOS: Homebrew or Xcode Command Line Tools - Linux: Package manager (apt install git)\n\nGit isn’t just for code storage—we’ll use it to deploy code to our servers and manage different versions of our applications across environments."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#aws-cli-recommended",
     "href": "modules/01-prerequisites/slides.html#aws-cli-recommended",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "AWS CLI (Recommended)",
-    "text": "AWS CLI (Recommended)\nHelpful for advanced configurations:\n# Check installation\naws --version\n\n# Configure credentials\naws configure\nBenefits: - Automate AWS resource management - Script deployment processes\n- Access services not available in web console\n\nWhile not strictly required for basic deployments, AWS CLI becomes invaluable for automating deployment processes and managing resources programmatically.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "AWS CLI (Recommended)\nHelpful for advanced configurations:\n# Check installation\naws --version\n\n# Configure credentials\naws configure\nBenefits: - Automate AWS resource management - Script deployment processes\n- Access services not available in web console\n\nWhile not strictly required for basic deployments, AWS CLI becomes invaluable for automating deployment processes and managing resources programmatically."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#core-spring-boot-concepts",
     "href": "modules/01-prerequisites/slides.html#core-spring-boot-concepts",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "Core Spring Boot Concepts",
-    "text": "Core Spring Boot Concepts\nEssential understanding: - Spring Boot Starters: Dependency management made easy - Application Properties: Environment-specific configurations - Profiles: Different settings for dev/prod environments\n- Auto-configuration: Spring Boot’s “magic” explained - Embedded Servers: Tomcat, Jetty, Undertow options\nConfiguration Example:\n# application-prod.yml\nserver:\n  port: 8080\nspring:\n  profiles:\n    active: prod\n\nThese concepts form the foundation of effective Spring Boot deployment. Understanding profiles is particularly crucial for managing different environments.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "Core Spring Boot Concepts\nEssential understanding: - Spring Boot Starters: Dependency management made easy - Application Properties: Environment-specific configurations - Profiles: Different settings for dev/prod environments\n- Auto-configuration: Spring Boot’s “magic” explained - Embedded Servers: Tomcat, Jetty, Undertow options\nConfiguration Example:\n# application-prod.yml\nserver:\n  port: 8080\nspring:\n  profiles:\n    active: prod\n\nThese concepts form the foundation of effective Spring Boot deployment. Understanding profiles is particularly crucial for managing different environments."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#database-and-rest-knowledge",
     "href": "modules/01-prerequisites/slides.html#database-and-rest-knowledge",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "Database and REST Knowledge",
-    "text": "Database and REST Knowledge\n\n\nDatabase Integration: - Spring Data JPA basics - JDBC connection configuration - Database migration tools (Flyway/Liquibase)\n@Entity\npublic class User {\n    @Id\n    @GeneratedValue\n    private Long id;\n    private String name;\n}\n\nRESTful Services: - @RestController usage - HTTP methods (GET, POST, PUT, DELETE) - JSON serialization with Jackson\n@RestController\npublic class UserController {\n    @GetMapping(\"/users\")\n    public List&lt;User&gt; getUsers() {\n        return userService.findAll();\n    }\n}\n\n\nThese are the building blocks of most Spring Boot applications. Even if you’re not an expert, having basic familiarity with these concepts will help you understand deployment configurations.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "Database and REST Knowledge\n\n\nDatabase Integration: - Spring Data JPA basics - JDBC connection configuration - Database migration tools (Flyway/Liquibase)\n@Entity\npublic class User {\n    @Id\n    @GeneratedValue\n    private Long id;\n    private String name;\n}\n\nRESTful Services: - @RestController usage - HTTP methods (GET, POST, PUT, DELETE) - JSON serialization with Jackson\n@RestController\npublic class UserController {\n    @GetMapping(\"/users\")\n    public List&lt;User&gt; getUsers() {\n        return userService.findAll();\n    }\n}\n\n\nThese are the building blocks of most Spring Boot applications. Even if you’re not an expert, having basic familiarity with these concepts will help you understand deployment configurations."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#essential-linux-commands",
     "href": "modules/01-prerequisites/slides.html#essential-linux-commands",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "Essential Linux Commands",
-    "text": "Essential Linux Commands\nFile and Directory Operations:\nls -la          # List files with details\ncd /path/to/dir # Change directory  \nmkdir app-logs  # Create directory\nrm -rf old-app  # Remove files/directories\nFile Viewing and Editing:\ncat application.log     # View file contents\ntail -f application.log # Follow log files\nnano config.properties # Edit files\nProcess Management:\nps aux | grep java     # Find Java processes\nsudo systemctl start myapp  # Start services\n\nYou don’t need to be a Linux expert, but these commands will be essential for managing your deployed applications, viewing logs, and troubleshooting issues.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "Essential Linux Commands\nFile and Directory Operations:\nls -la          # List files with details\ncd /path/to/dir # Change directory  \nmkdir app-logs  # Create directory\nrm -rf old-app  # Remove files/directories\nFile Viewing and Editing:\ncat application.log     # View file contents\ntail -f application.log # Follow log files\nnano config.properties # Edit files\nProcess Management:\nps aux | grep java     # Find Java processes\nsudo systemctl start myapp  # Start services\n\nYou don’t need to be a Linux expert, but these commands will be essential for managing your deployed applications, viewing logs, and troubleshooting issues."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#file-permissions-and-services",
     "href": "modules/01-prerequisites/slides.html#file-permissions-and-services",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "File Permissions and Services",
-    "text": "File Permissions and Services\n\n\nFile Permissions:\n# Make file executable\nchmod +x deploy.sh\n\n# Change ownership\nsudo chown app:app myapp.jar\n\n# Common permission patterns\nchmod 755 # rwxr-xr-x\nchmod 644 # rw-r--r--\n\nService Management:\n# Service operations\nsudo systemctl start myapp\nsudo systemctl enable myapp  \nsudo systemctl status myapp\nsudo systemctl restart myapp\n\n\nUnderstanding permissions is crucial for security, and systemd services are how we’ll run our Spring Boot applications in production environments.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "File Permissions and Services\n\n\nFile Permissions:\n# Make file executable\nchmod +x deploy.sh\n\n# Change ownership\nsudo chown app:app myapp.jar\n\n# Common permission patterns\nchmod 755 # rwxr-xr-x\nchmod 644 # rw-r--r--\n\nService Management:\n# Service operations\nsudo systemctl start myapp\nsudo systemctl enable myapp  \nsudo systemctl status myapp\nsudo systemctl restart myapp\n\n\nUnderstanding permissions is crucial for security, and systemd services are how we’ll run our Spring Boot applications in production environments."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#understanding-ports-and-firewalls",
     "href": "modules/01-prerequisites/slides.html#understanding-ports-and-firewalls",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "Understanding Ports and Firewalls",
-    "text": "Understanding Ports and Firewalls\nCommon Ports You’ll Use:\n\n\n\nService\nPort\nPurpose\n\n\n\n\nHTTP\n80\nWeb traffic\n\n\nHTTPS\n443\nSecure web traffic\n\n\nSSH\n22\nServer access\n\n\nSpring Boot\n8080\nDefault application port\n\n\nMySQL\n3306\nDatabase connections\n\n\n\nFirewall Concepts: - Inbound vs. Outbound rules - Port ranges and protocols - Source IP restrictions\n\nUnderstanding ports is essential for configuring firewalls and ensuring your applications are accessible. AWS Lightsail has a simple firewall interface that makes this manageable.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "Understanding Ports and Firewalls\nCommon Ports You’ll Use:\n\n\n\nService\nPort\nPurpose\n\n\n\n\nHTTP\n80\nWeb traffic\n\n\nHTTPS\n443\nSecure web traffic\n\n\nSSH\n22\nServer access\n\n\nSpring Boot\n8080\nDefault application port\n\n\nMySQL\n3306\nDatabase connections\n\n\n\nFirewall Concepts: - Inbound vs. Outbound rules - Port ranges and protocols - Source IP restrictions\n\nUnderstanding ports is essential for configuring firewalls and ensuring your applications are accessible. AWS Lightsail has a simple firewall interface that makes this manageable."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#verify-your-setup",
     "href": "modules/01-prerequisites/slides.html#verify-your-setup",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "Verify Your Setup",
-    "text": "Verify Your Setup\nComplete this checklist before proceeding:\n\nAWS account with billing information configured\nJDK 17+ installed and working\nMaven or Gradle build tool available\nGit version control system installed\nSSH client tested and functional\nBasic Spring Boot application available\nUnderstanding of Spring Boot profiles\n\nTest Command:\njava -version && mvn -version && git --version && ssh -V\n\nTaking time to verify your setup now will save hours of troubleshooting later. Each tool plays a crucial role in the deployment process.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "Verify Your Setup\nComplete this checklist before proceeding:\n\nAWS account with billing information configured\nJDK 17+ installed and working\nMaven or Gradle build tool available\nGit version control system installed\nSSH client tested and functional\nBasic Spring Boot application available\nUnderstanding of Spring Boot profiles\n\nTest Command:\njava -version && mvn -version && git --version && ssh -V\n\nTaking time to verify your setup now will save hours of troubleshooting later. Each tool plays a crucial role in the deployment process."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#sample-application-ready",
     "href": "modules/01-prerequisites/slides.html#sample-application-ready",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "Sample Application Ready",
-    "text": "Sample Application Ready\nDon’t have a Spring Boot app?\nWe’ll provide a sample application that includes: - REST endpoints for testing - Database integration examples - Production-ready configuration - Health check endpoints - Logging configuration\nQuick Test:\n./mvnw spring-boot:run\n# Visit http://localhost:8080\n\nEven if students don’t have their own application ready, our sample application will demonstrate all the concepts they need to apply to their own projects.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "Sample Application Ready\nDon’t have a Spring Boot app?\nWe’ll provide a sample application that includes: - REST endpoints for testing - Database integration examples - Production-ready configuration - Health check endpoints - Logging configuration\nQuick Test:\n./mvnw spring-boot:run\n# Visit http://localhost:8080\n\nEven if students don’t have their own application ready, our sample application will demonstrate all the concepts they need to apply to their own projects."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#key-takeaways",
     "href": "modules/01-prerequisites/slides.html#key-takeaways",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "Key Takeaways",
-    "text": "Key Takeaways\n\n\nEssential Requirements: - AWS account for cloud resources - Java development environment - Command line tool proficiency - Basic Spring Boot knowledge\n\nSuccess Factors: - Understanding of Linux basics - Network and security concepts - Version control with Git - Service management principles\n\nYou’re Ready When: All checklist items are complete and you can run a Spring Boot application locally\n\nHaving these prerequisites in place ensures students can focus on learning deployment concepts rather than fighting with tool configuration issues.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "Key Takeaways\n\n\nEssential Requirements: - AWS account for cloud resources - Java development environment - Command line tool proficiency - Basic Spring Boot knowledge\n\nSuccess Factors: - Understanding of Linux basics - Network and security concepts - Version control with Git - Service management principles\n\nYou’re Ready When: All checklist items are complete and you can run a Spring Boot application locally\n\nHaving these prerequisites in place ensures students can focus on learning deployment concepts rather than fighting with tool configuration issues."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#whats-coming-next",
     "href": "modules/01-prerequisites/slides.html#whats-coming-next",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "What’s Coming Next",
-    "text": "What’s Coming Next\nOur Deployment Journey:\n\nApplication Configuration - Setting up profiles and properties\nLightsail Instance Creation - Provisioning your server\nServer Environment Setup - Installing Java and dependencies\n\nApplication Deployment - Getting your app running\nProduction Optimization - SSL, monitoring, and scaling\n\nReady to Deploy? Let’s build something amazing! 🚀\n\nThis roadmap gives students confidence about what’s ahead and shows them the logical progression from prerequisites to a fully deployed, production-ready application.",
-    "crumbs": [
-      "Prerequisites",
-      "Slides"
-    ]
+    "text": "What’s Coming Next\nOur Deployment Journey:\n\nApplication Configuration - Setting up profiles and properties\nLightsail Instance Creation - Provisioning your server\nServer Environment Setup - Installing Java and dependencies\n\nApplication Deployment - Getting your app running\nProduction Optimization - SSL, monitoring, and scaling\n\nReady to Deploy? Let’s build something amazing! 🚀\n\nThis roadmap gives students confidence about what’s ahead and shows them the logical progression from prerequisites to a fully deployed, production-ready application."
   },
   {
     "objectID": "modules/01-prerequisites/01-prerequisites.html",
