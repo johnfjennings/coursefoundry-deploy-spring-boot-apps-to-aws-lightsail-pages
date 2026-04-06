@@ -131,7 +131,7 @@
     "href": "modules/01-prerequisites/01-prerequisites-slides.html#aws-account-requirements",
     "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
     "section": "AWS Account Requirements",
-    "text": "AWS Account Requirements\nEssential Services\n\nAWS Account with billing information\nLightsail Service access\nOptional: Custom domain from registrar\n\n\n\nSetup Steps: 1. Visit aws.amazon.com 2. Create account 3. Add payment method 4. Verify access\n\nFree Tier Benefits: - 750 hours/month (first month) - Perfect for learning - No upfront costs\n\n\nAWS requires payment information even for free tier services. The Lightsail free tier provides excellent learning opportunities with 750 hours of usage in the first month."
+    "text": "AWS Account Requirements\nEssential Services\n\nAWS Account with billing information\nLightsail Service access\nOptional: Custom domain from registrar\n\n\n\nSetup Steps:\n\nVisit aws.amazon.com\nCreate account\nAdd payment method\nVerify access\n\n\nFree Tier Benefits:\n\n750 hours/month (first month)\nPerfect for learning\nNo upfront costs\n\n\n\nAWS requires payment information even for free tier services. The Lightsail free tier provides excellent learning opportunities with 750 hours of usage in the first month."
   },
   {
     "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#java-development-environment",
@@ -152,7 +152,7 @@
     "href": "modules/01-prerequisites/01-prerequisites-slides.html#spring-boot-knowledge-prerequisites",
     "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
     "section": "Spring Boot Knowledge Prerequisites",
-    "text": "Spring Boot Knowledge Prerequisites\nCore Concepts You Need\n\n\nApplication Structure: - Spring Boot Starters - Application Properties - Configuration Profiles - Auto-configuration\n\nWeb Development: - REST Controllers - Database Integration - JSON Serialization - HTTP Methods\n\n\nStudents should understand basic Spring Boot concepts. We’ll provide a sample application for those who need it, but familiarity with these concepts is important for troubleshooting."
+    "text": "Spring Boot Knowledge Prerequisites\nCore Concepts You Need\n\n\nApplication Structure:\n\nSpring Boot Starters\nApplication Properties\nConfiguration Profiles\nAuto-configuration\n\n\nWeb Development:\n\nREST Controllers\nDatabase Integration\nJSON Serialization\nHTTP Methods\n\n\n\nStudents should understand basic Spring Boot concepts. We’ll provide a sample application for those who need it, but familiarity with these concepts is important for troubleshooting."
   },
   {
     "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#linux-command-line-basics",
@@ -173,7 +173,7 @@
     "href": "modules/01-prerequisites/01-prerequisites-slides.html#network-and-security-fundamentals",
     "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
     "section": "Network and Security Fundamentals",
-    "text": "Network and Security Fundamentals\nKey Concepts\nCommon Ports: - HTTP: 80, HTTPS: 443 - SSH: 22, MySQL: 3306 - Spring Boot Default: 8080\nSecurity Basics: - Inbound vs. Outbound rules - Port restrictions - IP-based access control\n\nUnderstanding ports and basic firewall concepts is essential for configuring Lightsail security groups and ensuring your application is accessible while remaining secure."
+    "text": "Network and Security Fundamentals\nKey Concepts\nCommon Ports:\n\nHTTP: 80, HTTPS: 443\nSSH: 22, MySQL: 3306\nSpring Boot Default: 8080\n\nSecurity Basics:\n\nInbound vs. Outbound rules\nPort restrictions\nIP-based access control\n\n\nUnderstanding ports and basic firewall concepts is essential for configuring Lightsail security groups and ensuring your application is accessible while remaining secure."
   },
   {
     "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#pre-deployment-checklist",
@@ -1245,7 +1245,7 @@
     "href": "modules/01-prerequisites/01-prerequisites.html#command-line-tools",
     "title": "Prerequisites",
     "section": "Command Line Tools",
-    "text": "Command Line Tools\n\nSSH Client\nYou’ll need SSH access to connect to your Lightsail instance:\n\nWindows: Built-in OpenSSH (Windows 10+), PuTTY, or Windows Subsystem for Linux (WSL)\nmacOS/Linux: Built-in OpenSSH client\n\nTest SSH availability:\nssh -V\n\n\nGit\nVersion control is essential for managing your Spring Boot project:\n# Check Git installation\ngit --version\nIf not installed: - Windows: Download from git-scm.com - macOS: Install via Homebrew (brew install git) or Xcode Command Line Tools - Linux: Use your package manager (sudo apt install git)\n\n\nAWS CLI (Recommended)\nWhile not strictly required, the AWS CLI can be helpful for advanced configurations:\n# Check AWS CLI installation\naws --version\nInstall from AWS CLI documentation.",
+    "text": "Command Line Tools\n\nSSH Client\nYou’ll need SSH access to connect to your Lightsail instance:\n\nWindows: Built-in OpenSSH (Windows 10+), PuTTY, or Windows Subsystem for Linux (WSL)\nmacOS/Linux: Built-in OpenSSH client\n\nTest SSH availability:\nssh -V\n\n\nGit\nVersion control is essential for managing your Spring Boot project:\n# Check Git installation\ngit --version\nIf not installed:\n\nWindows: Download from git-scm.com\nmacOS: Install via Homebrew (brew install git) or Xcode Command Line Tools\nLinux: Use your package manager (sudo apt install git)\n\n\n\nAWS CLI (Recommended)\nWhile not strictly required, the AWS CLI can be helpful for advanced configurations:\n# Check AWS CLI installation\naws --version\nInstall from AWS CLI documentation.",
     "crumbs": [
       "Prerequisites",
       "Prerequisites"
