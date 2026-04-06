@@ -729,7 +729,7 @@
     "href": "modules/02-steps/01-first-step-slides.html#why-spring-boot-profiles-matter",
     "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
     "section": "Why Spring Boot Profiles Matter",
-    "text": "Why Spring Boot Profiles Matter\n\n\nDevelopment Environment - Local database connections - Debug logging enabled - Development-friendly settings\n\nProduction Environment - Cloud database connections - Optimized performance settings - Security-focused configuration\n\n\nProfiles allow you to segregate application configuration and make it available only in certain environments. This prevents hardcoding production credentials and enables local testing with development databases.",
+    "text": "Why Spring Boot Profiles Matter\n\n\nDevelopment Environment\n\nLocal database connections\nDebug logging enabled\nDevelopment-friendly settings\n\n\nProduction Environment\n\nCloud database connections\nOptimized performance settings\nSecurity-focused configuration\n\n\n\nProfiles allow you to segregate application configuration and make it available only in certain environments. This prevents hardcoding production credentials and enables local testing with development databases.",
     "crumbs": [
       "Steps",
       "First Step Slides"
@@ -773,7 +773,7 @@
     "href": "modules/02-steps/01-first-step-slides.html#environment-variables-in-production",
     "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
     "section": "Environment Variables in Production",
-    "text": "Environment Variables in Production\n\n\nSyntax: ${VARIABLE_NAME:default_value}\nBenefits: - Secure credential management - Environment-specific overrides - No hardcoded production secrets - Easy configuration changes\n\nspring.datasource.url=\n  ${DB_URL:default}\n\nspring.datasource.username=\n  ${DB_USERNAME:user}\n\nspring.datasource.password=\n  ${DB_PASSWORD:pass}\n\n\nThe ${} syntax allows overriding configuration values with environment variables while providing fallback defaults. This is crucial for cloud deployments.",
+    "text": "Environment Variables in Production\n\n\nSyntax: ${VARIABLE_NAME:default_value}\nBenefits:\n\nSecure credential management\nEnvironment-specific overrides\nNo hardcoded production secrets\nEasy configuration changes\n\n\nspring.datasource.url=\n  ${DB_URL:default}\n\nspring.datasource.username=\n  ${DB_USERNAME:user}\n\nspring.datasource.password=\n  ${DB_PASSWORD:pass}\n\n\nThe ${} syntax allows overriding configuration values with environment variables while providing fallback defaults. This is crucial for cloud deployments.",
     "crumbs": [
       "Steps",
       "First Step Slides"
@@ -828,7 +828,7 @@
     "href": "modules/02-steps/01-first-step-slides.html#key-benefits-achieved",
     "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
     "section": "Key Benefits Achieved",
-    "text": "Key Benefits Achieved\n\n\nDevelopment Benefits - Local development database - Debug logging enabled - Fast development cycle - Easy configuration changes\n\nProduction Benefits - Secure credential management - Optimized performance settings - Environment-specific configurations - Cloud-ready deployment package\n\n\nThis profile configuration provides the foundation for a professional deployment workflow, separating concerns between development and production environments.",
+    "text": "Key Benefits Achieved\n\n\nDevelopment Benefits\n\nLocal development database\nDebug logging enabled\nFast development cycle\nEasy configuration changes\n\n\nProduction Benefits\n\nSecure credential management\nOptimized performance settings\nEnvironment-specific configurations\nCloud-ready deployment package\n\n\n\nThis profile configuration provides the foundation for a professional deployment workflow, separating concerns between development and production environments.",
     "crumbs": [
       "Steps",
       "First Step Slides"
@@ -839,7 +839,7 @@
     "href": "modules/02-steps/01-first-step-slides.html#whats-next",
     "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
     "section": "What’s Next?",
-    "text": "What’s Next?\nComing Up in Step 2: - Create AWS Lightsail instance - Configure Linux environment - Set up MySQL database - Prepare for application deployment\nYour Spring Boot application is now production-ready with proper profile configuration!\n\nWith profiles configured, your application can seamlessly transition from local development to AWS Lightsail. Next, we’ll create the cloud infrastructure to host your application.",
+    "text": "What’s Next?\nComing Up in Step 2:\n\nCreate AWS Lightsail instance\nConfigure Linux environment\nSet up MySQL database\nPrepare for application deployment\n\nYour Spring Boot application is now production-ready with proper profile configuration!\n\nWith profiles configured, your application can seamlessly transition from local development to AWS Lightsail. Next, we’ll create the cloud infrastructure to host your application.",
     "crumbs": [
       "Steps",
       "First Step Slides"

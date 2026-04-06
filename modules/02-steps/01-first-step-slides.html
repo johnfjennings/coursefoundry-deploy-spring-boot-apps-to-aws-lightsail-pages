@@ -233,9 +233,19 @@ AWS Lightsail Deployment Course
 <h2>Why Spring Boot Profiles Matter</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Development Environment</strong> - Local database connections - Debug logging enabled - Development-friendly settings</p>
+<p><strong>Development Environment</strong></p>
+<ul>
+<li>Local database connections</li>
+<li>Debug logging enabled</li>
+<li>Development-friendly settings</li>
+</ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Production Environment</strong> - Cloud database connections - Optimized performance settings - Security-focused configuration</p>
+<p><strong>Production Environment</strong></p>
+<ul>
+<li>Cloud database connections</li>
+<li>Optimized performance settings</li>
+<li>Security-focused configuration</li>
+</ul>
 </div></div>
 <aside class="notes">
 <p>Profiles allow you to segregate application configuration and make it available only in certain environments. This prevents hardcoding production credentials and enables local testing with development databases.</p>
@@ -335,7 +345,13 @@ AWS Lightsail Deployment Course
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><strong>Syntax:</strong> <code>${VARIABLE_NAME:default_value}</code></p>
-<p><strong>Benefits:</strong> - Secure credential management - Environment-specific overrides - No hardcoded production secrets - Easy configuration changes</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Secure credential management</li>
+<li>Environment-specific overrides</li>
+<li>No hardcoded production secrets</li>
+<li>Easy configuration changes</li>
+</ul>
 </div><div class="column" style="width:40%;">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource properties number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>spring.datasource.url=</span>
 <span id="cb4-2"><a></a>  ${DB_URL:default}</span>
@@ -467,9 +483,21 @@ AWS Lightsail Deployment Course
 <h2>Key Benefits Achieved</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Development Benefits</strong> - Local development database - Debug logging enabled - Fast development cycle - Easy configuration changes</p>
+<p><strong>Development Benefits</strong></p>
+<ul>
+<li>Local development database</li>
+<li>Debug logging enabled</li>
+<li>Fast development cycle</li>
+<li>Easy configuration changes</li>
+</ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Production Benefits</strong> - Secure credential management - Optimized performance settings - Environment-specific configurations - Cloud-ready deployment package</p>
+<p><strong>Production Benefits</strong></p>
+<ul>
+<li>Secure credential management</li>
+<li>Optimized performance settings</li>
+<li>Environment-specific configurations</li>
+<li>Cloud-ready deployment package</li>
+</ul>
 </div></div>
 <aside class="notes">
 <p>This profile configuration provides the foundation for a professional deployment workflow, separating concerns between development and production environments.</p>
@@ -487,7 +515,13 @@ AWS Lightsail Deployment Course
 </section>
 <section id="whats-next" class="slide level2">
 <h2>What’s Next?</h2>
-<p><strong>Coming Up in Step 2:</strong> - Create AWS Lightsail instance - Configure Linux environment - Set up MySQL database - Prepare for application deployment</p>
+<p><strong>Coming Up in Step 2:</strong></p>
+<ul>
+<li>Create AWS Lightsail instance</li>
+<li>Configure Linux environment</li>
+<li>Set up MySQL database</li>
+<li>Prepare for application deployment</li>
+</ul>
 <p>Your Spring Boot application is now <strong>production-ready</strong> with proper profile configuration!</p>
 <aside class="notes">
 <p>With profiles configured, your application can seamlessly transition from local development to AWS Lightsail. Next, we’ll create the cloud infrastructure to host your application.</p>
