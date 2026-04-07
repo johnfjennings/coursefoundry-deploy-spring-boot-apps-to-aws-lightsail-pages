@@ -230,11 +230,11 @@
     ]
   },
   {
-    "objectID": "modules/02-steps/06-sixth-step.html#step-6-set-up-custom-domain-and-ssl-certificate",
-    "href": "modules/02-steps/06-sixth-step.html#step-6-set-up-custom-domain-and-ssl-certificate",
+    "objectID": "modules/02-steps/06-sixth-step.html#introduction",
+    "href": "modules/02-steps/06-sixth-step.html#introduction",
     "title": "Step 6: Set Up Custom Domain and SSL Certificate",
-    "section": "Step 6: Set Up Custom Domain and SSL Certificate",
-    "text": "Step 6: Set Up Custom Domain and SSL Certificate\nIn this final step, you’ll configure a custom domain for your Spring Boot application and secure it with an SSL certificate. This will make your application accessible via a professional domain name with HTTPS encryption, providing both credibility and security for your users.",
+    "section": "Introduction",
+    "text": "Introduction\nIn this final step, you’ll configure a custom domain for your Spring Boot application and secure it with an SSL certificate. This will make your application accessible via a professional domain name with HTTPS encryption, providing both credibility and security for your users.",
     "crumbs": [
       "Steps",
       "Sixth Step"
@@ -362,11 +362,11 @@
     ]
   },
   {
-    "objectID": "modules/02-steps/05-fifth-step.html#step-5-configure-reverse-proxy-with-nginx",
-    "href": "modules/02-steps/05-fifth-step.html#step-5-configure-reverse-proxy-with-nginx",
+    "objectID": "modules/02-steps/05-fifth-step.html#introduction",
+    "href": "modules/02-steps/05-fifth-step.html#introduction",
     "title": "Step 5: Configure Reverse Proxy with Nginx",
-    "section": "Step 5: Configure Reverse Proxy with Nginx",
-    "text": "Step 5: Configure Reverse Proxy with Nginx\nIn this step, you’ll configure Nginx as a reverse proxy for your Spring Boot application. This setup improves performance, provides better security, and enables you to serve static content efficiently while forwarding dynamic requests to your Java application.",
+    "section": "Introduction",
+    "text": "Introduction\nIn this step, you’ll configure Nginx as a reverse proxy for your Spring Boot application. This setup improves performance, provides better security, and enables you to serve static content efficiently while forwarding dynamic requests to your Java application.",
     "crumbs": [
       "Steps",
       "Fifth Step"
@@ -461,11 +461,11 @@
     ]
   },
   {
-    "objectID": "modules/02-steps/04-fourth-step.html#step-4-deploy-spring-boot-application-to-lightsail-server",
-    "href": "modules/02-steps/04-fourth-step.html#step-4-deploy-spring-boot-application-to-lightsail-server",
+    "objectID": "modules/02-steps/04-fourth-step.html#introduction",
+    "href": "modules/02-steps/04-fourth-step.html#introduction",
     "title": "Step 4: Deploy Spring Boot Application to Lightsail Server",
-    "section": "Step 4: Deploy Spring Boot Application to Lightsail Server",
-    "text": "Step 4: Deploy Spring Boot Application to Lightsail Server\nIn this step, you’ll deploy your Spring Boot application to the AWS Lightsail server you’ve configured. We’ll install Java, transfer your application files, configure environment variables, and set up the application to run as a system service.",
+    "section": "Introduction",
+    "text": "Introduction\nIn this step, you’ll deploy your Spring Boot application to the AWS Lightsail server you’ve configured. We’ll install Java, transfer your application files, configure environment variables, and set up the application to run as a system service.",
     "crumbs": [
       "Steps",
       "Fourth Step"
@@ -615,22 +615,11 @@
     ]
   },
   {
-    "objectID": "modules/02-steps/02-second-step.html#step-2-create-and-configure-aws-lightsail-instance",
-    "href": "modules/02-steps/02-second-step.html#step-2-create-and-configure-aws-lightsail-instance",
+    "objectID": "modules/02-steps/02-second-step.html#introduction",
+    "href": "modules/02-steps/02-second-step.html#introduction",
     "title": "Step 2: Create and Configure AWS Lightsail Instance",
-    "section": "Step 2: Create and Configure AWS Lightsail Instance",
-    "text": "Step 2: Create and Configure AWS Lightsail Instance",
-    "crumbs": [
-      "Steps",
-      "Second Step"
-    ]
-  },
-  {
-    "objectID": "modules/02-steps/02-second-step.html#lecture-slides-1",
-    "href": "modules/02-steps/02-second-step.html#lecture-slides-1",
-    "title": "Step 2: Create and Configure AWS Lightsail Instance",
-    "section": "Lecture Slides",
-    "text": "Lecture Slides\nEither click on the slide area below or click here to view it in fullscreen. Use your keypad to navigate the slides.\n\n\n\n\nA PDF printable handout version of the slides is available here\nIn this step, you’ll create a new AWS Lightsail instance that will serve as your production server for deploying your Spring Boot application. We’ll configure it with the appropriate specifications and security settings needed for a Java web application.",
+    "section": "Introduction",
+    "text": "Introduction\nIn this step, you’ll create a new AWS Lightsail instance that will serve as your production server for deploying your Spring Boot application. We’ll configure it with the appropriate specifications and security settings needed for a Java web application.",
     "crumbs": [
       "Steps",
       "Second Step"
@@ -736,11 +725,11 @@
     ]
   },
   {
-    "objectID": "modules/02-steps/01-first-step.html#step-1-configure-development-and-production-profiles-in-spring-boot",
-    "href": "modules/02-steps/01-first-step.html#step-1-configure-development-and-production-profiles-in-spring-boot",
+    "objectID": "modules/02-steps/01-first-step.html#introduction",
+    "href": "modules/02-steps/01-first-step.html#introduction",
     "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
-    "section": "Step 1: Configure Development and Production Profiles in Spring Boot",
-    "text": "Step 1: Configure Development and Production Profiles in Spring Boot\nIn this step, you’ll configure separate application profiles for development and production environments, ensuring your Spring Boot application can seamlessly transition from local development to AWS Lightsail deployment.",
+    "section": "Introduction",
+    "text": "Introduction\nIn this step, you’ll configure separate application profiles for development and production environments, ensuring your Spring Boot application can seamlessly transition from local development to AWS Lightsail deployment.",
     "crumbs": [
       "Steps",
       "First Step"
@@ -857,11 +846,11 @@
     ]
   },
   {
-    "objectID": "modules/02-steps/03-third-step.html#step-3-set-up-mysql-database-on-lightsail",
-    "href": "modules/02-steps/03-third-step.html#step-3-set-up-mysql-database-on-lightsail",
+    "objectID": "modules/02-steps/03-third-step.html#introduction",
+    "href": "modules/02-steps/03-third-step.html#introduction",
     "title": "Step 3: Set Up MySQL Database on Lightsail",
-    "section": "Step 3: Set Up MySQL Database on Lightsail",
-    "text": "Step 3: Set Up MySQL Database on Lightsail\nIn this step, you’ll install and configure MySQL on your Lightsail instance to serve as the production database for your Spring Boot application. We’ll set up proper security, create the application database, and configure it for optimal performance.",
+    "section": "Introduction",
+    "text": "Introduction\nIn this step, you’ll install and configure MySQL on your Lightsail instance to serve as the production database for your Spring Boot application. We’ll set up proper security, create the application database, and configure it for optimal performance.",
     "crumbs": [
       "Steps",
       "Third Step"
