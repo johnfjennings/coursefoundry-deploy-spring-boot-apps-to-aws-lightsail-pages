@@ -75,6 +75,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="neutral">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <meta property="og:title" content="Deploy Spring Boot Apps to AWS Lightsail">
@@ -328,8 +332,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="course-architecture-overview" class="level2">
 <h2 class="anchored" data-anchor-id="course-architecture-overview">Course Architecture Overview</h2>
-<pre class="mermaid"><code>
-graph TB
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TB
     A[Local Development] --&gt; B[Spring Boot App with Profiles]
     B --&gt; C[AWS Lightsail Instance]
     C --&gt; D[MySQL Database]
@@ -344,7 +352,13 @@ graph TB
     end
     
     F --&gt; G
-    G --&gt; E</code></pre>
+    G --&gt; E
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 </section>
 <section id="what-well-build" class="level2">
 <h2 class="anchored" data-anchor-id="what-well-build">What We’ll Build</h2>
