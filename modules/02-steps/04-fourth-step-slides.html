@@ -12,7 +12,7 @@
 
   <meta name="author" content="AWS Lightsail Deployment Course">
   <meta name="dcterms.date" content="2026-04-07">
-  <title>Deploy Spring Boot Apps to AWS Lightsail – Step 1: Configure Development and Production Profiles in Spring Boot</title>
+  <title>Deploy Spring Boot Apps to AWS Lightsail – Deploy Spring Boot Application to Lightsail Server</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -192,7 +192,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Step 1: Configure Development and Production Profiles in Spring Boot – Deploy Spring Boot Apps to AWS Lightsail">
+<meta property="og:title" content="Deploy Spring Boot Application to Lightsail Server – Deploy Spring Boot Apps to AWS Lightsail">
 <meta property="og:site_name" content="Deploy Spring Boot Apps to AWS Lightsail">
 </head>
 <body class="quarto-light">
@@ -200,7 +200,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Step 1: Configure Development and Production Profiles in Spring Boot</h1>
+  <h1 class="title">Deploy Spring Boot Application to Lightsail Server</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -212,11 +212,18 @@ AWS Lightsail Deployment Course
 
   <p class="date">2026-04-07</p>
 </section>
-<section id="configure-development-and-production-profiles-in-spring-boot" class="slide level2">
-<h2>Configure Development and Production Profiles in Spring Boot</h2>
-<p>Preparing your Spring Boot application for seamless deployment to AWS Lightsail</p>
+<section id="step-4-deploy-spring-boot-application" class="slide level2">
+<h2>Step 4: Deploy Spring Boot Application</h2>
+<p>Deploy your Spring Boot application to AWS Lightsail server</p>
+<ul>
+<li>Install Java Runtime Environment</li>
+<li>Transfer application files</li>
+<li>Configure production environment</li>
+<li>Set up system service</li>
+<li>Monitor and troubleshoot</li>
+</ul>
 <aside class="notes">
-<p>Welcome to step 1 of deploying Spring Boot apps to AWS Lightsail. Today we’ll configure separate application profiles for development and production environments.</p>
+<p>This step covers the complete deployment process from installing Java to monitoring the running application. We’ll create a production-ready deployment with proper security and monitoring.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -229,26 +236,23 @@ AWS Lightsail Deployment Course
           display:block!important;
       }</style></aside>
 </section>
-<section id="why-spring-boot-profiles-matter" class="slide level2">
-<h2>Why Spring Boot Profiles Matter</h2>
+<section id="understanding-the-deployment-process" class="slide level2">
+<h2>Understanding the Deployment Process</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Development Environment</strong></p>
+<h3 id="key-components">Key Components</h3>
 <ul>
-<li>Local database connections</li>
-<li>Debug logging enabled</li>
-<li>Development-friendly settings</li>
+<li>Java Runtime Environment (JRE)</li>
+<li>Compiled JAR file transfer</li>
+<li>Production environment variables</li>
+<li>System service configuration</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Production Environment</strong></p>
-<ul>
-<li>Cloud database connections</li>
-<li>Optimized performance settings</li>
-<li>Security-focused configuration</li>
-</ul>
+<h3 id="best-practice">Best Practice</h3>
+<p>Always test your application locally with production profiles before deploying</p>
 </div></div>
 <aside class="notes">
-<p>Profiles allow you to segregate application configuration and make it available only in certain environments. This prevents hardcoding production credentials and enables local testing with development databases.</p>
+<p>The deployment process involves several interconnected components that work together to create a robust production environment. Testing locally with production profiles helps catch configuration issues early.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -261,21 +265,20 @@ AWS Lightsail Deployment Course
           display:block!important;
       }</style></aside>
 </section>
-<section id="base-configuration-setup" class="slide level2">
-<h2>Base Configuration Setup</h2>
-<p>Create <code>application.properties</code> with common settings:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource properties number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a># Application name and basic settings</span>
-<span id="cb1-2"><a></a>spring.application.name=my-spring-app</span>
-<span id="cb1-3"><a></a>server.servlet.context-path=/</span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a># Default active profile</span>
-<span id="cb1-6"><a></a>spring.profiles.active=dev</span>
+<section id="installing-java-on-lightsail" class="slide level2">
+<h2>Installing Java on Lightsail</h2>
+<h3 id="connect-and-install-openjdk-17">Connect and Install OpenJDK 17</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="co"># SSH to your instance</span></span>
+<span id="cb1-2"><a></a><span class="fu">ssh</span> <span class="at">-i</span> your-key.pem ubuntu@your-lightsail-ip</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="co"># Update and install Java</span></span>
+<span id="cb1-5"><a></a><span class="fu">sudo</span> apt update</span>
+<span id="cb1-6"><a></a><span class="fu">sudo</span> apt install openjdk-17-jdk <span class="at">-y</span></span>
 <span id="cb1-7"><a></a></span>
-<span id="cb1-8"><a></a># JPA/Hibernate common settings</span>
-<span id="cb1-9"><a></a>spring.jpa.hibernate.ddl-auto=update</span>
-<span id="cb1-10"><a></a>spring.jpa.show-sql=false</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-8"><a></a><span class="co"># Verify installation</span></span>
+<span id="cb1-9"><a></a><span class="ex">java</span> <span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
-<p>The base configuration contains settings that apply to all environments. Notice we set the default profile to ‘dev’ for local development convenience.</p>
+<p>OpenJDK 17 is the current LTS version and fully compatible with Spring Boot 3.x. The installation process is straightforward on Ubuntu using the apt package manager.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -288,20 +291,22 @@ AWS Lightsail Deployment Course
           display:block!important;
       }</style></aside>
 </section>
-<section id="development-profile-configuration" class="slide level2">
-<h2>Development Profile Configuration</h2>
-<p>Create <code>application-dev.properties</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource properties number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a># Local MySQL database configuration</span>
-<span id="cb2-2"><a></a>spring.datasource.url=jdbc:mysql://localhost:3306/myapp_dev</span>
-<span id="cb2-3"><a></a>spring.datasource.username=dev_user</span>
-<span id="cb2-4"><a></a>spring.datasource.password=dev_password</span>
-<span id="cb2-5"><a></a></span>
-<span id="cb2-6"><a></a># Development-specific settings</span>
-<span id="cb2-7"><a></a>spring.jpa.show-sql=true</span>
-<span id="cb2-8"><a></a>logging.level.org.springframework.web=DEBUG</span>
-<span id="cb2-9"><a></a>server.port=8080</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="preparing-application-structure" class="slide level2">
+<h2>Preparing Application Structure</h2>
+<h3 id="create-directory-structure">Create Directory Structure</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="co"># Create application directory</span></span>
+<span id="cb2-2"><a></a><span class="fu">sudo</span> mkdir <span class="at">-p</span> /opt/myapp</span>
+<span id="cb2-3"><a></a></span>
+<span id="cb2-4"><a></a><span class="co"># Create logs directory</span></span>
+<span id="cb2-5"><a></a><span class="fu">sudo</span> mkdir <span class="at">-p</span> /var/log/myapp</span>
+<span id="cb2-6"><a></a></span>
+<span id="cb2-7"><a></a><span class="co"># Create application user</span></span>
+<span id="cb2-8"><a></a><span class="fu">sudo</span> useradd <span class="at">-r</span> <span class="at">-s</span> /bin/false myapp</span>
+<span id="cb2-9"><a></a></span>
+<span id="cb2-10"><a></a><span class="co"># Set ownership</span></span>
+<span id="cb2-11"><a></a><span class="fu">sudo</span> chown <span class="at">-R</span> myapp:myapp /opt/myapp /var/log/myapp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
-<p>The development profile uses local database connections and enables verbose logging to help with debugging during development.</p>
+<p>Creating a dedicated user for the application improves security by following the principle of least privilege. The application runs with minimal permissions needed for operation.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -314,20 +319,23 @@ AWS Lightsail Deployment Course
           display:block!important;
       }</style></aside>
 </section>
-<section id="production-profile-configuration" class="slide level2">
-<h2>Production Profile Configuration</h2>
-<p>Create <code>application-prod.properties</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource properties number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a># Production database with environment variables</span>
-<span id="cb3-2"><a></a>spring.datasource.url=${DB_URL:jdbc:mysql://localhost:3306/myapp_prod}</span>
-<span id="cb3-3"><a></a>spring.datasource.username=${DB_USERNAME:prod_user}</span>
-<span id="cb3-4"><a></a>spring.datasource.password=${DB_PASSWORD:secure_password}</span>
-<span id="cb3-5"><a></a></span>
-<span id="cb3-6"><a></a># Production optimizations</span>
-<span id="cb3-7"><a></a>spring.jpa.show-sql=false</span>
-<span id="cb3-8"><a></a>spring.jpa.hibernate.ddl-auto=validate</span>
-<span id="cb3-9"><a></a>server.compression.enabled=true</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="building-and-transferring-application" class="slide level2">
+<h2>Building and Transferring Application</h2>
+<h3 id="build-jar-file-locally">Build JAR File Locally</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="co"># Using Maven</span></span>
+<span id="cb3-2"><a></a><span class="ex">./mvnw</span> clean package <span class="at">-DskipTests</span></span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="co"># Using Gradle</span></span>
+<span id="cb3-5"><a></a><span class="ex">./gradlew</span> build <span class="at">-x</span> test</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 id="transfer-to-server">Transfer to Server</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="co"># Transfer JAR file</span></span>
+<span id="cb4-2"><a></a><span class="fu">scp</span> <span class="at">-i</span> your-key.pem target/myapp-0.0.1-SNAPSHOT.jar <span class="dt">\</span></span>
+<span id="cb4-3"><a></a>  ubuntu@your-lightsail-ip:/home/ubuntu/</span>
+<span id="cb4-4"><a></a></span>
+<span id="cb4-5"><a></a><span class="co"># Move to application directory</span></span>
+<span id="cb4-6"><a></a><span class="fu">sudo</span> mv /home/ubuntu/myapp-0.0.1-SNAPSHOT.jar /opt/myapp/myapp.jar</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
-<p>Production profile uses environment variables for database configuration, enabling secure credential management without hardcoding sensitive information.</p>
+<p>Building locally ensures you have the exact same environment for building. SCP provides a secure way to transfer files. Alternative methods include rsync, SFTP, or Git-based deployments.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -340,30 +348,21 @@ AWS Lightsail Deployment Course
           display:block!important;
       }</style></aside>
 </section>
-<section id="environment-variables-in-production" class="slide level2">
-<h2>Environment Variables in Production</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><strong>Syntax:</strong> <code>${VARIABLE_NAME:default_value}</code></p>
-<p><strong>Benefits:</strong></p>
+<section id="configuring-production-environment" class="slide level2">
+<h2>Configuring Production Environment</h2>
+<h3 id="create-environment-file">Create Environment File</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="co"># Create environment configuration</span></span>
+<span id="cb5-2"><a></a><span class="fu">sudo</span> nano /opt/myapp/application.env</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 class="incremental" id="environment-variables">Environment Variables</h3>
 <ul>
-<li>Secure credential management</li>
-<li>Environment-specific overrides</li>
-<li>No hardcoded production secrets</li>
-<li>Easy configuration changes</li>
+<li><code>SPRING_PROFILES_ACTIVE=prod</code></li>
+<li>Database connection settings</li>
+<li>Server configuration</li>
+<li>JVM memory options</li>
+<li>Logging levels</li>
 </ul>
-</div><div class="column" style="width:40%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource properties number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>spring.datasource.url=</span>
-<span id="cb4-2"><a></a>  ${DB_URL:default}</span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a>spring.datasource.username=</span>
-<span id="cb4-5"><a></a>  ${DB_USERNAME:user}</span>
-<span id="cb4-6"><a></a></span>
-<span id="cb4-7"><a></a>spring.datasource.password=</span>
-<span id="cb4-8"><a></a>  ${DB_PASSWORD:pass}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div></div>
 <aside class="notes">
-<p>The ${} syntax allows overriding configuration values with environment variables while providing fallback defaults. This is crucial for cloud deployments.</p>
+<p>Environment variables allow you to configure the application for different environments without changing code. This includes database settings, memory allocation, and feature flags.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -376,50 +375,25 @@ AWS Lightsail Deployment Course
           display:block!important;
       }</style></aside>
 </section>
-<section id="build-configuration-updates" class="slide level2">
-<h2>Build Configuration Updates</h2>
-<h3 id="maven-dependencies">Maven Dependencies</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource xml number-lines code-with-copy"><code class="sourceCode xml"><span id="cb5-1"><a></a>&lt;<span class="kw">dependency</span>&gt;</span>
-<span id="cb5-2"><a></a>    &lt;<span class="kw">groupId</span>&gt;mysql&lt;/<span class="kw">groupId</span>&gt;</span>
-<span id="cb5-3"><a></a>    &lt;<span class="kw">artifactId</span>&gt;mysql-connector-java&lt;/<span class="kw">artifactId</span>&gt;</span>
-<span id="cb5-4"><a></a>    &lt;<span class="kw">scope</span>&gt;runtime&lt;/<span class="kw">scope</span>&gt;</span>
-<span id="cb5-5"><a></a>&lt;/<span class="kw">dependency</span>&gt;</span>
-<span id="cb5-6"><a></a></span>
-<span id="cb5-7"><a></a>&lt;<span class="kw">dependency</span>&gt;</span>
-<span id="cb5-8"><a></a>    &lt;<span class="kw">groupId</span>&gt;org.springframework.boot&lt;/<span class="kw">groupId</span>&gt;</span>
-<span id="cb5-9"><a></a>    &lt;<span class="kw">artifactId</span>&gt;spring-boot-starter-data-jpa&lt;/<span class="kw">artifactId</span>&gt;</span>
-<span id="cb5-10"><a></a>&lt;/<span class="kw">dependency</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<aside class="notes">
-<p>Ensure your build configuration includes the necessary dependencies for MySQL connectivity and JPA data access.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="testing-your-profiles" class="slide level2">
-<h2>Testing Your Profiles</h2>
-<h3 id="development-profile">Development Profile</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="co"># Run with development profile (default)</span></span>
-<span id="cb6-2"><a></a><span class="ex">mvn</span> spring-boot:run</span>
+<section id="environment-configuration-example" class="slide level2">
+<h2>Environment Configuration Example</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="co"># /opt/myapp/application.env</span></span>
+<span id="cb6-2"><a></a><span class="va">SPRING_PROFILES_ACTIVE</span><span class="op">=</span>prod</span>
 <span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a><span class="co"># Or explicitly specify</span></span>
-<span id="cb6-5"><a></a><span class="ex">mvn</span> spring-boot:run <span class="at">-Dspring-boot.run.profiles</span><span class="op">=</span>dev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<h3 id="production-profile-testing">Production Profile Testing</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="co"># Set environment variables</span></span>
-<span id="cb7-2"><a></a><span class="bu">export</span> <span class="va">DB_URL</span><span class="op">=</span><span class="st">"jdbc:mysql://localhost:3306/myapp_test"</span></span>
-<span id="cb7-3"><a></a><span class="bu">export</span> <span class="va">DB_USERNAME</span><span class="op">=</span><span class="st">"test_user"</span></span>
-<span id="cb7-4"><a></a></span>
-<span id="cb7-5"><a></a><span class="co"># Run with production profile</span></span>
-<span id="cb7-6"><a></a><span class="ex">mvn</span> spring-boot:run <span class="at">-Dspring-boot.run.profiles</span><span class="op">=</span>prod</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-4"><a></a><span class="co"># Database Configuration</span></span>
+<span id="cb6-5"><a></a><span class="va">DB_HOST</span><span class="op">=</span>your-lightsail-db-endpoint</span>
+<span id="cb6-6"><a></a><span class="va">DB_PORT</span><span class="op">=</span>3306</span>
+<span id="cb6-7"><a></a><span class="va">DB_NAME</span><span class="op">=</span>myapp_prod</span>
+<span id="cb6-8"><a></a><span class="va">DB_USERNAME</span><span class="op">=</span>myappuser</span>
+<span id="cb6-9"><a></a><span class="va">DB_PASSWORD</span><span class="op">=</span>your-secure-password</span>
+<span id="cb6-10"><a></a></span>
+<span id="cb6-11"><a></a><span class="co"># JVM Options</span></span>
+<span id="cb6-12"><a></a><span class="va">JAVA_OPTS</span><span class="op">=</span>-Xms512m <span class="ex">-Xmx1024m</span> <span class="at">-Dspring.profiles.active</span><span class="op">=</span>prod</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 id="set-secure-permissions">Set Secure Permissions</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="fu">sudo</span> chown myapp:myapp /opt/myapp/application.env</span>
+<span id="cb7-2"><a></a><span class="fu">sudo</span> chmod 600 /opt/myapp/application.env</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
-<p>Testing both profiles locally ensures your configuration works correctly before deployment. The production profile test helps verify environment variable substitution works.</p>
+<p>Setting restrictive permissions (600) ensures only the application user can read sensitive configuration data like database passwords.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -432,18 +406,24 @@ AWS Lightsail Deployment Course
           display:block!important;
       }</style></aside>
 </section>
-<section id="building-for-production" class="slide level2">
-<h2>Building for Production</h2>
-<p>Create deployment-ready JAR:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="co"># Clean and build the project</span></span>
-<span id="cb8-2"><a></a><span class="ex">mvn</span> clean package</span>
-<span id="cb8-3"><a></a></span>
-<span id="cb8-4"><a></a><span class="co"># Verify the JAR was created</span></span>
-<span id="cb8-5"><a></a><span class="fu">ls</span> <span class="at">-la</span> target/<span class="pp">*</span>.jar</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Output:</strong></p>
-<pre><code>-rw-r--r-- 1 user user 45M Dec  1 10:30 my-spring-app-1.0.0.jar</code></pre>
+<section id="creating-system-service" class="slide level2">
+<h2>Creating System Service</h2>
+<h3 id="systemd-service-file">Systemd Service File</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="fu">sudo</span> nano /etc/systemd/system/myapp.service</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource ini number-lines code-with-copy"><code class="sourceCode ini"><span id="cb9-1"><a></a><span class="kw">[Unit]</span></span>
+<span id="cb9-2"><a></a><span class="dt">Description</span><span class="ot">=</span><span class="st">My Spring Boot Application</span></span>
+<span id="cb9-3"><a></a><span class="dt">After</span><span class="ot">=</span><span class="st">network.target</span></span>
+<span id="cb9-4"><a></a></span>
+<span id="cb9-5"><a></a><span class="kw">[Service]</span></span>
+<span id="cb9-6"><a></a><span class="dt">Type</span><span class="ot">=</span><span class="st">exec</span></span>
+<span id="cb9-7"><a></a><span class="dt">User</span><span class="ot">=</span><span class="st">myapp</span></span>
+<span id="cb9-8"><a></a><span class="dt">Group</span><span class="ot">=</span><span class="st">myapp</span></span>
+<span id="cb9-9"><a></a><span class="dt">ExecStart</span><span class="ot">=</span><span class="st">/usr/bin/java -jar /opt/myapp/myapp.jar</span></span>
+<span id="cb9-10"><a></a><span class="dt">EnvironmentFile</span><span class="ot">=</span><span class="st">/opt/myapp/application.env</span></span>
+<span id="cb9-11"><a></a><span class="dt">WorkingDirectory</span><span class="ot">=</span><span class="st">/opt/myapp</span></span>
+<span id="cb9-12"><a></a><span class="dt">Restart</span><span class="ot">=</span><span class="st">always</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
-<p>The executable JAR contains your application and all dependencies, making it perfect for cloud deployment. This single file can be transferred to your Lightsail instance.</p>
+<p>Systemd services provide automatic startup, restart on failure, and integration with the system’s logging infrastructure. The service runs as the dedicated application user for security.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -456,17 +436,109 @@ AWS Lightsail Deployment Course
           display:block!important;
       }</style></aside>
 </section>
-<section id="configuration-verification-checklist" class="slide level2">
-<h2>Configuration Verification Checklist</h2>
+<section id="enable-and-start-service" class="slide level2">
+<h2>Enable and Start Service</h2>
+<h3 id="service-management-commands">Service Management Commands</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="co"># Reload systemd configuration</span></span>
+<span id="cb10-2"><a></a><span class="fu">sudo</span> systemctl daemon-reload</span>
+<span id="cb10-3"><a></a></span>
+<span id="cb10-4"><a></a><span class="co"># Enable service to start on boot</span></span>
+<span id="cb10-5"><a></a><span class="fu">sudo</span> systemctl enable myapp.service</span>
+<span id="cb10-6"><a></a></span>
+<span id="cb10-7"><a></a><span class="co"># Start the service</span></span>
+<span id="cb10-8"><a></a><span class="fu">sudo</span> systemctl start myapp.service</span>
+<span id="cb10-9"><a></a></span>
+<span id="cb10-10"><a></a><span class="co"># Check service status</span></span>
+<span id="cb10-11"><a></a><span class="fu">sudo</span> systemctl status myapp.service</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>Enabling the service ensures it starts automatically when the server boots. The status command shows you if the service is running and any recent log entries.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="production-application-properties" class="slide level2">
+<h2>Production Application Properties</h2>
+<h3 id="database-configuration">Database Configuration</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource properties number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a></a># application-prod.properties</span>
+<span id="cb11-2"><a></a>spring.datasource.url=jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}</span>
+<span id="cb11-3"><a></a>spring.datasource.username=${DB_USERNAME}</span>
+<span id="cb11-4"><a></a>spring.datasource.password=${DB_PASSWORD}</span>
+<span id="cb11-5"><a></a></span>
+<span id="cb11-6"><a></a># Production optimizations</span>
+<span id="cb11-7"><a></a>spring.jpa.hibernate.ddl-auto=validate</span>
+<span id="cb11-8"><a></a>spring.jpa.show-sql=false</span>
+<span id="cb11-9"><a></a></span>
+<span id="cb11-10"><a></a># Logging</span>
+<span id="cb11-11"><a></a>logging.file.name=/var/log/myapp/application.log</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>Production properties use environment variables for configuration and disable development features like SQL logging. The ddl-auto setting is set to validate to prevent accidental schema changes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="testing-your-deployment" class="slide level2">
+<h2>Testing Your Deployment</h2>
+<h3 class="incremental" id="verification-steps">Verification Steps</h3>
 <ul>
-<li class="fragment">✓ Created <code>application.properties</code>, <code>application-dev.properties</code>, and <code>application-prod.properties</code></li>
-<li class="fragment">✓ Application starts successfully with development profile</li>
-<li class="fragment">✓ Executable JAR builds without errors</li>
-<li class="fragment">✓ Database dependencies configured in build file</li>
-<li class="fragment">✓ Environment variable syntax working in production profile</li>
+<li>Check service status: <code>sudo systemctl status myapp.service</code></li>
+<li>View logs: <code>sudo tail -f /var/log/myapp/application.log</code></li>
+<li>Test health endpoint: <code>curl http://localhost:8080/actuator/health</code></li>
+<li>Verify port listening: <code>sudo netstat -tlnp | grep :8080</code></li>
+</ul>
+<h3 id="configure-lightsail-firewall">Configure Lightsail Firewall</h3>
+<p>Open port 8080 in Lightsail console → Networking tab</p>
+<aside class="notes">
+<p>These verification steps help ensure the application is running correctly and accessible. The firewall configuration is temporary - we’ll use Nginx as a reverse proxy in the next step.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="monitoring-and-log-management" class="slide level2">
+<h2>Monitoring and Log Management</h2>
+<h3 id="log-rotation-configuration">Log Rotation Configuration</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a></a><span class="co"># /etc/logrotate.d/myapp</span></span>
+<span id="cb12-2"><a></a><span class="ex">/var/log/myapp/*.log</span> {</span>
+<span id="cb12-3"><a></a>    <span class="ex">daily</span></span>
+<span id="cb12-4"><a></a>    <span class="ex">rotate</span> 30</span>
+<span id="cb12-5"><a></a>    <span class="ex">compress</span></span>
+<span id="cb12-6"><a></a>    <span class="ex">delaycompress</span></span>
+<span id="cb12-7"><a></a>    <span class="ex">missingok</span></span>
+<span id="cb12-8"><a></a>    <span class="ex">notifempty</span></span>
+<span id="cb12-9"><a></a>    <span class="ex">create</span> 0644 myapp myapp</span>
+<span id="cb12-10"><a></a><span class="er">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 class="incremental" id="essential-monitoring-commands">Essential Monitoring Commands</h3>
+<ul>
+<li><code>sudo systemctl status myapp.service</code></li>
+<li><code>sudo journalctl -u myapp.service -f</code></li>
+<li><code>free -h</code> (memory usage)</li>
+<li><code>df -h</code> (disk usage)</li>
 </ul>
 <aside class="notes">
-<p>Before proceeding to the next step, ensure all these checkpoints are completed. This foundation is crucial for successful deployment.</p>
+<p>Log rotation prevents disk space issues by automatically compressing and removing old log files. These monitoring commands help you keep track of application health and system resources.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -479,28 +551,34 @@ AWS Lightsail Deployment Course
           display:block!important;
       }</style></aside>
 </section>
-<section id="key-benefits-achieved" class="slide level2">
-<h2>Key Benefits Achieved</h2>
+<section id="troubleshooting-common-issues" class="slide level2">
+<h2>Troubleshooting Common Issues</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Development Benefits</strong></p>
+<h3 id="application-wont-start">Application Won’t Start</h3>
 <ul>
-<li>Local development database</li>
-<li>Debug logging enabled</li>
-<li>Fast development cycle</li>
-<li>Easy configuration changes</li>
+<li>Check Java installation</li>
+<li>Verify JAR permissions</li>
+<li>Review systemd logs</li>
+<li>Check environment file syntax</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Production Benefits</strong></p>
+<h3 id="database-connection-issues">Database Connection Issues</h3>
 <ul>
-<li>Secure credential management</li>
-<li>Optimized performance settings</li>
-<li>Environment-specific configurations</li>
-<li>Cloud-ready deployment package</li>
+<li>Test database connectivity</li>
+<li>Verify connection strings</li>
+<li>Check firewall rules</li>
+<li>Validate credentials</li>
 </ul>
 </div></div>
+<h3 id="memory-issues">Memory Issues</h3>
+<ul>
+<li>Monitor usage with <code>free -h</code></li>
+<li>Adjust JVM heap settings</li>
+<li>Consider instance upgrade</li>
+</ul>
 <aside class="notes">
-<p>This profile configuration provides the foundation for a professional deployment workflow, separating concerns between development and production environments.</p>
+<p>Most deployment issues fall into these categories. Systematic troubleshooting using these checkpoints helps identify and resolve problems quickly.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -513,41 +591,22 @@ AWS Lightsail Deployment Course
           display:block!important;
       }</style></aside>
 </section>
-<section id="whats-next" class="slide level2">
-<h2>What’s Next?</h2>
-<p><strong>Coming Up in Step 2:</strong></p>
+<section id="summary-what-youve-accomplished" class="slide level2">
+<h2>Summary: What You’ve Accomplished</h2>
+<h3 class="incremental" id="successfully-deployed">Successfully Deployed ✅</h3>
 <ul>
-<li>Create AWS Lightsail instance</li>
-<li>Configure Linux environment</li>
-<li>Set up MySQL database</li>
-<li>Prepare for application deployment</li>
+<li>Installed Java 17 on Lightsail server</li>
+<li>Created secure directory structure</li>
+<li>Transferred application JAR file</li>
+<li>Configured production environment variables</li>
+<li>Set up systemd service for automatic startup</li>
+<li>Implemented logging with rotation</li>
+<li>Configured basic monitoring tools</li>
 </ul>
-<p>Your Spring Boot application is now <strong>production-ready</strong> with proper profile configuration!</p>
+<h3 id="next-step-preview">Next Step Preview</h3>
+<p>Configure Nginx reverse proxy for HTTP/HTTPS traffic on standard ports</p>
 <aside class="notes">
-<p>With profiles configured, your application can seamlessly transition from local development to AWS Lightsail. Next, we’ll create the cloud infrastructure to host your application.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="summary" class="slide level2">
-<h2>Summary</h2>
-<ul>
-<li><strong>Spring Boot profiles</strong> enable environment-specific configurations</li>
-<li><strong>Environment variables</strong> provide secure credential management</li>
-<li><strong>Executable JARs</strong> simplify deployment processes</li>
-<li><strong>Proper configuration</strong> is essential for cloud deployments</li>
-</ul>
-<p><strong>Your application is now ready for AWS Lightsail deployment!</strong></p>
-<aside class="notes">
-<p>You’ve successfully configured a Spring Boot application with separate development and production profiles, created a deployment-ready JAR, and established the foundation for secure cloud deployment.</p>
+<p>Your Spring Boot application is now running in production on AWS Lightsail with proper security, monitoring, and automatic startup. The next step will add Nginx for better performance and standard web ports.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

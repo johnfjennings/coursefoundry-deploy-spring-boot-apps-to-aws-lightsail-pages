@@ -10,8 +10,8 @@
 <link href="../../site_libs/quarto-contrib/naquiz-styles-1.0.4/buttons.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.36">
 
-  <meta name="author" content="Mr.&nbsp;John Jennings">
-  <title>Deploy Spring Boot Apps to AWS Lightsail – Second Step Slides</title>
+  <meta name="dcterms.date" content="2026-04-07">
+  <title>Deploy Spring Boot Apps to AWS Lightsail – Step 3: Set Up MySQL Database on Lightsail</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -191,7 +191,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Second Step Slides – Deploy Spring Boot Apps to AWS Lightsail">
+<meta property="og:title" content="Step 3: Set Up MySQL Database on Lightsail – Deploy Spring Boot Apps to AWS Lightsail">
 <meta property="og:site_name" content="Deploy Spring Boot Apps to AWS Lightsail">
 </head>
 <body class="quarto-light">
@@ -199,143 +199,317 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Second Step Slides</h1>
+  <h1 class="title">Step 3: Set Up MySQL Database on Lightsail</h1>
 
 <div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Mr.&nbsp;John Jennings 
-</div>
-</div>
 </div>
 
+  <p class="date">2026-04-07</p>
 </section>
-<section id="second-step-overview" class="slide level2">
-<h2>Second Step Overview</h2>
+<section id="overview" class="slide level2">
+<h2>Overview</h2>
+<p>Setting up MySQL database on AWS Lightsail for Spring Boot production deployment</p>
 <ul>
-<li>Key concepts for this step</li>
-<li>What we’ll accomplish</li>
-<li>Prerequisites check</li>
+<li>Database installation and security</li>
+<li>User and database creation</li>
+<li>Performance optimization</li>
+<li>Backup configuration</li>
+<li>Spring Boot integration</li>
 </ul>
+<aside class="notes">
+<p>This lesson covers complete MySQL setup on Lightsail instance, from installation through production configuration.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="learning-objectives" class="slide level2">
-<h2>Learning Objectives</h2>
-<p>By the end of this step, you will:</p>
-<ul>
-<li>Understand the main concept</li>
-<li>Be able to implement the solution</li>
-<li>Know how to troubleshoot common issues</li>
-</ul>
+<section id="database-options-on-lightsail" class="slide level2">
+<h2>Database Options on Lightsail</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>MySQL on Lightsail Instance</strong> - Full control over configuration - No additional charges - Simplified networking - Cost-effective for smaller apps</p>
+</div><div class="column" style="width:50%;">
+<p><strong>When to Use RDS</strong> - Thousands of concurrent users - High availability requirements - Automated scaling needs - Enterprise-level backup requirements</p>
+</div></div>
+<aside class="notes">
+<p>Lightsail MySQL is perfect for small to medium applications. RDS becomes valuable at scale.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="getting-started" class="slide level2">
-<h2>Getting Started</h2>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Pro Tip</strong></p>
-</div>
-<div class="callout-content">
-<p>Make sure you’ve completed the first step before proceeding.</p>
-</div>
-</div>
-</div>
-<ul>
-<li>Step 1: Initial setup</li>
-<li>Step 2: Configuration</li>
-<li>Step 3: Implementation</li>
-</ul>
+<section id="installing-mysql" class="slide level2">
+<h2>Installing MySQL</h2>
+<p>Connect to your Lightsail instance and install MySQL:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="co"># Update system packages</span></span>
+<span id="cb1-2"><a></a><span class="fu">sudo</span> apt update <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt upgrade <span class="at">-y</span></span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="co"># Install MySQL server and client</span></span>
+<span id="cb1-5"><a></a><span class="fu">sudo</span> apt install mysql-server mysql-client <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Installation takes 2-3 minutes and automatically starts MySQL service</p>
+<aside class="notes">
+<p>Always start with system updates for security. MySQL installation includes both server and client components.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="key-concepts" class="slide level2">
-<h2>Key Concepts</h2>
-<h3 id="concept-1">Concept 1</h3>
+<section id="securing-mysql-installation" class="slide level2">
+<h2>Securing MySQL Installation</h2>
+<p>Run the security script to remove insecure defaults:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="fu">sudo</span> mysql_secure_installation</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Configure these settings: {.incremental}</p>
 <ul>
-<li>Important point about concept 1</li>
-<li>How it relates to our deployment</li>
-<li>Best practices</li>
+<li>VALIDATE PASSWORD COMPONENT: <strong>Y</strong></li>
+<li>Password validation policy: <strong>2 (STRONG)</strong></li>
+<li>Set strong root password</li>
+<li>Remove anonymous users: <strong>Y</strong></li>
+<li>Disallow root remote login: <strong>Y</strong></li>
+<li>Remove test database: <strong>Y</strong></li>
 </ul>
-<h3 id="concept-2">Concept 2</h3>
-<ul>
-<li>Important point about concept 2</li>
-<li>Implementation details</li>
-<li>Common pitfalls</li>
-</ul>
+<aside class="notes">
+<p>The security script is crucial for production deployments. Save the root password securely - you’ll need it for administration.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="hands-on-demo" class="slide level2">
-<h2>Hands-On Demo</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="co"># Example command</span></span>
-<span id="cb1-2"><a></a><span class="bu">echo</span> <span class="st">"This is a placeholder command"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Replace this with actual commands for your second step.</p>
-</div>
-</div>
-</div>
+<section id="creating-application-database" class="slide level2">
+<h2>Creating Application Database</h2>
+<p>Access MySQL and create dedicated resources:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a></a><span class="co">-- Create database with proper charset</span></span>
+<span id="cb3-2"><a></a><span class="kw">CREATE</span> <span class="kw">DATABASE</span> myapp_prod <span class="dt">CHARACTER</span> <span class="kw">SET</span> utf8mb4 </span>
+<span id="cb3-3"><a></a>COLLATE utf8mb4_unicode_ci;</span>
+<span id="cb3-4"><a></a></span>
+<span id="cb3-5"><a></a><span class="co">-- Create application user</span></span>
+<span id="cb3-6"><a></a><span class="kw">CREATE</span> <span class="fu">USER</span> <span class="st">'springapp'</span>@<span class="st">'localhost'</span> </span>
+<span id="cb3-7"><a></a><span class="kw">IDENTIFIED</span> <span class="kw">BY</span> <span class="st">'your-secure-app-password'</span>;</span>
+<span id="cb3-8"><a></a></span>
+<span id="cb3-9"><a></a><span class="co">-- Grant privileges</span></span>
+<span id="cb3-10"><a></a><span class="kw">GRANT</span> <span class="kw">ALL</span> <span class="kw">PRIVILEGES</span> <span class="kw">ON</span> myapp_prod.<span class="op">*</span> <span class="kw">TO</span> <span class="st">'springapp'</span>@<span class="st">'localhost'</span>;</span>
+<span id="cb3-11"><a></a><span class="kw">FLUSH</span> <span class="kw">PRIVILEGES</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>Use utf8mb4 charset for full Unicode support. Create dedicated user with minimal required privileges for security.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="best-practices" class="slide level2">
-<h2>Best Practices</h2>
-<ul>
-<li>✅ <strong>Do</strong>: Follow recommended practices</li>
-<li>✅ <strong>Do</strong>: Test thoroughly</li>
-<li>❌ <strong>Don’t</strong>: Skip validation steps</li>
-<li>❌ <strong>Don’t</strong>: Ignore error messages</li>
-</ul>
+<section id="testing-database-setup" class="slide level2">
+<h2>Testing Database Setup</h2>
+<p>Verify your configuration works:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a></a><span class="co">-- Switch to new database</span></span>
+<span id="cb4-2"><a></a><span class="kw">USE</span> myapp_prod;</span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a><span class="co">-- Check current user and database</span></span>
+<span id="cb4-5"><a></a><span class="kw">SELECT</span> <span class="fu">USER</span>(), <span class="kw">DATABASE</span>();</span>
+<span id="cb4-6"><a></a></span>
+<span id="cb4-7"><a></a><span class="co">-- Test table operations</span></span>
+<span id="cb4-8"><a></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> test_connection (</span>
+<span id="cb4-9"><a></a>    <span class="kw">id</span> <span class="dt">INT</span> AUTO_INCREMENT <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb4-10"><a></a>    message <span class="dt">VARCHAR</span>(<span class="dv">255</span>),</span>
+<span id="cb4-11"><a></a>    created_at <span class="dt">TIMESTAMP</span> <span class="kw">DEFAULT</span> <span class="fu">CURRENT_TIMESTAMP</span></span>
+<span id="cb4-12"><a></a>);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>Always test database operations before proceeding. This ensures connectivity and permissions are correct.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="common-issues" class="slide level2">
-<h2>Common Issues</h2>
-<h3 id="issue-1-configuration-problems">Issue 1: Configuration Problems</h3>
+<section id="mysql-performance-configuration" class="slide level2">
+<h2>MySQL Performance Configuration</h2>
+<p>Edit MySQL configuration file:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="fu">sudo</span> nano /etc/mysql/mysql.conf.d/mysqld.cnf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Add performance settings:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource ini number-lines code-with-copy"><code class="sourceCode ini"><span id="cb6-1"><a></a><span class="co"># Performance tuning</span></span>
+<span id="cb6-2"><a></a><span class="dt">innodb_buffer_pool_size </span><span class="ot">=</span><span class="st"> 256M</span></span>
+<span id="cb6-3"><a></a><span class="dt">innodb_log_file_size </span><span class="ot">=</span><span class="st"> 64M</span></span>
+<span id="cb6-4"><a></a><span class="dt">max_connections </span><span class="ot">=</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb6-5"><a></a></span>
+<span id="cb6-6"><a></a><span class="co"># Character set</span></span>
+<span id="cb6-7"><a></a><span class="dt">character-set-server </span><span class="ot">=</span><span class="st"> utf8mb4</span></span>
+<span id="cb6-8"><a></a><span class="dt">collation-server </span><span class="ot">=</span><span class="st"> utf8mb4_unicode_ci</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>These settings optimize MySQL for small to medium applications on Lightsail instances.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="apply-configuration-changes" class="slide level2">
+<h2>Apply Configuration Changes</h2>
+<p>Restart MySQL to apply new settings:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="co"># Restart MySQL service</span></span>
+<span id="cb7-2"><a></a><span class="fu">sudo</span> systemctl restart mysql</span>
+<span id="cb7-3"><a></a></span>
+<span id="cb7-4"><a></a><span class="co"># Verify service status</span></span>
+<span id="cb7-5"><a></a><span class="fu">sudo</span> systemctl status mysql</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Status should show “active (running)” in green</p>
+<aside class="notes">
+<p>Always verify service status after configuration changes. Green “active (running)” indicates successful restart.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="setting-up-automated-backups" class="slide level2">
+<h2>Setting Up Automated Backups</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Create backup directory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="fu">sudo</span> mkdir <span class="at">-p</span> /backup/mysql</span>
+<span id="cb8-2"><a></a><span class="fu">sudo</span> chown mysql:mysql /backup/mysql</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p>Create backup script:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="fu">sudo</span> nano /usr/local/bin/mysql-backup.sh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<p>Script includes: - Daily database dumps - 7-day retention policy - Automated cleanup</p>
+<aside class="notes">
+<p>Automated backups are essential for production databases. This simple script provides basic backup functionality.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="spring-boot-database-configuration" class="slide level2">
+<h2>Spring Boot Database Configuration</h2>
+<p>Update production properties:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource properties number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a></a># Production MySQL configuration</span>
+<span id="cb10-2"><a></a>spring.datasource.url=jdbc:mysql://localhost:3306/myapp_prod</span>
+<span id="cb10-3"><a></a>spring.datasource.username=springapp</span>
+<span id="cb10-4"><a></a>spring.datasource.password=your-secure-app-password</span>
+<span id="cb10-5"><a></a>spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver</span>
+<span id="cb10-6"><a></a></span>
+<span id="cb10-7"><a></a># Production JPA settings</span>
+<span id="cb10-8"><a></a>spring.jpa.hibernate.ddl-auto=validate</span>
+<span id="cb10-9"><a></a>spring.jpa.show-sql=false</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>Production configuration should use validate mode for ddl-auto and disable SQL logging for performance.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="security-best-practices" class="slide level2">
+<h2>Security Best Practices</h2>
+<p>{.incremental}</p>
 <ul>
-<li><strong>Symptom</strong>: Description of the problem</li>
-<li><strong>Solution</strong>: How to fix it</li>
-<li><strong>Prevention</strong>: How to avoid it</li>
+<li>Use strong, unique passwords</li>
+<li>Create dedicated application users</li>
+<li>Limit user privileges to required databases</li>
+<li>Keep database local to instance</li>
+<li>Regular security updates</li>
+<li>Implement backup verification</li>
 </ul>
-<h3 id="issue-2-connection-issues">Issue 2: Connection Issues</h3>
-<ul>
-<li><strong>Symptom</strong>: Description of the problem</li>
-<li><strong>Solution</strong>: How to fix it</li>
-<li><strong>Prevention</strong>: How to avoid it</li>
-</ul>
+<aside class="notes">
+<p>Security should be built in from the start. These practices prevent common security vulnerabilities.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
+<p>✅ <strong>Completed Tasks:</strong></p>
 <ul>
-<li>We covered the key concepts</li>
-<li>Implemented the solution</li>
-<li>Learned troubleshooting techniques</li>
+<li>Installed and secured MySQL server</li>
+<li>Created production database and user</li>
+<li>Configured performance optimizations</li>
+<li>Set up automated backup system</li>
+<li>Prepared Spring Boot configuration</li>
 </ul>
-</section>
-<section id="next-steps" class="slide level2">
-<h2>Next Steps</h2>
-<ul>
-<li>Move on to the third step</li>
-<li>Review any troubleshooting needed</li>
-<li>Prepare for the next phase</li>
-</ul>
-</section>
-<section id="questions" class="slide level2">
-<h2>Questions?</h2>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Ready to Continue?</strong></p>
-</div>
-<div class="callout-content">
-<p>Make sure you understand this step before moving forward.</p>
-</div>
-</div>
-</div>
+<p><strong>Next:</strong> Deploy Spring Boot application and connect to MySQL database</p>
+<aside class="notes">
+<p>Your Lightsail instance now has a production-ready MySQL database configured for optimal performance and security.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 
 
 </section>

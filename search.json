@@ -120,127 +120,6 @@
     ]
   },
   {
-    "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#overview",
-    "href": "modules/01-prerequisites/01-prerequisites-slides.html#overview",
-    "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
-    "section": "Overview",
-    "text": "Overview\nWhat you’ll need before deploying Spring Boot apps to AWS Lightsail:\n\nAWS Account and Services\nDevelopment Environment Setup\n\nCommand Line Tools\nSpring Boot Knowledge\nLinux and Server Basics\nNetwork and Security Fundamentals\n\n\nThis lesson ensures students have all necessary prerequisites before starting the deployment process. We’ll cover accounts, tools, and foundational knowledge needed for success.",
-    "crumbs": [
-      "Prerequisites",
-      "Prerequisites Slides"
-    ]
-  },
-  {
-    "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#aws-account-requirements",
-    "href": "modules/01-prerequisites/01-prerequisites-slides.html#aws-account-requirements",
-    "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
-    "section": "AWS Account Requirements",
-    "text": "AWS Account Requirements\nEssential Services\n\nAWS Account with billing information\nLightsail Service access\nOptional: Custom domain from registrar\n\n\n\nSetup Steps:\n\nVisit aws.amazon.com\nCreate account\nAdd payment method\nVerify access\n\n\nFree Tier Benefits:\n\n750 hours/month (first month)\nPerfect for learning\nNo upfront costs\n\n\n\nAWS requires payment information even for free tier services. The Lightsail free tier provides excellent learning opportunities with 750 hours of usage in the first month.",
-    "crumbs": [
-      "Prerequisites",
-      "Prerequisites Slides"
-    ]
-  },
-  {
-    "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#java-development-environment",
-    "href": "modules/01-prerequisites/01-prerequisites-slides.html#java-development-environment",
-    "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
-    "section": "Java Development Environment",
-    "text": "Java Development Environment\nCore Requirements\n\nJDK 17 or later\nBuild tool: Maven or Gradle\nIDE: IntelliJ IDEA, VS Code, or Eclipse\n\n# Verify your setup\njava -version\njavac -version\nmvn -version\ngradle -version\n\nStudents should verify their Java environment is properly configured. We recommend JDK 17+ for the latest Spring Boot features and long-term support.",
-    "crumbs": [
-      "Prerequisites",
-      "Prerequisites Slides"
-    ]
-  },
-  {
-    "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#command-line-tools",
-    "href": "modules/01-prerequisites/01-prerequisites-slides.html#command-line-tools",
-    "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
-    "section": "Command Line Tools",
-    "text": "Command Line Tools\nEssential Tools\n\nSSH Client: Connect to Lightsail instances\nGit: Version control for your project\nAWS CLI: Advanced configurations (recommended)\n\n# Test your tools\nssh -V\ngit --version\naws --version\n\nSSH is critical for server management. Git is essential for project management. AWS CLI provides additional flexibility but isn’t strictly required for basic deployments.",
-    "crumbs": [
-      "Prerequisites",
-      "Prerequisites Slides"
-    ]
-  },
-  {
-    "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#spring-boot-knowledge-prerequisites",
-    "href": "modules/01-prerequisites/01-prerequisites-slides.html#spring-boot-knowledge-prerequisites",
-    "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
-    "section": "Spring Boot Knowledge Prerequisites",
-    "text": "Spring Boot Knowledge Prerequisites\nCore Concepts You Need\n\n\nApplication Structure:\n\nSpring Boot Starters\nApplication Properties\nConfiguration Profiles\nAuto-configuration\n\n\nWeb Development:\n\nREST Controllers\nDatabase Integration\nJSON Serialization\nHTTP Methods\n\n\n\nStudents should understand basic Spring Boot concepts. We’ll provide a sample application for those who need it, but familiarity with these concepts is important for troubleshooting.",
-    "crumbs": [
-      "Prerequisites",
-      "Prerequisites Slides"
-    ]
-  },
-  {
-    "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#linux-command-line-basics",
-    "href": "modules/01-prerequisites/01-prerequisites-slides.html#linux-command-line-basics",
-    "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
-    "section": "Linux Command Line Basics",
-    "text": "Linux Command Line Basics\nEssential Commands\n# File operations\nls, cd, mkdir, rm, cp, mv\n\n# File viewing/editing  \ncat, less, nano, vi\n\n# Process management\nps, kill, systemctl\n\n# Network utilities\ncurl, wget, netstat\n\nThese Linux commands are essential for server administration. Students will use these regularly when managing their Lightsail instances and troubleshooting deployments.",
-    "crumbs": [
-      "Prerequisites",
-      "Prerequisites Slides"
-    ]
-  },
-  {
-    "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#file-permissions-and-services",
-    "href": "modules/01-prerequisites/01-prerequisites-slides.html#file-permissions-and-services",
-    "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
-    "section": "File Permissions and Services",
-    "text": "File Permissions and Services\nSystem Administration Basics\n\n\nFile Permissions:\nchmod 755 filename\nsudo chown user:group filename\n\nService Management:\nsudo systemctl start service-name\nsudo systemctl enable service-name\nsudo systemctl status service-name\n\n\nUnderstanding file permissions and systemd services is crucial for Spring Boot deployment. We’ll cover these in detail later, but basic familiarity helps.",
-    "crumbs": [
-      "Prerequisites",
-      "Prerequisites Slides"
-    ]
-  },
-  {
-    "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#network-and-security-fundamentals",
-    "href": "modules/01-prerequisites/01-prerequisites-slides.html#network-and-security-fundamentals",
-    "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
-    "section": "Network and Security Fundamentals",
-    "text": "Network and Security Fundamentals\nKey Concepts\nCommon Ports:\n\nHTTP: 80, HTTPS: 443\nSSH: 22, MySQL: 3306\nSpring Boot Default: 8080\n\nSecurity Basics:\n\nInbound vs. Outbound rules\nPort restrictions\nIP-based access control\n\n\nUnderstanding ports and basic firewall concepts is essential for configuring Lightsail security groups and ensuring your application is accessible while remaining secure.",
-    "crumbs": [
-      "Prerequisites",
-      "Prerequisites Slides"
-    ]
-  },
-  {
-    "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#pre-deployment-checklist",
-    "href": "modules/01-prerequisites/01-prerequisites-slides.html#pre-deployment-checklist",
-    "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
-    "section": "Pre-Deployment Checklist",
-    "text": "Pre-Deployment Checklist\nVerify Your Setup ✅\n\nAWS account with billing configured\nJDK 17+ and build tools installed\nGit and SSH client working\nBasic Spring Boot knowledge\nComfortable with command line\nSample application ready (or will use ours)\n\n\nStudents should work through this checklist before proceeding. Having everything ready prevents frustration during the actual deployment process.",
-    "crumbs": [
-      "Prerequisites",
-      "Prerequisites Slides"
-    ]
-  },
-  {
-    "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#testing-your-environment",
-    "href": "modules/01-prerequisites/01-prerequisites-slides.html#testing-your-environment",
-    "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
-    "section": "Testing Your Environment",
-    "text": "Testing Your Environment\nQuick Validation Test\nCreate and run a simple Spring Boot “Hello World”:\n# Create project\nspring init --dependencies=web my-test-app\n\n# Run locally\ncd my-test-app\n./mvnw spring-boot:run\n\n# Test\ncurl http://localhost:8080\n\nThis quick test validates that the entire development environment is working correctly. Students should be able to create, build, and run a basic Spring Boot application before moving to deployment.",
-    "crumbs": [
-      "Prerequisites",
-      "Prerequisites Slides"
-    ]
-  },
-  {
-    "objectID": "modules/01-prerequisites/01-prerequisites-slides.html#summary---ready-for-deployment",
-    "href": "modules/01-prerequisites/01-prerequisites-slides.html#summary---ready-for-deployment",
-    "title": "Prerequisites for Spring Boot AWS Lightsail Deployment",
-    "section": "Summary - Ready for Deployment",
-    "text": "Summary - Ready for Deployment\nWith these prerequisites in place:\n\nAWS Account: Ready for Lightsail instances\nDevelopment Tools: Complete Java environment\nCommand Line Skills: SSH, Git, Linux basics\nSpring Boot Foundation: Understanding core concepts\nSystem Knowledge: Permissions, services, networking\n\nNext: Configuring Spring Boot profiles for deployment\n\nThis comprehensive preparation ensures students can follow along confidently and troubleshoot independently. Taking time to verify each requirement saves significant time and frustration during deployment.",
-    "crumbs": [
-      "Prerequisites",
-      "Prerequisites Slides"
-    ]
-  },
-  {
     "objectID": "modules/03-troubleshooting/01-troubleshooting.html",
     "href": "modules/03-troubleshooting/01-troubleshooting.html",
     "title": "Troubleshooting Common Issues",
@@ -326,6 +205,138 @@
     "crumbs": [
       "Troubleshooting",
       "Troubleshooting"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step.html",
+    "href": "modules/02-steps/06-sixth-step.html",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "",
+    "text": "Either click on the slide area below or click here to view it in fullscreen. Use your keypad to navigate the slides.\n\n\n\n\nA PDF printable handout version of the slides is available here",
+    "crumbs": [
+      "Steps",
+      "Sixth Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step.html#lecture-slides",
+    "href": "modules/02-steps/06-sixth-step.html#lecture-slides",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "",
+    "text": "Either click on the slide area below or click here to view it in fullscreen. Use your keypad to navigate the slides.\n\n\n\n\nA PDF printable handout version of the slides is available here",
+    "crumbs": [
+      "Steps",
+      "Sixth Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step.html#step-6-set-up-custom-domain-and-ssl-certificate",
+    "href": "modules/02-steps/06-sixth-step.html#step-6-set-up-custom-domain-and-ssl-certificate",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "text": "Step 6: Set Up Custom Domain and SSL Certificate\nIn this final step, you’ll configure a custom domain for your Spring Boot application and secure it with an SSL certificate. This will make your application accessible via a professional domain name with HTTPS encryption, providing both credibility and security for your users.",
+    "crumbs": [
+      "Steps",
+      "Sixth Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step.html#understanding-ssl-and-domain-configuration",
+    "href": "modules/02-steps/06-sixth-step.html#understanding-ssl-and-domain-configuration",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Understanding SSL and Domain Configuration",
+    "text": "Understanding SSL and Domain Configuration\nSSL (Secure Sockets Layer) certificates encrypt data transmitted between your users’ browsers and your server, while custom domains provide a professional, memorable way to access your application. AWS Lightsail makes both of these configurations straightforward through integrated services.\n\n\n\n\n\n\nTipWhy SSL Matters\n\n\n\nModern browsers mark HTTP sites as “Not Secure,” which can deter users. SSL certificates are now essential for any web application, and search engines favor HTTPS sites in rankings.",
+    "crumbs": [
+      "Steps",
+      "Sixth Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step.html#prerequisites-for-this-step",
+    "href": "modules/02-steps/06-sixth-step.html#prerequisites-for-this-step",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Prerequisites for This Step",
+    "text": "Prerequisites for This Step\nBefore proceeding, ensure you have:\n\nA registered domain name (from any domain registrar)\nAccess to your domain’s DNS management\nYour Lightsail instance running with Nginx configured (from Step 5)\nYour Spring Boot application accessible via your instance’s public IP",
+    "crumbs": [
+      "Steps",
+      "Sixth Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step.html#setting-up-dns-and-domain-configuration",
+    "href": "modules/02-steps/06-sixth-step.html#setting-up-dns-and-domain-configuration",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Setting Up DNS and Domain Configuration",
+    "text": "Setting Up DNS and Domain Configuration\n\nStep 1: Create a Lightsail DNS Zone\n\nIn the Lightsail console, navigate to Networking → DNS zones\nClick Create DNS zone\nEnter your domain name (e.g., example.com)\nClick Create DNS zone\n\n\n\n\n\n\n\nNoteDNS Zone Purpose\n\n\n\nThe DNS zone will manage all DNS records for your domain, making it easy to point your domain to your Lightsail instance.\n\n\n\n\nStep 2: Configure DNS Records\nOnce your DNS zone is created, you’ll need to add the following records:\n\nA Record: Point your domain to your Lightsail instance\n\nSubdomain: Leave blank for root domain, or enter www for www subdomain\nResolves to: Select your Lightsail instance from the dropdown\n\nCNAME Record (optional, for www subdomain):\n\nSubdomain: www\nMaps to: Your root domain (e.g., example.com)\n\n\n# Example DNS configuration\n# A Record: example.com → Your Lightsail Instance IP\n# CNAME: www.example.com → example.com\n\n\nStep 3: Update Your Domain Registrar’s Name Servers\n\nCopy the name servers provided by Lightsail (they’ll look like ns-xxx.awsdns-xxx.com)\nLog into your domain registrar’s control panel\nReplace the existing name servers with the Lightsail name servers\nSave the changes\n\n\n\n\n\n\n\nWarningDNS Propagation Time\n\n\n\nDNS changes can take up to 48 hours to propagate worldwide, though they usually take effect within a few hours. Be patient during this process.",
+    "crumbs": [
+      "Steps",
+      "Sixth Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step.html#installing-and-configuring-ssl-certificate",
+    "href": "modules/02-steps/06-sixth-step.html#installing-and-configuring-ssl-certificate",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Installing and Configuring SSL Certificate",
+    "text": "Installing and Configuring SSL Certificate\n\nStep 1: Install Certbot\nSSH into your Lightsail instance and install Certbot, which will manage your SSL certificates:\n# Update package list\nsudo apt update\n\n# Install Certbot and Nginx plugin\nsudo apt install certbot python3-certbot-nginx -y\n\n# Verify installation\ncertbot --version\n\n\nStep 2: Configure Nginx for Your Domain\nUpdate your Nginx configuration to include your domain name:\n# Edit the Nginx configuration\nsudo nano /etc/nginx/sites-available/default\nUpdate the server block to include your domain:\nserver {\n    listen 80;\n    server_name example.com www.example.com;  # Replace with your domain\n\n    location / {\n        proxy_pass http://localhost:8080;\n        proxy_set_header Host $host;\n        proxy_set_header X-Real-IP $remote_addr;\n        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n        proxy_set_header X-Forwarded-Proto $scheme;\n    }\n}\nTest and reload the configuration:\n# Test configuration\nsudo nginx -t\n\n# Reload Nginx\nsudo systemctl reload nginx\n\n\nStep 3: Obtain SSL Certificate\nUse Certbot to automatically obtain and install an SSL certificate:\n# Obtain and install SSL certificate\nsudo certbot --nginx -d example.com -d www.example.com\n\n# Follow the prompts:\n# 1. Enter your email address for certificate expiration notifications\n# 2. Agree to terms of service\n# 3. Choose whether to share email with EFF (optional)\n# 4. Certbot will automatically configure HTTPS redirect\n\n\n\n\n\n\nTipAutomatic HTTPS Redirect\n\n\n\nCertbot will automatically modify your Nginx configuration to redirect HTTP traffic to HTTPS, ensuring all connections are secure.",
+    "crumbs": [
+      "Steps",
+      "Sixth Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step.html#configuring-automatic-certificate-renewal",
+    "href": "modules/02-steps/06-sixth-step.html#configuring-automatic-certificate-renewal",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Configuring Automatic Certificate Renewal",
+    "text": "Configuring Automatic Certificate Renewal\nSSL certificates from Let’s Encrypt expire every 90 days, but Certbot can automatically renew them:\n\nStep 1: Test Automatic Renewal\n# Test the renewal process (dry run)\nsudo certbot renew --dry-run\n\n\nStep 2: Set Up Automatic Renewal\nThe automatic renewal should already be configured via systemd timer, but you can verify:\n# Check if the timer is active\nsudo systemctl status certbot.timer\n\n# Enable the timer if it's not active\nsudo systemctl enable certbot.timer\nsudo systemctl start certbot.timer",
+    "crumbs": [
+      "Steps",
+      "Sixth Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step.html#updating-spring-boot-configuration-for-https",
+    "href": "modules/02-steps/06-sixth-step.html#updating-spring-boot-configuration-for-https",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Updating Spring Boot Configuration for HTTPS",
+    "text": "Updating Spring Boot Configuration for HTTPS\n\nStep 1: Configure HTTPS in Application Properties\nUpdate your production profile to handle HTTPS properly:\n# src/main/resources/application-prod.properties\n\n# Server configuration for HTTPS\nserver.forward-headers-strategy=native\nserver.tomcat.use-relative-redirects=true\n\n# Security headers\nserver.servlet.session.cookie.secure=true\nserver.servlet.session.cookie.http-only=true\n\n\nStep 2: Update Security Configuration (if applicable)\nIf you’re using Spring Security, ensure it’s configured for HTTPS:\n@Configuration\n@EnableWebSecurity\npublic class SecurityConfig {\n    \n    @Bean\n    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {\n        http\n            .requiresChannel(channel -&gt; \n                channel.requestMatchers(r -&gt; r.getHeader(\"X-Forwarded-Proto\") != null)\n                       .requiresSecure())\n            .headers(headers -&gt; \n                headers.httpStrictTransportSecurity(hstsConfig -&gt; \n                    hstsConfig.maxAgeInSeconds(31536000)\n                             .includeSubdomains(true)));\n        \n        return http.build();\n    }\n}\n\n\nStep 3: Rebuild and Deploy\nRebuild your application with the HTTPS configurations:\n# On your development machine\n./mvnw clean package -DskipTests\n\n# Transfer to Lightsail instance\nscp target/myapp.jar ubuntu@your-domain.com:~/\n\n# On Lightsail instance\nsudo systemctl stop myapp\nsudo cp /home/ubuntu/myapp.jar /opt/myapp/\nsudo systemctl start myapp",
+    "crumbs": [
+      "Steps",
+      "Sixth Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step.html#verifying-your-https-setup",
+    "href": "modules/02-steps/06-sixth-step.html#verifying-your-https-setup",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Verifying Your HTTPS Setup",
+    "text": "Verifying Your HTTPS Setup\n\nStep 1: Test Domain Access\n\nOpen your browser and navigate to https://yourdomain.com\nVerify the SSL certificate is valid (look for the lock icon)\nCheck that HTTP automatically redirects to HTTPS\n\n\n\nStep 2: Test SSL Configuration\nUse online tools to verify your SSL setup:\n# Test SSL certificate from command line\ncurl -I https://yourdomain.com\n\n# Check SSL rating\n# Visit: https://www.ssllabs.com/ssltest/\n\n\nStep 3: Monitor Certificate Status\n# Check certificate expiration\nsudo certbot certificates\n\n# View certificate details\nopenssl x509 -in /etc/letsencrypt/live/yourdomain.com/cert.pem -text -noout\n\n\n\n\n\n\nNoteSSL Certificate Monitoring\n\n\n\nConsider setting up monitoring to alert you if certificate renewal fails, though Certbot’s automatic renewal is very reliable.",
+    "crumbs": [
+      "Steps",
+      "Sixth Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step.html#troubleshooting-common-issues",
+    "href": "modules/02-steps/06-sixth-step.html#troubleshooting-common-issues",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Troubleshooting Common Issues",
+    "text": "Troubleshooting Common Issues\n\nDomain Not Resolving\nIf your domain isn’t resolving to your Lightsail instance:\n\nVerify DNS records in Lightsail console\nCheck that name servers are correctly set at your registrar\nUse dig or nslookup to test DNS resolution:\n\n# Test DNS resolution\ndig yourdomain.com\nnslookup yourdomain.com\n\n\nSSL Certificate Issues\nIf Certbot fails to obtain certificates:\n\nEnsure your domain is resolving correctly\nCheck that port 80 is accessible (Certbot needs it for verification)\nVerify Nginx is running and serving your domain\n\n# Check if domain is accessible\ncurl -I http://yourdomain.com\n\n# Check Nginx status\nsudo systemctl status nginx\n\n# View Nginx error logs\nsudo tail -f /var/log/nginx/error.log\n\n\nMixed Content Warnings\nIf you see mixed content warnings in the browser:\n\nEnsure all resources (CSS, JS, images) are loaded via HTTPS\nUpdate any hardcoded HTTP URLs in your application\nUse protocol-relative URLs (//example.com/resource) when possible",
+    "crumbs": [
+      "Steps",
+      "Sixth Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step.html#summary-and-key-takeaways",
+    "href": "modules/02-steps/06-sixth-step.html#summary-and-key-takeaways",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Summary and Key Takeaways",
+    "text": "Summary and Key Takeaways\nCongratulations! You’ve successfully configured a custom domain and SSL certificate for your Spring Boot application on AWS Lightsail. Your application now has:\n✅ Key Accomplishments:\n\nCustom domain configuration with proper DNS management\nSSL certificate with automatic HTTPS redirect\nAutomatic certificate renewal to prevent expiration\nProduction-ready HTTPS security headers\nProfessional appearance with secure connections\n\n🔒 Security Benefits:\n\nEncrypted data transmission between users and your server\nBrowser trust indicators (lock icon, “Secure” label)\nProtection against man-in-the-middle attacks\nImproved SEO rankings due to HTTPS preference\n\n📈 Next Steps:\n\nMonitor your SSL certificate status regularly\nConsider implementing additional security headers\nSet up monitoring and alerting for your domain and certificates\nPlan for scaling if your application grows beyond Lightsail’s capacity\n\nYour Spring Boot application is now fully deployed with enterprise-grade security and accessibility. Users can confidently access your application through a professional domain with complete data protection.",
+    "crumbs": [
+      "Steps",
+      "Sixth Step"
     ]
   },
   {
@@ -439,143 +450,254 @@
     ]
   },
   {
-    "objectID": "modules/02-steps/03-third-step.html",
-    "href": "modules/02-steps/03-third-step.html",
-    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "objectID": "modules/02-steps/05-fifth-step.html",
+    "href": "modules/02-steps/05-fifth-step.html",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
     "section": "",
-    "text": "In this step, you’ll install and configure MySQL on your Lightsail instance to serve as the production database for your Spring Boot application. We’ll set up proper security, create the application database, and configure it for optimal performance.",
+    "text": "Either click on the slide area below or click here to view it in fullscreen. Use your keypad to navigate the slides.\n\n\n\n\nA PDF printable handout version of the slides is available here",
     "crumbs": [
       "Steps",
-      "Third Step"
+      "Fifth Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/03-third-step.html#step-3-set-up-mysql-database-on-lightsail",
-    "href": "modules/02-steps/03-third-step.html#step-3-set-up-mysql-database-on-lightsail",
-    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "objectID": "modules/02-steps/05-fifth-step.html#lecture-slides",
+    "href": "modules/02-steps/05-fifth-step.html#lecture-slides",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
     "section": "",
-    "text": "In this step, you’ll install and configure MySQL on your Lightsail instance to serve as the production database for your Spring Boot application. We’ll set up proper security, create the application database, and configure it for optimal performance.",
+    "text": "Either click on the slide area below or click here to view it in fullscreen. Use your keypad to navigate the slides.\n\n\n\n\nA PDF printable handout version of the slides is available here",
     "crumbs": [
       "Steps",
-      "Third Step"
+      "Fifth Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/03-third-step.html#understanding-database-options-on-lightsail",
-    "href": "modules/02-steps/03-third-step.html#understanding-database-options-on-lightsail",
-    "title": "Step 3: Set Up MySQL Database on Lightsail",
-    "section": "Understanding Database Options on Lightsail",
-    "text": "Understanding Database Options on Lightsail\nWhile AWS offers managed database services like RDS, installing MySQL directly on your Lightsail instance is often more cost-effective for smaller applications. This approach gives you:\n\nFull control over database configuration\nNo additional monthly charges beyond your instance cost\nSimplified networking (database and application on same server)\nEasier backup and maintenance for small-scale deployments\n\n\n\n\n\n\n\nNoteWhen to Consider RDS\n\n\n\nIf your application grows to handle thousands of concurrent users or requires high availability, consider migrating to Amazon RDS for better scalability and automated backups.",
+    "objectID": "modules/02-steps/05-fifth-step.html#step-5-configure-reverse-proxy-with-nginx",
+    "href": "modules/02-steps/05-fifth-step.html#step-5-configure-reverse-proxy-with-nginx",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Step 5: Configure Reverse Proxy with Nginx",
+    "text": "Step 5: Configure Reverse Proxy with Nginx\nIn this step, you’ll configure Nginx as a reverse proxy for your Spring Boot application. This setup improves performance, provides better security, and enables you to serve static content efficiently while forwarding dynamic requests to your Java application.",
     "crumbs": [
       "Steps",
-      "Third Step"
+      "Fifth Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/03-third-step.html#installing-mysql-on-ubuntu",
-    "href": "modules/02-steps/03-third-step.html#installing-mysql-on-ubuntu",
-    "title": "Step 3: Set Up MySQL Database on Lightsail",
-    "section": "Installing MySQL on Ubuntu",
-    "text": "Installing MySQL on Ubuntu\n\nStep 1: Connect to Your Lightsail Instance\nFirst, connect to your Lightsail instance using the browser-based SSH client:\n\nIn the Lightsail console, click on your instance name\nClick the “Connect using SSH” button\nWait for the terminal to load\n\n\n\nStep 2: Update System Packages\nAlways start by updating your system packages to ensure security and compatibility:\nsudo apt update && sudo apt upgrade -y\n\n\nStep 3: Install MySQL Server\nInstall MySQL server and client packages:\nsudo apt install mysql-server mysql-client -y\n\n\n\n\n\n\nTipInstallation Progress\n\n\n\nThe MySQL installation process may take 2-3 minutes. The system will automatically start the MySQL service after installation.",
+    "objectID": "modules/02-steps/05-fifth-step.html#understanding-reverse-proxy-architecture",
+    "href": "modules/02-steps/05-fifth-step.html#understanding-reverse-proxy-architecture",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Understanding Reverse Proxy Architecture",
+    "text": "Understanding Reverse Proxy Architecture\nA reverse proxy sits between client requests and your Spring Boot application, acting as an intermediary that forwards requests to your backend service. This architecture provides several benefits:\n\nPerformance: Nginx can serve static content directly and cache responses\nSecurity: Hides your application server details from external clients\nLoad Balancing: Can distribute requests across multiple application instances\nSSL Termination: Handles SSL/TLS encryption and decryption\n\n\n\n\n\n\n\nTipWhy Use Nginx with Spring Boot?\n\n\n\nWhile Spring Boot has an embedded Tomcat server, using Nginx as a front-end proxy is a production best practice that improves scalability and security.",
     "crumbs": [
       "Steps",
-      "Third Step"
+      "Fifth Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/03-third-step.html#securing-mysql-installation",
-    "href": "modules/02-steps/03-third-step.html#securing-mysql-installation",
-    "title": "Step 3: Set Up MySQL Database on Lightsail",
-    "section": "Securing MySQL Installation",
-    "text": "Securing MySQL Installation\n\nStep 1: Run MySQL Security Script\nMySQL comes with a security script that removes insecure default settings:\nsudo mysql_secure_installation\n\n\nStep 2: Configure Security Settings\nWhen prompted, configure the following settings:\n\nVALIDATE PASSWORD COMPONENT: Choose Y for better security\nPassword validation policy: Select 2 (STRONG)\nSet root password: Create a strong password and save it securely\nRemove anonymous users: Choose Y\nDisallow root login remotely: Choose Y\nRemove test database: Choose Y\nReload privilege tables: Choose Y\n\n\n\n\n\n\n\nWarningSave Your Root Password\n\n\n\nWrite down your MySQL root password in a secure location. You’ll need it for database administration tasks.",
+    "objectID": "modules/02-steps/05-fifth-step.html#installing-and-configuring-nginx",
+    "href": "modules/02-steps/05-fifth-step.html#installing-and-configuring-nginx",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Installing and Configuring Nginx",
+    "text": "Installing and Configuring Nginx\n\nStep 1: Install Nginx on Your Lightsail Instance\nConnect to your Lightsail instance via SSH and install Nginx:\n# Update package lists\nsudo apt update\n\n# Install Nginx\nsudo apt install nginx -y\n\n# Check if Nginx is running\nsudo systemctl status nginx\n\n# Enable Nginx to start on boot\nsudo systemctl enable nginx\n\n\nStep 2: Configure Firewall Rules\nUpdate your Lightsail instance’s firewall to allow HTTP and HTTPS traffic:\n# Allow HTTP traffic (port 80)\nsudo ufw allow 'Nginx HTTP'\n\n# Allow HTTPS traffic (port 443)\nsudo ufw allow 'Nginx HTTPS'\n\n# Check firewall status\nsudo ufw status\n\n\n\n\n\n\nNoteLightsail Networking Tab\n\n\n\nAlso ensure that ports 80 (HTTP) and 443 (HTTPS) are open in your Lightsail instance’s Networking tab in the AWS console.\n\n\n\n\nStep 3: Create Nginx Configuration for Your Spring Boot App\nCreate a new Nginx server block configuration:\n# Create configuration file\nsudo nano /etc/nginx/sites-available/spring-boot-app\nAdd the following configuration:\nserver {\n    listen 80;\n    server_name your-domain.com www.your-domain.com;\n    \n    # Security headers\n    add_header X-Frame-Options \"SAMEORIGIN\" always;\n    add_header X-Content-Type-Options \"nosniff\" always;\n    add_header X-XSS-Protection \"1; mode=block\" always;\n    add_header Referrer-Policy \"no-referrer-when-downgrade\" always;\n    \n    # Gzip compression\n    gzip on;\n    gzip_vary on;\n    gzip_min_length 1024;\n    gzip_proxied any;\n    gzip_comp_level 6;\n    gzip_types text/plain text/css text/xml text/javascript application/javascript application/xml+rss application/json;\n    \n    # Static content location (if you have static assets)\n    location /static/ {\n        alias /home/ubuntu/app/static/;\n        expires 1y;\n        add_header Cache-Control \"public, immutable\";\n    }\n    \n    # Health check endpoint (bypass proxy for quick responses)\n    location /actuator/health {\n        proxy_pass http://localhost:8080;\n        proxy_http_version 1.1;\n        proxy_set_header Connection \"\";\n        proxy_connect_timeout 2s;\n        proxy_read_timeout 2s;\n    }\n    \n    # Main application proxy\n    location / {\n        proxy_pass http://localhost:8080;\n        proxy_http_version 1.1;\n        proxy_set_header Upgrade $http_upgrade;\n        proxy_set_header Connection 'upgrade';\n        proxy_set_header Host $host;\n        proxy_set_header X-Real-IP $remote_addr;\n        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n        proxy_set_header X-Forwarded-Proto $scheme;\n        proxy_cache_bypass $http_upgrade;\n        proxy_read_timeout 300s;\n        proxy_connect_timeout 75s;\n    }\n    \n    # Custom error pages\n    error_page 502 503 504 /50x.html;\n    location = /50x.html {\n        root /var/www/html;\n    }\n}\n\n\nStep 4: Enable the Configuration\n# Create symbolic link to enable the site\nsudo ln -s /etc/nginx/sites-available/spring-boot-app /etc/nginx/sites-enabled/\n\n# Remove default Nginx site\nsudo rm /etc/nginx/sites-enabled/default\n\n# Test Nginx configuration\nsudo nginx -t\n\n# Reload Nginx to apply changes\nsudo systemctl reload nginx",
     "crumbs": [
       "Steps",
-      "Third Step"
+      "Fifth Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/03-third-step.html#creating-the-application-database",
-    "href": "modules/02-steps/03-third-step.html#creating-the-application-database",
-    "title": "Step 3: Set Up MySQL Database on Lightsail",
-    "section": "Creating the Application Database",
-    "text": "Creating the Application Database\n\nStep 1: Access MySQL as Root\nLog into MySQL using the root account:\nsudo mysql -u root -p\nEnter the root password you created during the security setup.\n\n\nStep 2: Create Application Database\nCreate a dedicated database for your Spring Boot application:\nCREATE DATABASE myapp_prod CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\n\n\nStep 3: Create Application User\nCreate a dedicated MySQL user for your application with limited privileges:\nCREATE USER 'springapp'@'localhost' IDENTIFIED BY 'your-secure-app-password';\nGRANT ALL PRIVILEGES ON myapp_prod.* TO 'springapp'@'localhost';\nFLUSH PRIVILEGES;\n\n\n\n\n\n\nTipPassword Security\n\n\n\nUse a strong, unique password for your application user. Consider using a password manager to generate and store it securely.\n\n\n\n\nStep 4: Verify Database Setup\nTest your new database and user:\n-- Switch to the new database\nUSE myapp_prod;\n\n-- Show current user and database\nSELECT USER(), DATABASE();\n\n-- Exit MySQL\nEXIT;",
+    "objectID": "modules/02-steps/05-fifth-step.html#advanced-nginx-configuration",
+    "href": "modules/02-steps/05-fifth-step.html#advanced-nginx-configuration",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Advanced Nginx Configuration",
+    "text": "Advanced Nginx Configuration\n\nImplementing Rate Limiting\nAdd rate limiting to protect your application from abuse:\n# Add this to the http block in /etc/nginx/nginx.conf\nhttp {\n    # Rate limiting zones\n    limit_req_zone $binary_remote_addr zone=login:10m rate=5r/m;\n    limit_req_zone $binary_remote_addr zone=api:10m rate=10r/s;\n    limit_req_zone $binary_remote_addr zone=general:10m rate=1r/s;\n    \n    # Include your site configuration\n    include /etc/nginx/sites-enabled/*;\n}\nThen update your site configuration to use rate limiting:\n# Add these location blocks to your server configuration\nlocation /api/auth/login {\n    limit_req zone=login burst=3 nodelay;\n    proxy_pass http://localhost:8080;\n    # ... other proxy settings\n}\n\nlocation /api/ {\n    limit_req zone=api burst=20 nodelay;\n    proxy_pass http://localhost:8080;\n    # ... other proxy settings\n}\n\nlocation / {\n    limit_req zone=general burst=10 nodelay;\n    proxy_pass http://localhost:8080;\n    # ... other proxy settings\n}\n\n\nSetting Up Log Files\nConfigure custom log files for better monitoring:\nserver {\n    # Custom log files\n    access_log /var/log/nginx/spring-boot-app.access.log;\n    error_log /var/log/nginx/spring-boot-app.error.log;\n    \n    # ... rest of configuration\n}\n\n\nOptimizing for Static Content\nIf your Spring Boot app serves static content, optimize Nginx for better performance:\n# Add to your server block\nlocation ~* \\.(js|css|png|jpg|jpeg|gif|ico|svg)$ {\n    expires 1y;\n    add_header Cache-Control \"public, immutable\";\n    access_log off;\n    try_files $uri @proxy;\n}\n\nlocation @proxy {\n    proxy_pass http://localhost:8080;\n    # ... other proxy settings\n}",
     "crumbs": [
       "Steps",
-      "Third Step"
+      "Fifth Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/03-third-step.html#configuring-mysql-for-production",
-    "href": "modules/02-steps/03-third-step.html#configuring-mysql-for-production",
-    "title": "Step 3: Set Up MySQL Database on Lightsail",
-    "section": "Configuring MySQL for Production",
-    "text": "Configuring MySQL for Production\n\nStep 1: Edit MySQL Configuration\nOpen the MySQL configuration file:\nsudo nano /etc/mysql/mysql.conf.d/mysqld.cnf\n\n\nStep 2: Optimize MySQL Settings\nAdd or modify these settings in the [mysqld] section for better performance:\n# Performance tuning for small to medium applications\ninnodb_buffer_pool_size = 256M\ninnodb_log_file_size = 64M\ninnodb_flush_log_at_trx_commit = 2\n\n# Character set configuration\ncharacter-set-server = utf8mb4\ncollation-server = utf8mb4_unicode_ci\n\n# Connection limits\nmax_connections = 100\nmax_connect_errors = 10000\n\n# Query cache (for MySQL 5.7 and earlier)\nquery_cache_type = 1\nquery_cache_size = 64M\n\n\nStep 3: Restart MySQL Service\nApply the configuration changes:\nsudo systemctl restart mysql\nsudo systemctl status mysql\n\n\n\n\n\n\nNoteService Status\n\n\n\nThe systemctl status mysql command should show the service as “active (running)” in green text.",
+    "objectID": "modules/02-steps/05-fifth-step.html#testing-your-configuration",
+    "href": "modules/02-steps/05-fifth-step.html#testing-your-configuration",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Testing Your Configuration",
+    "text": "Testing Your Configuration\n\nStep 1: Verify Nginx is Running\n# Check Nginx status\nsudo systemctl status nginx\n\n# Check if Nginx is listening on port 80\nsudo netstat -tlnp | grep :80\n\n\nStep 2: Test the Reverse Proxy\n# Test from your server (should show Spring Boot app response)\ncurl -I http://localhost\n\n# Check Nginx logs\nsudo tail -f /var/log/nginx/access.log\nsudo tail -f /var/log/nginx/error.log\n\n\nStep 3: Access from Browser\n\nOpen your browser and navigate to your Lightsail instance’s public IP\nYou should see your Spring Boot application served through Nginx\nCheck the browser’s developer tools to verify response headers include Nginx security headers\n\n\n\n\n\n\n\nWarningTroubleshooting Common Issues\n\n\n\n\n502 Bad Gateway: Your Spring Boot app isn’t running on port 8080\nConnection refused: Check if ports 80/443 are open in Lightsail firewall\nConfiguration errors: Run sudo nginx -t to validate your config",
     "crumbs": [
       "Steps",
-      "Third Step"
+      "Fifth Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/03-third-step.html#testing-database-connection",
-    "href": "modules/02-steps/03-third-step.html#testing-database-connection",
-    "title": "Step 3: Set Up MySQL Database on Lightsail",
-    "section": "Testing Database Connection",
-    "text": "Testing Database Connection\n\nStep 1: Test Local Connection\nVerify you can connect with your application user:\nmysql -u springapp -p myapp_prod\n\n\nStep 2: Create a Test Table\nOnce connected, test database operations:\n-- Create a simple test table\nCREATE TABLE test_connection (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    message VARCHAR(255),\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);\n\n-- Insert test data\nINSERT INTO test_connection (message) VALUES ('Database connection successful!');\n\n-- Verify the data\nSELECT * FROM test_connection;\n\n-- Clean up\nDROP TABLE test_connection;\nEXIT;",
+    "objectID": "modules/02-steps/05-fifth-step.html#monitoring-and-maintenance",
+    "href": "modules/02-steps/05-fifth-step.html#monitoring-and-maintenance",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Monitoring and Maintenance",
+    "text": "Monitoring and Maintenance\n\nSetting Up Log Rotation\nConfigure log rotation to prevent disk space issues:\n# Create log rotation configuration\nsudo nano /etc/logrotate.d/nginx-spring-boot\n\n# Add the following content:\n/var/log/nginx/spring-boot-app.*.log {\n    daily\n    missingok\n    rotate 52\n    compress\n    notifempty\n    create 0644 www-data www-data\n    postrotate\n        if [ -f /var/run/nginx.pid ]; then\n            kill -USR1 `cat /var/run/nginx.pid`\n        fi\n    endscript\n}\n\n\nPerformance Monitoring\nMonitor your reverse proxy performance:\n# Check Nginx processes\nps aux | grep nginx\n\n# Monitor active connections\ncurl http://localhost/nginx_status\n\n# Check system resources\nhtop",
     "crumbs": [
       "Steps",
-      "Third Step"
+      "Fifth Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/03-third-step.html#configuring-firewall-optional",
-    "href": "modules/02-steps/03-third-step.html#configuring-firewall-optional",
-    "title": "Step 3: Set Up MySQL Database on Lightsail",
-    "section": "Configuring Firewall (Optional)",
-    "text": "Configuring Firewall (Optional)\nIf you plan to connect to MySQL from external applications for testing, you can configure the firewall:\n# Allow MySQL connections (only if needed for external access)\nsudo ufw allow 3306/tcp\n\n# Check firewall status\nsudo ufw status\n\n\n\n\n\n\nWarningSecurity Consideration\n\n\n\nOnly open MySQL port 3306 if you absolutely need external database access. For production applications, keep the database local to the instance for better security.",
+    "objectID": "modules/02-steps/05-fifth-step.html#summary-and-key-takeaways",
+    "href": "modules/02-steps/05-fifth-step.html#summary-and-key-takeaways",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Summary and Key Takeaways",
+    "text": "Summary and Key Takeaways\nIn this step, you’ve successfully configured Nginx as a reverse proxy for your Spring Boot application. This setup provides:\n\nEnhanced Security: Security headers and request filtering\nImproved Performance: Static content serving and compression\nBetter Monitoring: Detailed logging and health checks\nProduction Readiness: Rate limiting and error handling\n\nKey configuration points: - Nginx listens on port 80 and forwards requests to Spring Boot on port 8080 - Security headers protect against common web vulnerabilities - Gzip compression reduces bandwidth usage - Custom error pages provide better user experience - Rate limiting prevents abuse and DDoS attacks\nYour application is now accessible through Nginx, providing a professional and secure front-end to your Spring Boot service. In the next step, we’ll add a custom domain and SSL certificate to complete your production deployment.",
     "crumbs": [
       "Steps",
-      "Third Step"
+      "Fifth Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/03-third-step.html#setting-up-automated-backups",
-    "href": "modules/02-steps/03-third-step.html#setting-up-automated-backups",
-    "title": "Step 3: Set Up MySQL Database on Lightsail",
-    "section": "Setting Up Automated Backups",
-    "text": "Setting Up Automated Backups\n\nStep 1: Create Backup Directory\nsudo mkdir -p /backup/mysql\nsudo chown mysql:mysql /backup/mysql\n\n\nStep 2: Create Backup Script\nCreate a simple backup script:\nsudo nano /usr/local/bin/mysql-backup.sh\nAdd the following content:\n#!/bin/bash\nBACKUP_DIR=\"/backup/mysql\"\nDATE=$(date +%Y%m%d_%H%M%S)\nDB_NAME=\"myapp_prod\"\nDB_USER=\"springapp\"\nDB_PASS=\"your-secure-app-password\"\n\n# Create backup\nmysqldump -u $DB_USER -p$DB_PASS $DB_NAME &gt; $BACKUP_DIR/${DB_NAME}_${DATE}.sql\n\n# Keep only last 7 days of backups\nfind $BACKUP_DIR -name \"${DB_NAME}_*.sql\" -mtime +7 -delete\n\necho \"Backup completed: ${DB_NAME}_${DATE}.sql\"\n\n\nStep 3: Make Script Executable and Test\nsudo chmod +x /usr/local/bin/mysql-backup.sh\nsudo /usr/local/bin/mysql-backup.sh",
-    "crumbs": [
-      "Steps",
-      "Third Step"
-    ]
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#overview",
+    "href": "modules/02-steps/05-fifth-step-slides.html#overview",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Overview",
+    "text": "Overview\n\n\nWhat We’ll Cover:\n\nUnderstanding reverse proxy architecture\nInstalling and configuring Nginx\nAdvanced configuration options\nTesting and monitoring\n\n\nLearning Objectives:\n\nSet up Nginx as reverse proxy\nImplement security headers\nConfigure rate limiting\nOptimize performance\n\n\n\nToday we’ll learn how to configure Nginx as a reverse proxy for your Spring Boot application. This is a crucial step for production deployments that provides security, performance, and scalability benefits."
   },
   {
-    "objectID": "modules/02-steps/03-third-step.html#updating-spring-boot-configuration",
-    "href": "modules/02-steps/03-third-step.html#updating-spring-boot-configuration",
-    "title": "Step 3: Set Up MySQL Database on Lightsail",
-    "section": "Updating Spring Boot Configuration",
-    "text": "Updating Spring Boot Configuration\nNow that your database is ready, update your production profile configuration to match your MySQL setup:\n# src/main/resources/application-prod.properties\n\n# Production MySQL database configuration\nspring.datasource.url=jdbc:mysql://localhost:3306/myapp_prod\nspring.datasource.username=springapp\nspring.datasource.password=your-secure-app-password\nspring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver\n\n# Production-specific JPA settings\nspring.jpa.hibernate.ddl-auto=validate\nspring.jpa.show-sql=false\n\n# Production logging\nlogging.level.root=WARN\nlogging.level.org.springframework.web=INFO\nlogging.level.org.hibernate=ERROR\n\n\n\n\n\n\nTipEnvironment Variables\n\n\n\nIn the next step, we’ll show you how to externalize these database credentials using environment variables for better security.",
-    "crumbs": [
-      "Steps",
-      "Third Step"
-    ]
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#why-use-a-reverse-proxy",
+    "href": "modules/02-steps/05-fifth-step-slides.html#why-use-a-reverse-proxy",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Why Use a Reverse Proxy?",
+    "text": "Why Use a Reverse Proxy?\n\n\nPerformance Benefits: - Serve static content directly - Cache responses - Gzip compression - Load balancing capability\n\nSecurity Benefits: - Hide application server details - SSL termination - Request filtering - Security headers\n\n\nWhile Spring Boot has an embedded Tomcat server, using Nginx as a front-end proxy is a production best practice. It acts as an intermediary between clients and your application, providing multiple layers of optimization and security."
   },
   {
-    "objectID": "modules/02-steps/03-third-step.html#summary",
-    "href": "modules/02-steps/03-third-step.html#summary",
-    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#reverse-proxy-architecture",
+    "href": "modules/02-steps/05-fifth-step-slides.html#reverse-proxy-architecture",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Reverse Proxy Architecture",
+    "text": "Reverse Proxy Architecture\ngraph LR\n    A[Client] --&gt; B[Nginx :80]\n    B --&gt; C[Spring Boot :8080]\n    B --&gt; D[Static Files]\n    B --&gt; E[Cache]\nFlow: Client → Nginx (Port 80) → Spring Boot (Port 8080)\n\nThis diagram shows how requests flow through our architecture. Nginx receives all client requests on port 80, then either serves static content directly or forwards dynamic requests to Spring Boot running on port 8080."
+  },
+  {
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#install-nginx",
+    "href": "modules/02-steps/05-fifth-step-slides.html#install-nginx",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Install Nginx",
+    "text": "Install Nginx\n# Update package lists\nsudo apt update\n\n# Install Nginx\nsudo apt install nginx -y\n\n# Check if Nginx is running\nsudo systemctl status nginx\n\n# Enable Nginx to start on boot\nsudo systemctl enable nginx\n\nFirst, we need to install Nginx on our Lightsail instance. These commands will install Nginx, check its status, and ensure it starts automatically when the server reboots."
+  },
+  {
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#configure-firewall",
+    "href": "modules/02-steps/05-fifth-step-slides.html#configure-firewall",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Configure Firewall",
+    "text": "Configure Firewall\n# Allow HTTP traffic (port 80)\nsudo ufw allow 'Nginx HTTP'\n\n# Allow HTTPS traffic (port 443)\nsudo ufw allow 'Nginx HTTPS'\n\n# Check firewall status\nsudo ufw status\nDon’t forget: Also open ports 80 and 443 in Lightsail’s Networking tab!\n\nSecurity is crucial, so we need to properly configure the firewall to allow HTTP and HTTPS traffic. Remember to also check your Lightsail instance’s networking settings in the AWS console."
+  },
+  {
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#create-nginx-configuration",
+    "href": "modules/02-steps/05-fifth-step-slides.html#create-nginx-configuration",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Create Nginx Configuration",
+    "text": "Create Nginx Configuration\n# Create configuration file\nsudo nano /etc/nginx/sites-available/spring-boot-app\nKey Configuration Sections: - Server block and domain settings - Security headers - Gzip compression - Proxy settings\n\nNow we’ll create a custom Nginx configuration specifically for our Spring Boot application. This configuration will include several important sections for security, performance, and proper request forwarding."
+  },
+  {
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#basic-server-configuration",
+    "href": "modules/02-steps/05-fifth-step-slides.html#basic-server-configuration",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Basic Server Configuration",
+    "text": "Basic Server Configuration\nserver {\n    listen 80;\n    server_name your-domain.com www.your-domain.com;\n    \n    # Security headers\n    add_header X-Frame-Options \"SAMEORIGIN\" always;\n    add_header X-Content-Type-Options \"nosniff\" always;\n    add_header X-XSS-Protection \"1; mode=block\" always;\n    \n    # Main application proxy\n    location / {\n        proxy_pass http://localhost:8080;\n        proxy_set_header Host $host;\n        proxy_set_header X-Real-IP $remote_addr;\n        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n    }\n}\n\nThis is the basic server configuration that listens on port 80, includes essential security headers, and forwards all requests to our Spring Boot application running on port 8080. The proxy headers ensure your application receives proper client information."
+  },
+  {
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#enable-gzip-compression",
+    "href": "modules/02-steps/05-fifth-step-slides.html#enable-gzip-compression",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Enable Gzip Compression",
+    "text": "Enable Gzip Compression\n# Gzip compression\ngzip on;\ngzip_vary on;\ngzip_min_length 1024;\ngzip_proxied any;\ngzip_comp_level 6;\ngzip_types text/plain text/css text/xml \n           text/javascript application/javascript \n           application/xml+rss application/json;\nBenefits: Reduces bandwidth usage by up to 70%\n\nGzip compression significantly reduces the size of responses sent to clients, improving load times and reducing bandwidth costs. This configuration compresses various file types while avoiding very small files where compression overhead isn’t worth it."
+  },
+  {
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#static-content-optimization",
+    "href": "modules/02-steps/05-fifth-step-slides.html#static-content-optimization",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Static Content Optimization",
+    "text": "Static Content Optimization\n# Static content location\nlocation /static/ {\n    alias /home/ubuntu/app/static/;\n    expires 1y;\n    add_header Cache-Control \"public, immutable\";\n}\n\n# Optimize static assets\nlocation ~* \\.(js|css|png|jpg|jpeg|gif|ico|svg)$ {\n    expires 1y;\n    add_header Cache-Control \"public, immutable\";\n    access_log off;\n}\n\nFor better performance, we can configure Nginx to serve static content directly instead of forwarding these requests to Spring Boot. This includes setting appropriate cache headers to reduce server load."
+  },
+  {
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#enable-the-configuration",
+    "href": "modules/02-steps/05-fifth-step-slides.html#enable-the-configuration",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Enable the Configuration",
+    "text": "Enable the Configuration\n# Create symbolic link to enable the site\nsudo ln -s /etc/nginx/sites-available/spring-boot-app \\\n           /etc/nginx/sites-enabled/\n\n# Remove default Nginx site\nsudo rm /etc/nginx/sites-enabled/default\n\n# Test Nginx configuration\nsudo nginx -t\n\n# Reload Nginx to apply changes\nsudo systemctl reload nginx\n\nAfter creating our configuration, we need to enable it by creating a symbolic link, remove the default site, test our configuration for syntax errors, and reload Nginx to apply the changes."
+  },
+  {
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#implement-rate-limiting",
+    "href": "modules/02-steps/05-fifth-step-slides.html#implement-rate-limiting",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Implement Rate Limiting",
+    "text": "Implement Rate Limiting\n# Add to /etc/nginx/nginx.conf http block\nlimit_req_zone $binary_remote_addr zone=login:10m rate=5r/m;\nlimit_req_zone $binary_remote_addr zone=api:10m rate=10r/s;\nlimit_req_zone $binary_remote_addr zone=general:10m rate=1r/s;\n\n# In server block\nlocation /api/auth/login {\n    limit_req zone=login burst=3 nodelay;\n    proxy_pass http://localhost:8080;\n}\nProtection against: DDoS attacks, brute force attempts, API abuse\n\nRate limiting is crucial for protecting your application from abuse. We can set different limits for different endpoints - stricter limits for login attempts and more generous limits for general API usage."
+  },
+  {
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#custom-error-pages",
+    "href": "modules/02-steps/05-fifth-step-slides.html#custom-error-pages",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Custom Error Pages",
+    "text": "Custom Error Pages\n# Custom error pages\nerror_page 502 503 504 /50x.html;\nlocation = /50x.html {\n    root /var/www/html;\n}\n\n# Health check endpoint (bypass proxy for quick responses)\nlocation /actuator/health {\n    proxy_pass http://localhost:8080;\n    proxy_connect_timeout 2s;\n    proxy_read_timeout 2s;\n}\n\nProfessional applications need proper error handling. We can configure custom error pages and set up dedicated health check endpoints that respond quickly for monitoring systems."
+  },
+  {
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#testing-your-configuration",
+    "href": "modules/02-steps/05-fifth-step-slides.html#testing-your-configuration",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Testing Your Configuration",
+    "text": "Testing Your Configuration\n\n\nServer Tests:\n# Check Nginx status\nsudo systemctl status nginx\n\n# Verify port listening\nsudo netstat -tlnp | grep :80\n\n# Test locally\ncurl -I http://localhost\n\nBrowser Tests: - Navigate to public IP - Check developer tools for headers - Verify application loads correctly - Test static content serving\n\n\nTesting is crucial to ensure everything works correctly. We should test both from the server itself and from external browsers to verify that requests are being properly forwarded and responses include our security headers."
+  },
+  {
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#troubleshooting-common-issues",
+    "href": "modules/02-steps/05-fifth-step-slides.html#troubleshooting-common-issues",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Troubleshooting Common Issues",
+    "text": "Troubleshooting Common Issues\n\n502 Bad Gateway → Spring Boot app not running on port 8080\nConnection refused → Firewall blocking ports 80/443\nConfiguration errors → Run sudo nginx -t to validate\nPerformance issues → Check logs and system resources\n\nLog Locations: - /var/log/nginx/access.log - /var/log/nginx/error.log\n\nWhen things go wrong, these are the most common issues you’ll encounter. Always check the logs first, and remember that Nginx configuration validation can catch syntax errors before they cause problems."
+  },
+  {
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#monitoring-and-maintenance",
+    "href": "modules/02-steps/05-fifth-step-slides.html#monitoring-and-maintenance",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Monitoring and Maintenance",
+    "text": "Monitoring and Maintenance\n# Set up log rotation\nsudo nano /etc/logrotate.d/nginx-spring-boot\n\n# Monitor performance\nps aux | grep nginx\ncurl http://localhost/nginx_status\nhtop\nBest Practices: - Regular log rotation - Monitor system resources - Track response times - Set up alerting\n\nOngoing maintenance is important for production systems. Set up log rotation to prevent disk space issues, monitor system resources, and consider implementing alerting for critical issues."
+  },
+  {
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#security-headers-explained",
+    "href": "modules/02-steps/05-fifth-step-slides.html#security-headers-explained",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Security Headers Explained",
+    "text": "Security Headers Explained\n\n\nX-Frame-Options: \"SAMEORIGIN\"\nX-Content-Type-Options: \"nosniff\"\nX-XSS-Protection: \"1; mode=block\"\nReferrer-Policy: \"no-referrer-when-downgrade\"\n\nProtection Against: - Clickjacking attacks - MIME type sniffing - Cross-site scripting - Information leakage\n\n\nSecurity headers are essential for protecting your application against common web vulnerabilities. Each header serves a specific purpose in hardening your application against attacks."
+  },
+  {
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#performance-optimization-tips",
+    "href": "modules/02-steps/05-fifth-step-slides.html#performance-optimization-tips",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Performance Optimization Tips",
+    "text": "Performance Optimization Tips\n{.incremental} - Enable gzip compression for text content - Set appropriate cache headers for static assets - Use separate location blocks for different content types - Implement connection keep-alive for better performance - Configure proper timeout values - Monitor and tune worker processes\n\nThese optimization techniques can significantly improve your application’s performance. The key is to understand your traffic patterns and configure Nginx accordingly."
+  },
+  {
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#summary",
+    "href": "modules/02-steps/05-fifth-step-slides.html#summary",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
     "section": "Summary",
-    "text": "Summary\nIn this step, you’ve successfully:\n\nInstalled and secured MySQL on your Lightsail instance\nCreated a dedicated database and user for your Spring Boot application\nConfigured MySQL for optimal performance\nSet up basic backup functionality\nPrepared your database configuration for production deployment\n\nYour Lightsail instance now has a properly configured MySQL database ready to support your Spring Boot application. The database is secured with appropriate user permissions and optimized for production workloads.\n\nKey Takeaways\n\nSecurity First: Always run mysql_secure_installation and use strong passwords\nDedicated Users: Create application-specific database users with minimal required privileges\nPerformance Tuning: Configure MySQL settings appropriate for your instance size\nRegular Backups: Implement automated backup strategies from the beginning\nConnection Testing: Always verify database connectivity before deploying your application\n\nIn the next step, you’ll learn how to deploy your Spring Boot application to the Lightsail server and connect it to this MySQL database.",
-    "crumbs": [
-      "Steps",
-      "Third Step"
-    ]
+    "text": "Summary\nWhat We Accomplished: - ✅ Installed and configured Nginx as reverse proxy - ✅ Implemented security headers and rate limiting - ✅ Optimized performance with compression and caching - ✅ Set up proper error handling and monitoring\nKey Benefits: - Enhanced security and performance - Professional error handling - Production-ready architecture - Better monitoring and maintenance\n\nWe’ve successfully set up a professional-grade reverse proxy configuration that provides security, performance, and monitoring capabilities. Your Spring Boot application is now running behind a robust web server that can handle production traffic effectively."
+  },
+  {
+    "objectID": "modules/02-steps/05-fifth-step-slides.html#next-steps",
+    "href": "modules/02-steps/05-fifth-step-slides.html#next-steps",
+    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "section": "Next Steps",
+    "text": "Next Steps\nComing Up in Step 6: - Add custom domain configuration - Implement SSL/TLS certificates - Configure HTTPS redirects - Final security hardening\nYour application is now: - Accessible through Nginx on port 80 - Protected with security headers - Optimized for performance - Ready for domain and SSL setup\n\nWith Nginx configured as our reverse proxy, we’re ready to move on to the final step of adding a custom domain and SSL certificate to complete our professional deployment setup."
   },
   {
     "objectID": "modules/02-steps/04-fourth-step.html",
     "href": "modules/02-steps/04-fourth-step.html",
     "title": "Step 4: Deploy Spring Boot Application to Lightsail Server",
     "section": "",
-    "text": "In this step, you’ll deploy your Spring Boot application to the AWS Lightsail server you’ve configured. We’ll install Java, transfer your application files, configure environment variables, and set up the application to run as a system service.",
+    "text": "Either click on the slide area below or click here to view it in fullscreen. Use your keypad to navigate the slides.\n\n\n\n\nA PDF printable handout version of the slides is available here",
+    "crumbs": [
+      "Steps",
+      "Fourth Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/04-fourth-step.html#lecture-slides",
+    "href": "modules/02-steps/04-fourth-step.html#lecture-slides",
+    "title": "Step 4: Deploy Spring Boot Application to Lightsail Server",
+    "section": "",
+    "text": "Either click on the slide area below or click here to view it in fullscreen. Use your keypad to navigate the slides.\n\n\n\n\nA PDF printable handout version of the slides is available here",
     "crumbs": [
       "Steps",
       "Fourth Step"
@@ -585,8 +707,8 @@
     "objectID": "modules/02-steps/04-fourth-step.html#step-4-deploy-spring-boot-application-to-lightsail-server",
     "href": "modules/02-steps/04-fourth-step.html#step-4-deploy-spring-boot-application-to-lightsail-server",
     "title": "Step 4: Deploy Spring Boot Application to Lightsail Server",
-    "section": "",
-    "text": "In this step, you’ll deploy your Spring Boot application to the AWS Lightsail server you’ve configured. We’ll install Java, transfer your application files, configure environment variables, and set up the application to run as a system service.",
+    "section": "Step 4: Deploy Spring Boot Application to Lightsail Server",
+    "text": "Step 4: Deploy Spring Boot Application to Lightsail Server\nIn this step, you’ll deploy your Spring Boot application to the AWS Lightsail server you’ve configured. We’ll install Java, transfer your application files, configure environment variables, and set up the application to run as a system service.",
     "crumbs": [
       "Steps",
       "Fourth Step"
@@ -714,164 +836,22 @@
     ]
   },
   {
-    "objectID": "modules/02-steps/01-first-step-slides.html#configure-development-and-production-profiles-in-spring-boot",
-    "href": "modules/02-steps/01-first-step-slides.html#configure-development-and-production-profiles-in-spring-boot",
-    "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
-    "section": "Configure Development and Production Profiles in Spring Boot",
-    "text": "Configure Development and Production Profiles in Spring Boot\nPreparing your Spring Boot application for seamless deployment to AWS Lightsail\n\nWelcome to step 1 of deploying Spring Boot apps to AWS Lightsail. Today we’ll configure separate application profiles for development and production environments.",
-    "crumbs": [
-      "Steps",
-      "First Step Slides"
-    ]
-  },
-  {
-    "objectID": "modules/02-steps/01-first-step-slides.html#why-spring-boot-profiles-matter",
-    "href": "modules/02-steps/01-first-step-slides.html#why-spring-boot-profiles-matter",
-    "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
-    "section": "Why Spring Boot Profiles Matter",
-    "text": "Why Spring Boot Profiles Matter\n\n\nDevelopment Environment\n\nLocal database connections\nDebug logging enabled\nDevelopment-friendly settings\n\n\nProduction Environment\n\nCloud database connections\nOptimized performance settings\nSecurity-focused configuration\n\n\n\nProfiles allow you to segregate application configuration and make it available only in certain environments. This prevents hardcoding production credentials and enables local testing with development databases.",
-    "crumbs": [
-      "Steps",
-      "First Step Slides"
-    ]
-  },
-  {
-    "objectID": "modules/02-steps/01-first-step-slides.html#base-configuration-setup",
-    "href": "modules/02-steps/01-first-step-slides.html#base-configuration-setup",
-    "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
-    "section": "Base Configuration Setup",
-    "text": "Base Configuration Setup\nCreate application.properties with common settings:\n# Application name and basic settings\nspring.application.name=my-spring-app\nserver.servlet.context-path=/\n\n# Default active profile\nspring.profiles.active=dev\n\n# JPA/Hibernate common settings\nspring.jpa.hibernate.ddl-auto=update\nspring.jpa.show-sql=false\n\nThe base configuration contains settings that apply to all environments. Notice we set the default profile to ‘dev’ for local development convenience.",
-    "crumbs": [
-      "Steps",
-      "First Step Slides"
-    ]
-  },
-  {
-    "objectID": "modules/02-steps/01-first-step-slides.html#development-profile-configuration",
-    "href": "modules/02-steps/01-first-step-slides.html#development-profile-configuration",
-    "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
-    "section": "Development Profile Configuration",
-    "text": "Development Profile Configuration\nCreate application-dev.properties:\n# Local MySQL database configuration\nspring.datasource.url=jdbc:mysql://localhost:3306/myapp_dev\nspring.datasource.username=dev_user\nspring.datasource.password=dev_password\n\n# Development-specific settings\nspring.jpa.show-sql=true\nlogging.level.org.springframework.web=DEBUG\nserver.port=8080\n\nThe development profile uses local database connections and enables verbose logging to help with debugging during development.",
-    "crumbs": [
-      "Steps",
-      "First Step Slides"
-    ]
-  },
-  {
-    "objectID": "modules/02-steps/01-first-step-slides.html#production-profile-configuration",
-    "href": "modules/02-steps/01-first-step-slides.html#production-profile-configuration",
-    "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
-    "section": "Production Profile Configuration",
-    "text": "Production Profile Configuration\nCreate application-prod.properties:\n# Production database with environment variables\nspring.datasource.url=${DB_URL:jdbc:mysql://localhost:3306/myapp_prod}\nspring.datasource.username=${DB_USERNAME:prod_user}\nspring.datasource.password=${DB_PASSWORD:secure_password}\n\n# Production optimizations\nspring.jpa.show-sql=false\nspring.jpa.hibernate.ddl-auto=validate\nserver.compression.enabled=true\n\nProduction profile uses environment variables for database configuration, enabling secure credential management without hardcoding sensitive information.",
-    "crumbs": [
-      "Steps",
-      "First Step Slides"
-    ]
-  },
-  {
-    "objectID": "modules/02-steps/01-first-step-slides.html#environment-variables-in-production",
-    "href": "modules/02-steps/01-first-step-slides.html#environment-variables-in-production",
-    "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
-    "section": "Environment Variables in Production",
-    "text": "Environment Variables in Production\n\n\nSyntax: ${VARIABLE_NAME:default_value}\nBenefits:\n\nSecure credential management\nEnvironment-specific overrides\nNo hardcoded production secrets\nEasy configuration changes\n\n\nspring.datasource.url=\n  ${DB_URL:default}\n\nspring.datasource.username=\n  ${DB_USERNAME:user}\n\nspring.datasource.password=\n  ${DB_PASSWORD:pass}\n\n\nThe ${} syntax allows overriding configuration values with environment variables while providing fallback defaults. This is crucial for cloud deployments.",
-    "crumbs": [
-      "Steps",
-      "First Step Slides"
-    ]
-  },
-  {
-    "objectID": "modules/02-steps/01-first-step-slides.html#build-configuration-updates",
-    "href": "modules/02-steps/01-first-step-slides.html#build-configuration-updates",
-    "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
-    "section": "Build Configuration Updates",
-    "text": "Build Configuration Updates\nMaven Dependencies\n&lt;dependency&gt;\n    &lt;groupId&gt;mysql&lt;/groupId&gt;\n    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;\n    &lt;scope&gt;runtime&lt;/scope&gt;\n&lt;/dependency&gt;\n\n&lt;dependency&gt;\n    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;\n    &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;\n&lt;/dependency&gt;\n\nEnsure your build configuration includes the necessary dependencies for MySQL connectivity and JPA data access.",
-    "crumbs": [
-      "Steps",
-      "First Step Slides"
-    ]
-  },
-  {
-    "objectID": "modules/02-steps/01-first-step-slides.html#testing-your-profiles",
-    "href": "modules/02-steps/01-first-step-slides.html#testing-your-profiles",
-    "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
-    "section": "Testing Your Profiles",
-    "text": "Testing Your Profiles\nDevelopment Profile\n# Run with development profile (default)\nmvn spring-boot:run\n\n# Or explicitly specify\nmvn spring-boot:run -Dspring-boot.run.profiles=dev\nProduction Profile Testing\n# Set environment variables\nexport DB_URL=\"jdbc:mysql://localhost:3306/myapp_test\"\nexport DB_USERNAME=\"test_user\"\n\n# Run with production profile\nmvn spring-boot:run -Dspring-boot.run.profiles=prod\n\nTesting both profiles locally ensures your configuration works correctly before deployment. The production profile test helps verify environment variable substitution works.",
-    "crumbs": [
-      "Steps",
-      "First Step Slides"
-    ]
-  },
-  {
-    "objectID": "modules/02-steps/01-first-step-slides.html#building-for-production",
-    "href": "modules/02-steps/01-first-step-slides.html#building-for-production",
-    "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
-    "section": "Building for Production",
-    "text": "Building for Production\nCreate deployment-ready JAR:\n# Clean and build the project\nmvn clean package\n\n# Verify the JAR was created\nls -la target/*.jar\nOutput:\n-rw-r--r-- 1 user user 45M Dec  1 10:30 my-spring-app-1.0.0.jar\n\nThe executable JAR contains your application and all dependencies, making it perfect for cloud deployment. This single file can be transferred to your Lightsail instance.",
-    "crumbs": [
-      "Steps",
-      "First Step Slides"
-    ]
-  },
-  {
-    "objectID": "modules/02-steps/01-first-step-slides.html#configuration-verification-checklist",
-    "href": "modules/02-steps/01-first-step-slides.html#configuration-verification-checklist",
-    "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
-    "section": "Configuration Verification Checklist",
-    "text": "Configuration Verification Checklist\n\n✓ Created application.properties, application-dev.properties, and application-prod.properties\n✓ Application starts successfully with development profile\n✓ Executable JAR builds without errors\n✓ Database dependencies configured in build file\n✓ Environment variable syntax working in production profile\n\n\nBefore proceeding to the next step, ensure all these checkpoints are completed. This foundation is crucial for successful deployment.",
-    "crumbs": [
-      "Steps",
-      "First Step Slides"
-    ]
-  },
-  {
-    "objectID": "modules/02-steps/01-first-step-slides.html#key-benefits-achieved",
-    "href": "modules/02-steps/01-first-step-slides.html#key-benefits-achieved",
-    "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
-    "section": "Key Benefits Achieved",
-    "text": "Key Benefits Achieved\n\n\nDevelopment Benefits\n\nLocal development database\nDebug logging enabled\nFast development cycle\nEasy configuration changes\n\n\nProduction Benefits\n\nSecure credential management\nOptimized performance settings\nEnvironment-specific configurations\nCloud-ready deployment package\n\n\n\nThis profile configuration provides the foundation for a professional deployment workflow, separating concerns between development and production environments.",
-    "crumbs": [
-      "Steps",
-      "First Step Slides"
-    ]
-  },
-  {
-    "objectID": "modules/02-steps/01-first-step-slides.html#whats-next",
-    "href": "modules/02-steps/01-first-step-slides.html#whats-next",
-    "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
-    "section": "What’s Next?",
-    "text": "What’s Next?\nComing Up in Step 2:\n\nCreate AWS Lightsail instance\nConfigure Linux environment\nSet up MySQL database\nPrepare for application deployment\n\nYour Spring Boot application is now production-ready with proper profile configuration!\n\nWith profiles configured, your application can seamlessly transition from local development to AWS Lightsail. Next, we’ll create the cloud infrastructure to host your application.",
-    "crumbs": [
-      "Steps",
-      "First Step Slides"
-    ]
-  },
-  {
-    "objectID": "modules/02-steps/01-first-step-slides.html#summary",
-    "href": "modules/02-steps/01-first-step-slides.html#summary",
-    "title": "Step 1: Configure Development and Production Profiles in Spring Boot",
-    "section": "Summary",
-    "text": "Summary\n\nSpring Boot profiles enable environment-specific configurations\nEnvironment variables provide secure credential management\nExecutable JARs simplify deployment processes\nProper configuration is essential for cloud deployments\n\nYour application is now ready for AWS Lightsail deployment!\n\nYou’ve successfully configured a Spring Boot application with separate development and production profiles, created a deployment-ready JAR, and established the foundation for secure cloud deployment.",
-    "crumbs": [
-      "Steps",
-      "First Step Slides"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "References",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
     "objectID": "modules/02-steps/02-second-step.html",
     "href": "modules/02-steps/02-second-step.html",
     "title": "Step 2: Create and Configure AWS Lightsail Instance",
     "section": "",
-    "text": "In this step, you’ll create a new AWS Lightsail instance that will serve as your production server for deploying your Spring Boot application. We’ll configure it with the appropriate specifications and security settings needed for a Java web application.",
+    "text": "Either click on the slide area below or click here to view it in fullscreen. Use your keypad to navigate the slides.\n\n\n\n\nA PDF printable handout version of the slides is available here",
+    "crumbs": [
+      "Steps",
+      "Second Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/02-second-step.html#lecture-slides",
+    "href": "modules/02-steps/02-second-step.html#lecture-slides",
+    "title": "Step 2: Create and Configure AWS Lightsail Instance",
+    "section": "",
+    "text": "Either click on the slide area below or click here to view it in fullscreen. Use your keypad to navigate the slides.\n\n\n\n\nA PDF printable handout version of the slides is available here",
     "crumbs": [
       "Steps",
       "Second Step"
@@ -881,8 +861,19 @@
     "objectID": "modules/02-steps/02-second-step.html#step-2-create-and-configure-aws-lightsail-instance",
     "href": "modules/02-steps/02-second-step.html#step-2-create-and-configure-aws-lightsail-instance",
     "title": "Step 2: Create and Configure AWS Lightsail Instance",
-    "section": "",
-    "text": "In this step, you’ll create a new AWS Lightsail instance that will serve as your production server for deploying your Spring Boot application. We’ll configure it with the appropriate specifications and security settings needed for a Java web application.",
+    "section": "Step 2: Create and Configure AWS Lightsail Instance",
+    "text": "Step 2: Create and Configure AWS Lightsail Instance",
+    "crumbs": [
+      "Steps",
+      "Second Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/02-second-step.html#lecture-slides-1",
+    "href": "modules/02-steps/02-second-step.html#lecture-slides-1",
+    "title": "Step 2: Create and Configure AWS Lightsail Instance",
+    "section": "Lecture Slides",
+    "text": "Lecture Slides\nEither click on the slide area below or click here to view it in fullscreen. Use your keypad to navigate the slides.\n\n\n\n\nA PDF printable handout version of the slides is available here\nIn this step, you’ll create a new AWS Lightsail instance that will serve as your production server for deploying your Spring Boot application. We’ll configure it with the appropriate specifications and security settings needed for a Java web application.",
     "crumbs": [
       "Steps",
       "Second Step"
@@ -1087,213 +1078,469 @@
     ]
   },
   {
-    "objectID": "modules/02-steps/05-fifth-step.html",
-    "href": "modules/02-steps/05-fifth-step.html",
-    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "objectID": "modules/02-steps/03-third-step.html",
+    "href": "modules/02-steps/03-third-step.html",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
     "section": "",
-    "text": "In this step, you’ll configure Nginx as a reverse proxy for your Spring Boot application. This setup improves performance, provides better security, and enables you to serve static content efficiently while forwarding dynamic requests to your Java application.",
+    "text": "Either click on the slide area below or click here to view it in fullscreen. Use your keypad to navigate the slides.\n\n\n\n\nA PDF printable handout version of the slides is available here",
     "crumbs": [
       "Steps",
-      "Fifth Step"
+      "Third Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/05-fifth-step.html#step-5-configure-reverse-proxy-with-nginx",
-    "href": "modules/02-steps/05-fifth-step.html#step-5-configure-reverse-proxy-with-nginx",
-    "title": "Step 5: Configure Reverse Proxy with Nginx",
+    "objectID": "modules/02-steps/03-third-step.html#lecture-slides",
+    "href": "modules/02-steps/03-third-step.html#lecture-slides",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
     "section": "",
-    "text": "In this step, you’ll configure Nginx as a reverse proxy for your Spring Boot application. This setup improves performance, provides better security, and enables you to serve static content efficiently while forwarding dynamic requests to your Java application.",
+    "text": "Either click on the slide area below or click here to view it in fullscreen. Use your keypad to navigate the slides.\n\n\n\n\nA PDF printable handout version of the slides is available here",
     "crumbs": [
       "Steps",
-      "Fifth Step"
+      "Third Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/05-fifth-step.html#understanding-reverse-proxy-architecture",
-    "href": "modules/02-steps/05-fifth-step.html#understanding-reverse-proxy-architecture",
-    "title": "Step 5: Configure Reverse Proxy with Nginx",
-    "section": "Understanding Reverse Proxy Architecture",
-    "text": "Understanding Reverse Proxy Architecture\nA reverse proxy sits between client requests and your Spring Boot application, acting as an intermediary that forwards requests to your backend service. This architecture provides several benefits:\n\nPerformance: Nginx can serve static content directly and cache responses\nSecurity: Hides your application server details from external clients\nLoad Balancing: Can distribute requests across multiple application instances\nSSL Termination: Handles SSL/TLS encryption and decryption\n\n\n\n\n\n\n\nTipWhy Use Nginx with Spring Boot?\n\n\n\nWhile Spring Boot has an embedded Tomcat server, using Nginx as a front-end proxy is a production best practice that improves scalability and security.",
+    "objectID": "modules/02-steps/03-third-step.html#step-3-set-up-mysql-database-on-lightsail",
+    "href": "modules/02-steps/03-third-step.html#step-3-set-up-mysql-database-on-lightsail",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Step 3: Set Up MySQL Database on Lightsail",
+    "text": "Step 3: Set Up MySQL Database on Lightsail\nIn this step, you’ll install and configure MySQL on your Lightsail instance to serve as the production database for your Spring Boot application. We’ll set up proper security, create the application database, and configure it for optimal performance.",
     "crumbs": [
       "Steps",
-      "Fifth Step"
+      "Third Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/05-fifth-step.html#installing-and-configuring-nginx",
-    "href": "modules/02-steps/05-fifth-step.html#installing-and-configuring-nginx",
-    "title": "Step 5: Configure Reverse Proxy with Nginx",
-    "section": "Installing and Configuring Nginx",
-    "text": "Installing and Configuring Nginx\n\nStep 1: Install Nginx on Your Lightsail Instance\nConnect to your Lightsail instance via SSH and install Nginx:\n# Update package lists\nsudo apt update\n\n# Install Nginx\nsudo apt install nginx -y\n\n# Check if Nginx is running\nsudo systemctl status nginx\n\n# Enable Nginx to start on boot\nsudo systemctl enable nginx\n\n\nStep 2: Configure Firewall Rules\nUpdate your Lightsail instance’s firewall to allow HTTP and HTTPS traffic:\n# Allow HTTP traffic (port 80)\nsudo ufw allow 'Nginx HTTP'\n\n# Allow HTTPS traffic (port 443)\nsudo ufw allow 'Nginx HTTPS'\n\n# Check firewall status\nsudo ufw status\n\n\n\n\n\n\nNoteLightsail Networking Tab\n\n\n\nAlso ensure that ports 80 (HTTP) and 443 (HTTPS) are open in your Lightsail instance’s Networking tab in the AWS console.\n\n\n\n\nStep 3: Create Nginx Configuration for Your Spring Boot App\nCreate a new Nginx server block configuration:\n# Create configuration file\nsudo nano /etc/nginx/sites-available/spring-boot-app\nAdd the following configuration:\nserver {\n    listen 80;\n    server_name your-domain.com www.your-domain.com;\n    \n    # Security headers\n    add_header X-Frame-Options \"SAMEORIGIN\" always;\n    add_header X-Content-Type-Options \"nosniff\" always;\n    add_header X-XSS-Protection \"1; mode=block\" always;\n    add_header Referrer-Policy \"no-referrer-when-downgrade\" always;\n    \n    # Gzip compression\n    gzip on;\n    gzip_vary on;\n    gzip_min_length 1024;\n    gzip_proxied any;\n    gzip_comp_level 6;\n    gzip_types text/plain text/css text/xml text/javascript application/javascript application/xml+rss application/json;\n    \n    # Static content location (if you have static assets)\n    location /static/ {\n        alias /home/ubuntu/app/static/;\n        expires 1y;\n        add_header Cache-Control \"public, immutable\";\n    }\n    \n    # Health check endpoint (bypass proxy for quick responses)\n    location /actuator/health {\n        proxy_pass http://localhost:8080;\n        proxy_http_version 1.1;\n        proxy_set_header Connection \"\";\n        proxy_connect_timeout 2s;\n        proxy_read_timeout 2s;\n    }\n    \n    # Main application proxy\n    location / {\n        proxy_pass http://localhost:8080;\n        proxy_http_version 1.1;\n        proxy_set_header Upgrade $http_upgrade;\n        proxy_set_header Connection 'upgrade';\n        proxy_set_header Host $host;\n        proxy_set_header X-Real-IP $remote_addr;\n        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n        proxy_set_header X-Forwarded-Proto $scheme;\n        proxy_cache_bypass $http_upgrade;\n        proxy_read_timeout 300s;\n        proxy_connect_timeout 75s;\n    }\n    \n    # Custom error pages\n    error_page 502 503 504 /50x.html;\n    location = /50x.html {\n        root /var/www/html;\n    }\n}\n\n\nStep 4: Enable the Configuration\n# Create symbolic link to enable the site\nsudo ln -s /etc/nginx/sites-available/spring-boot-app /etc/nginx/sites-enabled/\n\n# Remove default Nginx site\nsudo rm /etc/nginx/sites-enabled/default\n\n# Test Nginx configuration\nsudo nginx -t\n\n# Reload Nginx to apply changes\nsudo systemctl reload nginx",
+    "objectID": "modules/02-steps/03-third-step.html#understanding-database-options-on-lightsail",
+    "href": "modules/02-steps/03-third-step.html#understanding-database-options-on-lightsail",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Understanding Database Options on Lightsail",
+    "text": "Understanding Database Options on Lightsail\nWhile AWS offers managed database services like RDS, installing MySQL directly on your Lightsail instance is often more cost-effective for smaller applications. This approach gives you:\n\nFull control over database configuration\nNo additional monthly charges beyond your instance cost\nSimplified networking (database and application on same server)\nEasier backup and maintenance for small-scale deployments\n\n\n\n\n\n\n\nNoteWhen to Consider RDS\n\n\n\nIf your application grows to handle thousands of concurrent users or requires high availability, consider migrating to Amazon RDS for better scalability and automated backups.",
     "crumbs": [
       "Steps",
-      "Fifth Step"
+      "Third Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/05-fifth-step.html#advanced-nginx-configuration",
-    "href": "modules/02-steps/05-fifth-step.html#advanced-nginx-configuration",
-    "title": "Step 5: Configure Reverse Proxy with Nginx",
-    "section": "Advanced Nginx Configuration",
-    "text": "Advanced Nginx Configuration\n\nImplementing Rate Limiting\nAdd rate limiting to protect your application from abuse:\n# Add this to the http block in /etc/nginx/nginx.conf\nhttp {\n    # Rate limiting zones\n    limit_req_zone $binary_remote_addr zone=login:10m rate=5r/m;\n    limit_req_zone $binary_remote_addr zone=api:10m rate=10r/s;\n    limit_req_zone $binary_remote_addr zone=general:10m rate=1r/s;\n    \n    # Include your site configuration\n    include /etc/nginx/sites-enabled/*;\n}\nThen update your site configuration to use rate limiting:\n# Add these location blocks to your server configuration\nlocation /api/auth/login {\n    limit_req zone=login burst=3 nodelay;\n    proxy_pass http://localhost:8080;\n    # ... other proxy settings\n}\n\nlocation /api/ {\n    limit_req zone=api burst=20 nodelay;\n    proxy_pass http://localhost:8080;\n    # ... other proxy settings\n}\n\nlocation / {\n    limit_req zone=general burst=10 nodelay;\n    proxy_pass http://localhost:8080;\n    # ... other proxy settings\n}\n\n\nSetting Up Log Files\nConfigure custom log files for better monitoring:\nserver {\n    # Custom log files\n    access_log /var/log/nginx/spring-boot-app.access.log;\n    error_log /var/log/nginx/spring-boot-app.error.log;\n    \n    # ... rest of configuration\n}\n\n\nOptimizing for Static Content\nIf your Spring Boot app serves static content, optimize Nginx for better performance:\n# Add to your server block\nlocation ~* \\.(js|css|png|jpg|jpeg|gif|ico|svg)$ {\n    expires 1y;\n    add_header Cache-Control \"public, immutable\";\n    access_log off;\n    try_files $uri @proxy;\n}\n\nlocation @proxy {\n    proxy_pass http://localhost:8080;\n    # ... other proxy settings\n}",
+    "objectID": "modules/02-steps/03-third-step.html#installing-mysql-on-ubuntu",
+    "href": "modules/02-steps/03-third-step.html#installing-mysql-on-ubuntu",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Installing MySQL on Ubuntu",
+    "text": "Installing MySQL on Ubuntu\n\nStep 1: Connect to Your Lightsail Instance\nFirst, connect to your Lightsail instance using the browser-based SSH client:\n\nIn the Lightsail console, click on your instance name\nClick the “Connect using SSH” button\nWait for the terminal to load\n\n\n\nStep 2: Update System Packages\nAlways start by updating your system packages to ensure security and compatibility:\nsudo apt update && sudo apt upgrade -y\n\n\nStep 3: Install MySQL Server\nInstall MySQL server and client packages:\nsudo apt install mysql-server mysql-client -y\n\n\n\n\n\n\nTipInstallation Progress\n\n\n\nThe MySQL installation process may take 2-3 minutes. The system will automatically start the MySQL service after installation.",
     "crumbs": [
       "Steps",
-      "Fifth Step"
+      "Third Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/05-fifth-step.html#testing-your-configuration",
-    "href": "modules/02-steps/05-fifth-step.html#testing-your-configuration",
-    "title": "Step 5: Configure Reverse Proxy with Nginx",
-    "section": "Testing Your Configuration",
-    "text": "Testing Your Configuration\n\nStep 1: Verify Nginx is Running\n# Check Nginx status\nsudo systemctl status nginx\n\n# Check if Nginx is listening on port 80\nsudo netstat -tlnp | grep :80\n\n\nStep 2: Test the Reverse Proxy\n# Test from your server (should show Spring Boot app response)\ncurl -I http://localhost\n\n# Check Nginx logs\nsudo tail -f /var/log/nginx/access.log\nsudo tail -f /var/log/nginx/error.log\n\n\nStep 3: Access from Browser\n\nOpen your browser and navigate to your Lightsail instance’s public IP\nYou should see your Spring Boot application served through Nginx\nCheck the browser’s developer tools to verify response headers include Nginx security headers\n\n\n\n\n\n\n\nWarningTroubleshooting Common Issues\n\n\n\n\n502 Bad Gateway: Your Spring Boot app isn’t running on port 8080\nConnection refused: Check if ports 80/443 are open in Lightsail firewall\nConfiguration errors: Run sudo nginx -t to validate your config",
+    "objectID": "modules/02-steps/03-third-step.html#securing-mysql-installation",
+    "href": "modules/02-steps/03-third-step.html#securing-mysql-installation",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Securing MySQL Installation",
+    "text": "Securing MySQL Installation\n\nStep 1: Run MySQL Security Script\nMySQL comes with a security script that removes insecure default settings:\nsudo mysql_secure_installation\n\n\nStep 2: Configure Security Settings\nWhen prompted, configure the following settings:\n\nVALIDATE PASSWORD COMPONENT: Choose Y for better security\nPassword validation policy: Select 2 (STRONG)\nSet root password: Create a strong password and save it securely\nRemove anonymous users: Choose Y\nDisallow root login remotely: Choose Y\nRemove test database: Choose Y\nReload privilege tables: Choose Y\n\n\n\n\n\n\n\nWarningSave Your Root Password\n\n\n\nWrite down your MySQL root password in a secure location. You’ll need it for database administration tasks.",
     "crumbs": [
       "Steps",
-      "Fifth Step"
+      "Third Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/05-fifth-step.html#monitoring-and-maintenance",
-    "href": "modules/02-steps/05-fifth-step.html#monitoring-and-maintenance",
-    "title": "Step 5: Configure Reverse Proxy with Nginx",
-    "section": "Monitoring and Maintenance",
-    "text": "Monitoring and Maintenance\n\nSetting Up Log Rotation\nConfigure log rotation to prevent disk space issues:\n# Create log rotation configuration\nsudo nano /etc/logrotate.d/nginx-spring-boot\n\n# Add the following content:\n/var/log/nginx/spring-boot-app.*.log {\n    daily\n    missingok\n    rotate 52\n    compress\n    notifempty\n    create 0644 www-data www-data\n    postrotate\n        if [ -f /var/run/nginx.pid ]; then\n            kill -USR1 `cat /var/run/nginx.pid`\n        fi\n    endscript\n}\n\n\nPerformance Monitoring\nMonitor your reverse proxy performance:\n# Check Nginx processes\nps aux | grep nginx\n\n# Monitor active connections\ncurl http://localhost/nginx_status\n\n# Check system resources\nhtop",
+    "objectID": "modules/02-steps/03-third-step.html#creating-the-application-database",
+    "href": "modules/02-steps/03-third-step.html#creating-the-application-database",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Creating the Application Database",
+    "text": "Creating the Application Database\n\nStep 1: Access MySQL as Root\nLog into MySQL using the root account:\nsudo mysql -u root -p\nEnter the root password you created during the security setup.\n\n\nStep 2: Create Application Database\nCreate a dedicated database for your Spring Boot application:\nCREATE DATABASE myapp_prod CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\n\n\nStep 3: Create Application User\nCreate a dedicated MySQL user for your application with limited privileges:\nCREATE USER 'springapp'@'localhost' IDENTIFIED BY 'your-secure-app-password';\nGRANT ALL PRIVILEGES ON myapp_prod.* TO 'springapp'@'localhost';\nFLUSH PRIVILEGES;\n\n\n\n\n\n\nTipPassword Security\n\n\n\nUse a strong, unique password for your application user. Consider using a password manager to generate and store it securely.\n\n\n\n\nStep 4: Verify Database Setup\nTest your new database and user:\n-- Switch to the new database\nUSE myapp_prod;\n\n-- Show current user and database\nSELECT USER(), DATABASE();\n\n-- Exit MySQL\nEXIT;",
     "crumbs": [
       "Steps",
-      "Fifth Step"
+      "Third Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/05-fifth-step.html#summary-and-key-takeaways",
-    "href": "modules/02-steps/05-fifth-step.html#summary-and-key-takeaways",
-    "title": "Step 5: Configure Reverse Proxy with Nginx",
-    "section": "Summary and Key Takeaways",
-    "text": "Summary and Key Takeaways\nIn this step, you’ve successfully configured Nginx as a reverse proxy for your Spring Boot application. This setup provides:\n\nEnhanced Security: Security headers and request filtering\nImproved Performance: Static content serving and compression\nBetter Monitoring: Detailed logging and health checks\nProduction Readiness: Rate limiting and error handling\n\nKey configuration points: - Nginx listens on port 80 and forwards requests to Spring Boot on port 8080 - Security headers protect against common web vulnerabilities - Gzip compression reduces bandwidth usage - Custom error pages provide better user experience - Rate limiting prevents abuse and DDoS attacks\nYour application is now accessible through Nginx, providing a professional and secure front-end to your Spring Boot service. In the next step, we’ll add a custom domain and SSL certificate to complete your production deployment.",
+    "objectID": "modules/02-steps/03-third-step.html#configuring-mysql-for-production",
+    "href": "modules/02-steps/03-third-step.html#configuring-mysql-for-production",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Configuring MySQL for Production",
+    "text": "Configuring MySQL for Production\n\nStep 1: Edit MySQL Configuration\nOpen the MySQL configuration file:\nsudo nano /etc/mysql/mysql.conf.d/mysqld.cnf\n\n\nStep 2: Optimize MySQL Settings\nAdd or modify these settings in the [mysqld] section for better performance:\n# Performance tuning for small to medium applications\ninnodb_buffer_pool_size = 256M\ninnodb_log_file_size = 64M\ninnodb_flush_log_at_trx_commit = 2\n\n# Character set configuration\ncharacter-set-server = utf8mb4\ncollation-server = utf8mb4_unicode_ci\n\n# Connection limits\nmax_connections = 100\nmax_connect_errors = 10000\n\n# Query cache (for MySQL 5.7 and earlier)\nquery_cache_type = 1\nquery_cache_size = 64M\n\n\nStep 3: Restart MySQL Service\nApply the configuration changes:\nsudo systemctl restart mysql\nsudo systemctl status mysql\n\n\n\n\n\n\nNoteService Status\n\n\n\nThe systemctl status mysql command should show the service as “active (running)” in green text.",
     "crumbs": [
       "Steps",
-      "Fifth Step"
+      "Third Step"
     ]
   },
   {
-    "objectID": "modules/02-steps/06-sixth-step.html",
-    "href": "modules/02-steps/06-sixth-step.html",
+    "objectID": "modules/02-steps/03-third-step.html#testing-database-connection",
+    "href": "modules/02-steps/03-third-step.html#testing-database-connection",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Testing Database Connection",
+    "text": "Testing Database Connection\n\nStep 1: Test Local Connection\nVerify you can connect with your application user:\nmysql -u springapp -p myapp_prod\n\n\nStep 2: Create a Test Table\nOnce connected, test database operations:\n-- Create a simple test table\nCREATE TABLE test_connection (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    message VARCHAR(255),\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);\n\n-- Insert test data\nINSERT INTO test_connection (message) VALUES ('Database connection successful!');\n\n-- Verify the data\nSELECT * FROM test_connection;\n\n-- Clean up\nDROP TABLE test_connection;\nEXIT;",
+    "crumbs": [
+      "Steps",
+      "Third Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/03-third-step.html#configuring-firewall-optional",
+    "href": "modules/02-steps/03-third-step.html#configuring-firewall-optional",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Configuring Firewall (Optional)",
+    "text": "Configuring Firewall (Optional)\nIf you plan to connect to MySQL from external applications for testing, you can configure the firewall:\n# Allow MySQL connections (only if needed for external access)\nsudo ufw allow 3306/tcp\n\n# Check firewall status\nsudo ufw status\n\n\n\n\n\n\nWarningSecurity Consideration\n\n\n\nOnly open MySQL port 3306 if you absolutely need external database access. For production applications, keep the database local to the instance for better security.",
+    "crumbs": [
+      "Steps",
+      "Third Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/03-third-step.html#setting-up-automated-backups",
+    "href": "modules/02-steps/03-third-step.html#setting-up-automated-backups",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Setting Up Automated Backups",
+    "text": "Setting Up Automated Backups\n\nStep 1: Create Backup Directory\nsudo mkdir -p /backup/mysql\nsudo chown mysql:mysql /backup/mysql\n\n\nStep 2: Create Backup Script\nCreate a simple backup script:\nsudo nano /usr/local/bin/mysql-backup.sh\nAdd the following content:\n#!/bin/bash\nBACKUP_DIR=\"/backup/mysql\"\nDATE=$(date +%Y%m%d_%H%M%S)\nDB_NAME=\"myapp_prod\"\nDB_USER=\"springapp\"\nDB_PASS=\"your-secure-app-password\"\n\n# Create backup\nmysqldump -u $DB_USER -p$DB_PASS $DB_NAME &gt; $BACKUP_DIR/${DB_NAME}_${DATE}.sql\n\n# Keep only last 7 days of backups\nfind $BACKUP_DIR -name \"${DB_NAME}_*.sql\" -mtime +7 -delete\n\necho \"Backup completed: ${DB_NAME}_${DATE}.sql\"\n\n\nStep 3: Make Script Executable and Test\nsudo chmod +x /usr/local/bin/mysql-backup.sh\nsudo /usr/local/bin/mysql-backup.sh",
+    "crumbs": [
+      "Steps",
+      "Third Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/03-third-step.html#updating-spring-boot-configuration",
+    "href": "modules/02-steps/03-third-step.html#updating-spring-boot-configuration",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Updating Spring Boot Configuration",
+    "text": "Updating Spring Boot Configuration\nNow that your database is ready, update your production profile configuration to match your MySQL setup:\n# src/main/resources/application-prod.properties\n\n# Production MySQL database configuration\nspring.datasource.url=jdbc:mysql://localhost:3306/myapp_prod\nspring.datasource.username=springapp\nspring.datasource.password=your-secure-app-password\nspring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver\n\n# Production-specific JPA settings\nspring.jpa.hibernate.ddl-auto=validate\nspring.jpa.show-sql=false\n\n# Production logging\nlogging.level.root=WARN\nlogging.level.org.springframework.web=INFO\nlogging.level.org.hibernate=ERROR\n\n\n\n\n\n\nTipEnvironment Variables\n\n\n\nIn the next step, we’ll show you how to externalize these database credentials using environment variables for better security.",
+    "crumbs": [
+      "Steps",
+      "Third Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/03-third-step.html#summary",
+    "href": "modules/02-steps/03-third-step.html#summary",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Summary",
+    "text": "Summary\nIn this step, you’ve successfully:\n\nInstalled and secured MySQL on your Lightsail instance\nCreated a dedicated database and user for your Spring Boot application\nConfigured MySQL for optimal performance\nSet up basic backup functionality\nPrepared your database configuration for production deployment\n\nYour Lightsail instance now has a properly configured MySQL database ready to support your Spring Boot application. The database is secured with appropriate user permissions and optimized for production workloads.\n\nKey Takeaways\n\nSecurity First: Always run mysql_secure_installation and use strong passwords\nDedicated Users: Create application-specific database users with minimal required privileges\nPerformance Tuning: Configure MySQL settings appropriate for your instance size\nRegular Backups: Implement automated backup strategies from the beginning\nConnection Testing: Always verify database connectivity before deploying your application\n\nIn the next step, you’ll learn how to deploy your Spring Boot application to the Lightsail server and connect it to this MySQL database.",
+    "crumbs": [
+      "Steps",
+      "Third Step"
+    ]
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#welcome-to-step-6",
+    "href": "modules/02-steps/06-sixth-step-slides.html#welcome-to-step-6",
     "title": "Step 6: Set Up Custom Domain and SSL Certificate",
-    "section": "",
-    "text": "In this final step, you’ll configure a custom domain for your Spring Boot application and secure it with an SSL certificate. This will make your application accessible via a professional domain name with HTTPS encryption, providing both credibility and security for your users.",
-    "crumbs": [
-      "Steps",
-      "Sixth Step"
-    ]
+    "section": "Welcome to Step 6",
+    "text": "Welcome to Step 6\nConfigure a custom domain and SSL certificate for your Spring Boot application\nWhat we’ll accomplish: - Set up professional domain name - Enable HTTPS encryption - Configure automatic certificate renewal - Ensure production-ready security\n\nThis final step transforms your application from a development prototype into a production-ready service that users can trust and easily remember."
   },
   {
-    "objectID": "modules/02-steps/06-sixth-step.html#step-6-set-up-custom-domain-and-ssl-certificate",
-    "href": "modules/02-steps/06-sixth-step.html#step-6-set-up-custom-domain-and-ssl-certificate",
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#why-ssl-and-custom-domains-matter",
+    "href": "modules/02-steps/06-sixth-step-slides.html#why-ssl-and-custom-domains-matter",
     "title": "Step 6: Set Up Custom Domain and SSL Certificate",
-    "section": "",
-    "text": "In this final step, you’ll configure a custom domain for your Spring Boot application and secure it with an SSL certificate. This will make your application accessible via a professional domain name with HTTPS encryption, providing both credibility and security for your users.",
-    "crumbs": [
-      "Steps",
-      "Sixth Step"
-    ]
+    "section": "Why SSL and Custom Domains Matter",
+    "text": "Why SSL and Custom Domains Matter\n\n\nSSL Benefits: - Encrypts data transmission - Browser trust indicators - SEO ranking improvements - Protection from attacks\n\nCustom Domain Benefits: - Professional appearance - Easy to remember URLs - Brand recognition - User confidence\n\n\nModern browsers actively warn users about non-HTTPS sites, making SSL essential. Custom domains provide credibility and make your application memorable for users."
   },
   {
-    "objectID": "modules/02-steps/06-sixth-step.html#understanding-ssl-and-domain-configuration",
-    "href": "modules/02-steps/06-sixth-step.html#understanding-ssl-and-domain-configuration",
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#prerequisites-check",
+    "href": "modules/02-steps/06-sixth-step-slides.html#prerequisites-check",
     "title": "Step 6: Set Up Custom Domain and SSL Certificate",
-    "section": "Understanding SSL and Domain Configuration",
-    "text": "Understanding SSL and Domain Configuration\nSSL (Secure Sockets Layer) certificates encrypt data transmitted between your users’ browsers and your server, while custom domains provide a professional, memorable way to access your application. AWS Lightsail makes both of these configurations straightforward through integrated services.\n\n\n\n\n\n\nTipWhy SSL Matters\n\n\n\nModern browsers mark HTTP sites as “Not Secure,” which can deter users. SSL certificates are now essential for any web application, and search engines favor HTTPS sites in rankings.",
-    "crumbs": [
-      "Steps",
-      "Sixth Step"
-    ]
+    "section": "Prerequisites Check",
+    "text": "Prerequisites Check\nBefore we begin, ensure you have:\n\n✅ Registered domain name\n✅ Access to DNS management\n✅ Lightsail instance running\n✅ Nginx configured (from Step 5)\n✅ Spring Boot app accessible via IP\n\n\nIf any of these prerequisites are missing, go back and complete the previous steps before proceeding with domain and SSL configuration."
   },
   {
-    "objectID": "modules/02-steps/06-sixth-step.html#prerequisites-for-this-step",
-    "href": "modules/02-steps/06-sixth-step.html#prerequisites-for-this-step",
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#setting-up-lightsail-dns-zone",
+    "href": "modules/02-steps/06-sixth-step-slides.html#setting-up-lightsail-dns-zone",
     "title": "Step 6: Set Up Custom Domain and SSL Certificate",
-    "section": "Prerequisites for This Step",
-    "text": "Prerequisites for This Step\nBefore proceeding, ensure you have:\n\nA registered domain name (from any domain registrar)\nAccess to your domain’s DNS management\nYour Lightsail instance running with Nginx configured (from Step 5)\nYour Spring Boot application accessible via your instance’s public IP",
-    "crumbs": [
-      "Steps",
-      "Sixth Step"
-    ]
+    "section": "Setting Up Lightsail DNS Zone",
+    "text": "Setting Up Lightsail DNS Zone\nStep 1: Create DNS Zone 1. Navigate to Networking → DNS zones 2. Click Create DNS zone 3. Enter your domain name 4. Click Create DNS zone\n\n\n\n\n\n\nTip\n\n\nThe DNS zone centralizes all DNS record management for your domain\n\n\n\n\nLightsail’s DNS zones provide a simple interface for managing DNS records without needing to work directly with Route 53 or external DNS providers."
   },
   {
-    "objectID": "modules/02-steps/06-sixth-step.html#setting-up-dns-and-domain-configuration",
-    "href": "modules/02-steps/06-sixth-step.html#setting-up-dns-and-domain-configuration",
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#configuring-dns-records",
+    "href": "modules/02-steps/06-sixth-step-slides.html#configuring-dns-records",
     "title": "Step 6: Set Up Custom Domain and SSL Certificate",
-    "section": "Setting Up DNS and Domain Configuration",
-    "text": "Setting Up DNS and Domain Configuration\n\nStep 1: Create a Lightsail DNS Zone\n\nIn the Lightsail console, navigate to Networking → DNS zones\nClick Create DNS zone\nEnter your domain name (e.g., example.com)\nClick Create DNS zone\n\n\n\n\n\n\n\nNoteDNS Zone Purpose\n\n\n\nThe DNS zone will manage all DNS records for your domain, making it easy to point your domain to your Lightsail instance.\n\n\n\n\nStep 2: Configure DNS Records\nOnce your DNS zone is created, you’ll need to add the following records:\n\nA Record: Point your domain to your Lightsail instance\n\nSubdomain: Leave blank for root domain, or enter www for www subdomain\nResolves to: Select your Lightsail instance from the dropdown\n\nCNAME Record (optional, for www subdomain):\n\nSubdomain: www\nMaps to: Your root domain (e.g., example.com)\n\n\n# Example DNS configuration\n# A Record: example.com → Your Lightsail Instance IP\n# CNAME: www.example.com → example.com\n\n\nStep 3: Update Your Domain Registrar’s Name Servers\n\nCopy the name servers provided by Lightsail (they’ll look like ns-xxx.awsdns-xxx.com)\nLog into your domain registrar’s control panel\nReplace the existing name servers with the Lightsail name servers\nSave the changes\n\n\n\n\n\n\n\nWarningDNS Propagation Time\n\n\n\nDNS changes can take up to 48 hours to propagate worldwide, though they usually take effect within a few hours. Be patient during this process.",
-    "crumbs": [
-      "Steps",
-      "Sixth Step"
-    ]
+    "section": "Configuring DNS Records",
+    "text": "Configuring DNS Records\nRequired DNS Records:\n# A Record: Points domain to your instance\nexample.com → Your Lightsail Instance IP\n\n# CNAME Record: Points www to root domain\nwww.example.com → example.com\nConfiguration Steps: - Subdomain: Leave blank for root, enter www for www - Resolves to: Select your Lightsail instance\n\nThe A record creates the primary connection between your domain and server, while the CNAME record ensures both www and non-www versions work correctly."
   },
   {
-    "objectID": "modules/02-steps/06-sixth-step.html#installing-and-configuring-ssl-certificate",
-    "href": "modules/02-steps/06-sixth-step.html#installing-and-configuring-ssl-certificate",
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#update-domain-registrar",
+    "href": "modules/02-steps/06-sixth-step-slides.html#update-domain-registrar",
     "title": "Step 6: Set Up Custom Domain and SSL Certificate",
-    "section": "Installing and Configuring SSL Certificate",
-    "text": "Installing and Configuring SSL Certificate\n\nStep 1: Install Certbot\nSSH into your Lightsail instance and install Certbot, which will manage your SSL certificates:\n# Update package list\nsudo apt update\n\n# Install Certbot and Nginx plugin\nsudo apt install certbot python3-certbot-nginx -y\n\n# Verify installation\ncertbot --version\n\n\nStep 2: Configure Nginx for Your Domain\nUpdate your Nginx configuration to include your domain name:\n# Edit the Nginx configuration\nsudo nano /etc/nginx/sites-available/default\nUpdate the server block to include your domain:\nserver {\n    listen 80;\n    server_name example.com www.example.com;  # Replace with your domain\n\n    location / {\n        proxy_pass http://localhost:8080;\n        proxy_set_header Host $host;\n        proxy_set_header X-Real-IP $remote_addr;\n        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n        proxy_set_header X-Forwarded-Proto $scheme;\n    }\n}\nTest and reload the configuration:\n# Test configuration\nsudo nginx -t\n\n# Reload Nginx\nsudo systemctl reload nginx\n\n\nStep 3: Obtain SSL Certificate\nUse Certbot to automatically obtain and install an SSL certificate:\n# Obtain and install SSL certificate\nsudo certbot --nginx -d example.com -d www.example.com\n\n# Follow the prompts:\n# 1. Enter your email address for certificate expiration notifications\n# 2. Agree to terms of service\n# 3. Choose whether to share email with EFF (optional)\n# 4. Certbot will automatically configure HTTPS redirect\n\n\n\n\n\n\nTipAutomatic HTTPS Redirect\n\n\n\nCertbot will automatically modify your Nginx configuration to redirect HTTP traffic to HTTPS, ensuring all connections are secure.",
-    "crumbs": [
-      "Steps",
-      "Sixth Step"
-    ]
+    "section": "Update Domain Registrar",
+    "text": "Update Domain Registrar\n\n\nSteps: 1. Copy Lightsail name servers 2. Access registrar control panel 3. Replace existing name servers 4. Save changes\n\nExample Name Servers:\nns-123.awsdns-12.com\nns-456.awsdns-45.net\nns-789.awsdns-78.org\nns-012.awsdns-01.co.uk\n\n⏰ DNS propagation takes up to 48 hours\n\nThis step tells the internet where to find your domain. The name servers act like a phone book, directing traffic to your Lightsail DNS zone."
   },
   {
-    "objectID": "modules/02-steps/06-sixth-step.html#configuring-automatic-certificate-renewal",
-    "href": "modules/02-steps/06-sixth-step.html#configuring-automatic-certificate-renewal",
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#installing-ssl-tools",
+    "href": "modules/02-steps/06-sixth-step-slides.html#installing-ssl-tools",
     "title": "Step 6: Set Up Custom Domain and SSL Certificate",
-    "section": "Configuring Automatic Certificate Renewal",
-    "text": "Configuring Automatic Certificate Renewal\nSSL certificates from Let’s Encrypt expire every 90 days, but Certbot can automatically renew them:\n\nStep 1: Test Automatic Renewal\n# Test the renewal process (dry run)\nsudo certbot renew --dry-run\n\n\nStep 2: Set Up Automatic Renewal\nThe automatic renewal should already be configured via systemd timer, but you can verify:\n# Check if the timer is active\nsudo systemctl status certbot.timer\n\n# Enable the timer if it's not active\nsudo systemctl enable certbot.timer\nsudo systemctl start certbot.timer",
-    "crumbs": [
-      "Steps",
-      "Sixth Step"
-    ]
+    "section": "Installing SSL Tools",
+    "text": "Installing SSL Tools\nSSH into your instance and install Certbot:\n# Update package list\nsudo apt update\n\n# Install Certbot and Nginx plugin\nsudo apt install certbot python3-certbot-nginx -y\n\n# Verify installation\ncertbot --version\n\nCertbot is the standard tool for obtaining and managing Let’s Encrypt SSL certificates. The Nginx plugin automates the configuration process."
   },
   {
-    "objectID": "modules/02-steps/06-sixth-step.html#updating-spring-boot-configuration-for-https",
-    "href": "modules/02-steps/06-sixth-step.html#updating-spring-boot-configuration-for-https",
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#configure-nginx-for-domain",
+    "href": "modules/02-steps/06-sixth-step-slides.html#configure-nginx-for-domain",
     "title": "Step 6: Set Up Custom Domain and SSL Certificate",
-    "section": "Updating Spring Boot Configuration for HTTPS",
-    "text": "Updating Spring Boot Configuration for HTTPS\n\nStep 1: Configure HTTPS in Application Properties\nUpdate your production profile to handle HTTPS properly:\n# src/main/resources/application-prod.properties\n\n# Server configuration for HTTPS\nserver.forward-headers-strategy=native\nserver.tomcat.use-relative-redirects=true\n\n# Security headers\nserver.servlet.session.cookie.secure=true\nserver.servlet.session.cookie.http-only=true\n\n\nStep 2: Update Security Configuration (if applicable)\nIf you’re using Spring Security, ensure it’s configured for HTTPS:\n@Configuration\n@EnableWebSecurity\npublic class SecurityConfig {\n    \n    @Bean\n    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {\n        http\n            .requiresChannel(channel -&gt; \n                channel.requestMatchers(r -&gt; r.getHeader(\"X-Forwarded-Proto\") != null)\n                       .requiresSecure())\n            .headers(headers -&gt; \n                headers.httpStrictTransportSecurity(hstsConfig -&gt; \n                    hstsConfig.maxAgeInSeconds(31536000)\n                             .includeSubdomains(true)));\n        \n        return http.build();\n    }\n}\n\n\nStep 3: Rebuild and Deploy\nRebuild your application with the HTTPS configurations:\n# On your development machine\n./mvnw clean package -DskipTests\n\n# Transfer to Lightsail instance\nscp target/myapp.jar ubuntu@your-domain.com:~/\n\n# On Lightsail instance\nsudo systemctl stop myapp\nsudo cp /home/ubuntu/myapp.jar /opt/myapp/\nsudo systemctl start myapp",
-    "crumbs": [
-      "Steps",
-      "Sixth Step"
-    ]
+    "section": "Configure Nginx for Domain",
+    "text": "Configure Nginx for Domain\nUpdate your Nginx configuration:\nsudo nano /etc/nginx/sites-available/default\nserver {\n    listen 80;\n    server_name example.com www.example.com;\n\n    location / {\n        proxy_pass http://localhost:8080;\n        proxy_set_header Host $host;\n        proxy_set_header X-Real-IP $remote_addr;\n        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n        proxy_set_header X-Forwarded-Proto $scheme;\n    }\n}\n\nThe server_name directive tells Nginx which domains this configuration should handle. The proxy headers ensure your Spring Boot app receives correct client information."
   },
   {
-    "objectID": "modules/02-steps/06-sixth-step.html#verifying-your-https-setup",
-    "href": "modules/02-steps/06-sixth-step.html#verifying-your-https-setup",
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#test-and-reload-nginx",
+    "href": "modules/02-steps/06-sixth-step-slides.html#test-and-reload-nginx",
     "title": "Step 6: Set Up Custom Domain and SSL Certificate",
-    "section": "Verifying Your HTTPS Setup",
-    "text": "Verifying Your HTTPS Setup\n\nStep 1: Test Domain Access\n\nOpen your browser and navigate to https://yourdomain.com\nVerify the SSL certificate is valid (look for the lock icon)\nCheck that HTTP automatically redirects to HTTPS\n\n\n\nStep 2: Test SSL Configuration\nUse online tools to verify your SSL setup:\n# Test SSL certificate from command line\ncurl -I https://yourdomain.com\n\n# Check SSL rating\n# Visit: https://www.ssllabs.com/ssltest/\n\n\nStep 3: Monitor Certificate Status\n# Check certificate expiration\nsudo certbot certificates\n\n# View certificate details\nopenssl x509 -in /etc/letsencrypt/live/yourdomain.com/cert.pem -text -noout\n\n\n\n\n\n\nNoteSSL Certificate Monitoring\n\n\n\nConsider setting up monitoring to alert you if certificate renewal fails, though Certbot’s automatic renewal is very reliable.",
-    "crumbs": [
-      "Steps",
-      "Sixth Step"
-    ]
+    "section": "Test and Reload Nginx",
+    "text": "Test and Reload Nginx\n# Test configuration syntax\nsudo nginx -t\n\n# Reload Nginx with new configuration\nsudo systemctl reload nginx\nExpected output:\nnginx: configuration file /etc/nginx/nginx.conf test is successful\n\nAlways test Nginx configuration before reloading. A syntax error could cause Nginx to fail, making your site inaccessible."
   },
   {
-    "objectID": "modules/02-steps/06-sixth-step.html#troubleshooting-common-issues",
-    "href": "modules/02-steps/06-sixth-step.html#troubleshooting-common-issues",
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#obtain-ssl-certificate",
+    "href": "modules/02-steps/06-sixth-step-slides.html#obtain-ssl-certificate",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Obtain SSL Certificate",
+    "text": "Obtain SSL Certificate\nUse Certbot to automatically get and install SSL:\nsudo certbot --nginx -d example.com -d www.example.com\nCertbot will prompt for: {.incremental} - Email address for notifications - Agreement to terms of service - Optional email sharing with EFF - Automatic HTTPS redirect (recommended: Yes)\n\nCertbot handles the entire SSL certificate process: domain validation, certificate generation, Nginx configuration updates, and HTTPS redirect setup."
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#automatic-certificate-renewal",
+    "href": "modules/02-steps/06-sixth-step-slides.html#automatic-certificate-renewal",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Automatic Certificate Renewal",
+    "text": "Automatic Certificate Renewal\nSSL certificates expire every 90 days. Set up automatic renewal:\n# Test renewal process (dry run)\nsudo certbot renew --dry-run\n\n# Check renewal timer status\nsudo systemctl status certbot.timer\n\n# Enable timer if needed\nsudo systemctl enable certbot.timer\nsudo systemctl start certbot.timer\n\nLet’s Encrypt certificates are short-lived for security. The automatic renewal system ensures your certificates stay valid without manual intervention."
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#update-spring-boot-for-https",
+    "href": "modules/02-steps/06-sixth-step-slides.html#update-spring-boot-for-https",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Update Spring Boot for HTTPS",
+    "text": "Update Spring Boot for HTTPS\nProduction Properties:\n# application-prod.properties\nserver.forward-headers-strategy=native\nserver.tomcat.use-relative-redirects=true\nserver.servlet.session.cookie.secure=true\nserver.servlet.session.cookie.http-only=true\nThese settings ensure your app works correctly behind the Nginx HTTPS proxy.\n\nThe forward-headers-strategy tells Spring Boot to trust headers from Nginx, while cookie settings enhance security for HTTPS connections."
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#security-configuration-optional",
+    "href": "modules/02-steps/06-sixth-step-slides.html#security-configuration-optional",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Security Configuration (Optional)",
+    "text": "Security Configuration (Optional)\nIf using Spring Security, add HTTPS enforcement:\n@Configuration\n@EnableWebSecurity\npublic class SecurityConfig {\n    @Bean\n    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {\n        http\n            .requiresChannel(channel -&gt; \n                channel.requestMatchers(r -&gt; r.getHeader(\"X-Forwarded-Proto\") != null)\n                       .requiresSecure())\n            .headers(headers -&gt; \n                headers.httpStrictTransportSecurity(hstsConfig -&gt; \n                    hstsConfig.maxAgeInSeconds(31536000)\n                             .includeSubdomains(true)));\n        return http.build();\n    }\n}\n\nThis configuration adds HTTP Strict Transport Security headers and ensures all requests use HTTPS, providing additional security layers."
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#rebuild-and-deploy",
+    "href": "modules/02-steps/06-sixth-step-slides.html#rebuild-and-deploy",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Rebuild and Deploy",
+    "text": "Rebuild and Deploy\nDeploy your updated application:\n# Build locally\n./mvnw clean package -DskipTests\n\n# Transfer to server\nscp target/myapp.jar ubuntu@your-domain.com:~/\n\n# Deploy on server\nsudo systemctl stop myapp\nsudo cp /home/ubuntu/myapp.jar /opt/myapp/\nsudo systemctl start myapp\n\nThis deployment cycle should become familiar. Always stop the service before replacing the JAR file to ensure a clean restart with new configurations."
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#verify-your-https-setup",
+    "href": "modules/02-steps/06-sixth-step-slides.html#verify-your-https-setup",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Verify Your HTTPS Setup",
+    "text": "Verify Your HTTPS Setup\nTesting checklist: {.incremental} 1. 🌐 Navigate to https://yourdomain.com 2. 🔒 Verify SSL certificate (lock icon) 3. ↩︎️ Confirm HTTP → HTTPS redirect 4. 🧪 Test with SSL Labs: ssllabs.com/ssltest\n# Command line verification\ncurl -I https://yourdomain.com\n\nThorough testing ensures your users will have a seamless, secure experience. The SSL Labs test provides a comprehensive security analysis."
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#troubleshooting-common-issues",
+    "href": "modules/02-steps/06-sixth-step-slides.html#troubleshooting-common-issues",
     "title": "Step 6: Set Up Custom Domain and SSL Certificate",
     "section": "Troubleshooting Common Issues",
-    "text": "Troubleshooting Common Issues\n\nDomain Not Resolving\nIf your domain isn’t resolving to your Lightsail instance:\n\nVerify DNS records in Lightsail console\nCheck that name servers are correctly set at your registrar\nUse dig or nslookup to test DNS resolution:\n\n# Test DNS resolution\ndig yourdomain.com\nnslookup yourdomain.com\n\n\nSSL Certificate Issues\nIf Certbot fails to obtain certificates:\n\nEnsure your domain is resolving correctly\nCheck that port 80 is accessible (Certbot needs it for verification)\nVerify Nginx is running and serving your domain\n\n# Check if domain is accessible\ncurl -I http://yourdomain.com\n\n# Check Nginx status\nsudo systemctl status nginx\n\n# View Nginx error logs\nsudo tail -f /var/log/nginx/error.log\n\n\nMixed Content Warnings\nIf you see mixed content warnings in the browser:\n\nEnsure all resources (CSS, JS, images) are loaded via HTTPS\nUpdate any hardcoded HTTP URLs in your application\nUse protocol-relative URLs (//example.com/resource) when possible",
-    "crumbs": [
-      "Steps",
-      "Sixth Step"
-    ]
+    "text": "Troubleshooting Common Issues\nDomain not resolving:\ndig yourdomain.com\nnslookup yourdomain.com\nSSL certificate problems:\ncurl -I http://yourdomain.com\nsudo systemctl status nginx\nsudo tail -f /var/log/nginx/error.log\nMixed content warnings: - Update hardcoded HTTP URLs - Use protocol-relative URLs (//example.com/resource)\n\nMost issues stem from DNS propagation delays or firewall configurations. These diagnostic commands help identify the root cause quickly."
   },
   {
-    "objectID": "modules/02-steps/06-sixth-step.html#summary-and-key-takeaways",
-    "href": "modules/02-steps/06-sixth-step.html#summary-and-key-takeaways",
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#certificate-management",
+    "href": "modules/02-steps/06-sixth-step-slides.html#certificate-management",
     "title": "Step 6: Set Up Custom Domain and SSL Certificate",
-    "section": "Summary and Key Takeaways",
-    "text": "Summary and Key Takeaways\nCongratulations! You’ve successfully configured a custom domain and SSL certificate for your Spring Boot application on AWS Lightsail. Your application now has:\n✅ Key Accomplishments:\n\nCustom domain configuration with proper DNS management\nSSL certificate with automatic HTTPS redirect\nAutomatic certificate renewal to prevent expiration\nProduction-ready HTTPS security headers\nProfessional appearance with secure connections\n\n🔒 Security Benefits:\n\nEncrypted data transmission between users and your server\nBrowser trust indicators (lock icon, “Secure” label)\nProtection against man-in-the-middle attacks\nImproved SEO rankings due to HTTPS preference\n\n📈 Next Steps:\n\nMonitor your SSL certificate status regularly\nConsider implementing additional security headers\nSet up monitoring and alerting for your domain and certificates\nPlan for scaling if your application grows beyond Lightsail’s capacity\n\nYour Spring Boot application is now fully deployed with enterprise-grade security and accessibility. Users can confidently access your application through a professional domain with complete data protection.",
-    "crumbs": [
-      "Steps",
-      "Sixth Step"
-    ]
+    "section": "Certificate Management",
+    "text": "Certificate Management\nMonitor certificate status:\n# View all certificates\nsudo certbot certificates\n\n# Check certificate details\nopenssl x509 -in /etc/letsencrypt/live/yourdomain.com/cert.pem -text -noout\n\n# Manual renewal (if needed)\nsudo certbot renew\n\nRegular monitoring ensures you catch any renewal issues before certificates expire. The automatic system is reliable, but manual oversight provides peace of mind."
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#summary-what-we-accomplished",
+    "href": "modules/02-steps/06-sixth-step-slides.html#summary-what-we-accomplished",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Summary: What We Accomplished",
+    "text": "Summary: What We Accomplished\n✅ Production-Ready Features: - Custom domain with professional appearance - SSL certificate with HTTPS encryption - Automatic certificate renewal - Security headers and browser trust - SEO-friendly HTTPS configuration\n🔒 Security Enhancements: - Encrypted data transmission - Protection from man-in-the-middle attacks - Browser security indicators - Enhanced user confidence\n\nYour application now meets enterprise standards for security and professionalism. Users can trust and easily access your Spring Boot application."
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#next-steps-and-best-practices",
+    "href": "modules/02-steps/06-sixth-step-slides.html#next-steps-and-best-practices",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Next Steps and Best Practices",
+    "text": "Next Steps and Best Practices\nRecommended next actions: - Set up monitoring for domain/certificate health - Implement additional security headers - Plan for scaling beyond Lightsail if needed - Regular security audits and updates\nMaintenance schedule: - Monthly SSL certificate checks - Quarterly security reviews - Monitor application performance and logs\n\nWith SSL and custom domain configured, your focus shifts to monitoring, maintenance, and potential scaling as your application grows in usage."
+  },
+  {
+    "objectID": "modules/02-steps/06-sixth-step-slides.html#congratulations",
+    "href": "modules/02-steps/06-sixth-step-slides.html#congratulations",
+    "title": "Step 6: Set Up Custom Domain and SSL Certificate",
+    "section": "Congratulations! 🎉",
+    "text": "Congratulations! 🎉\nYour Spring Boot application is now: - Accessible via custom domain - Secure with HTTPS encryption\n- Professional with browser trust indicators - Production-ready for real users\nYou’ve successfully deployed a complete Spring Boot application to AWS Lightsail!\n\nThis represents a significant achievement - you’ve taken an application from development through to production deployment with enterprise-grade security and accessibility."
+  },
+  {
+    "objectID": "modules/02-steps/04-fourth-step-slides.html#step-4-deploy-spring-boot-application",
+    "href": "modules/02-steps/04-fourth-step-slides.html#step-4-deploy-spring-boot-application",
+    "title": "Deploy Spring Boot Application to Lightsail Server",
+    "section": "Step 4: Deploy Spring Boot Application",
+    "text": "Step 4: Deploy Spring Boot Application\nDeploy your Spring Boot application to AWS Lightsail server\n\nInstall Java Runtime Environment\nTransfer application files\nConfigure production environment\nSet up system service\nMonitor and troubleshoot\n\n\nThis step covers the complete deployment process from installing Java to monitoring the running application. We’ll create a production-ready deployment with proper security and monitoring."
+  },
+  {
+    "objectID": "modules/02-steps/04-fourth-step-slides.html#understanding-the-deployment-process",
+    "href": "modules/02-steps/04-fourth-step-slides.html#understanding-the-deployment-process",
+    "title": "Deploy Spring Boot Application to Lightsail Server",
+    "section": "Understanding the Deployment Process",
+    "text": "Understanding the Deployment Process\n\n\nKey Components\n\nJava Runtime Environment (JRE)\nCompiled JAR file transfer\nProduction environment variables\nSystem service configuration\n\n\nBest Practice\nAlways test your application locally with production profiles before deploying\n\n\nThe deployment process involves several interconnected components that work together to create a robust production environment. Testing locally with production profiles helps catch configuration issues early."
+  },
+  {
+    "objectID": "modules/02-steps/04-fourth-step-slides.html#installing-java-on-lightsail",
+    "href": "modules/02-steps/04-fourth-step-slides.html#installing-java-on-lightsail",
+    "title": "Deploy Spring Boot Application to Lightsail Server",
+    "section": "Installing Java on Lightsail",
+    "text": "Installing Java on Lightsail\nConnect and Install OpenJDK 17\n# SSH to your instance\nssh -i your-key.pem ubuntu@your-lightsail-ip\n\n# Update and install Java\nsudo apt update\nsudo apt install openjdk-17-jdk -y\n\n# Verify installation\njava -version\n\nOpenJDK 17 is the current LTS version and fully compatible with Spring Boot 3.x. The installation process is straightforward on Ubuntu using the apt package manager."
+  },
+  {
+    "objectID": "modules/02-steps/04-fourth-step-slides.html#preparing-application-structure",
+    "href": "modules/02-steps/04-fourth-step-slides.html#preparing-application-structure",
+    "title": "Deploy Spring Boot Application to Lightsail Server",
+    "section": "Preparing Application Structure",
+    "text": "Preparing Application Structure\nCreate Directory Structure\n# Create application directory\nsudo mkdir -p /opt/myapp\n\n# Create logs directory\nsudo mkdir -p /var/log/myapp\n\n# Create application user\nsudo useradd -r -s /bin/false myapp\n\n# Set ownership\nsudo chown -R myapp:myapp /opt/myapp /var/log/myapp\n\nCreating a dedicated user for the application improves security by following the principle of least privilege. The application runs with minimal permissions needed for operation."
+  },
+  {
+    "objectID": "modules/02-steps/04-fourth-step-slides.html#building-and-transferring-application",
+    "href": "modules/02-steps/04-fourth-step-slides.html#building-and-transferring-application",
+    "title": "Deploy Spring Boot Application to Lightsail Server",
+    "section": "Building and Transferring Application",
+    "text": "Building and Transferring Application\nBuild JAR File Locally\n# Using Maven\n./mvnw clean package -DskipTests\n\n# Using Gradle\n./gradlew build -x test\nTransfer to Server\n# Transfer JAR file\nscp -i your-key.pem target/myapp-0.0.1-SNAPSHOT.jar \\\n  ubuntu@your-lightsail-ip:/home/ubuntu/\n\n# Move to application directory\nsudo mv /home/ubuntu/myapp-0.0.1-SNAPSHOT.jar /opt/myapp/myapp.jar\n\nBuilding locally ensures you have the exact same environment for building. SCP provides a secure way to transfer files. Alternative methods include rsync, SFTP, or Git-based deployments."
+  },
+  {
+    "objectID": "modules/02-steps/04-fourth-step-slides.html#configuring-production-environment",
+    "href": "modules/02-steps/04-fourth-step-slides.html#configuring-production-environment",
+    "title": "Deploy Spring Boot Application to Lightsail Server",
+    "section": "Configuring Production Environment",
+    "text": "Configuring Production Environment\nCreate Environment File\n# Create environment configuration\nsudo nano /opt/myapp/application.env\nEnvironment Variables\n\nSPRING_PROFILES_ACTIVE=prod\nDatabase connection settings\nServer configuration\nJVM memory options\nLogging levels\n\n\nEnvironment variables allow you to configure the application for different environments without changing code. This includes database settings, memory allocation, and feature flags."
+  },
+  {
+    "objectID": "modules/02-steps/04-fourth-step-slides.html#environment-configuration-example",
+    "href": "modules/02-steps/04-fourth-step-slides.html#environment-configuration-example",
+    "title": "Deploy Spring Boot Application to Lightsail Server",
+    "section": "Environment Configuration Example",
+    "text": "Environment Configuration Example\n# /opt/myapp/application.env\nSPRING_PROFILES_ACTIVE=prod\n\n# Database Configuration\nDB_HOST=your-lightsail-db-endpoint\nDB_PORT=3306\nDB_NAME=myapp_prod\nDB_USERNAME=myappuser\nDB_PASSWORD=your-secure-password\n\n# JVM Options\nJAVA_OPTS=-Xms512m -Xmx1024m -Dspring.profiles.active=prod\nSet Secure Permissions\nsudo chown myapp:myapp /opt/myapp/application.env\nsudo chmod 600 /opt/myapp/application.env\n\nSetting restrictive permissions (600) ensures only the application user can read sensitive configuration data like database passwords."
+  },
+  {
+    "objectID": "modules/02-steps/04-fourth-step-slides.html#creating-system-service",
+    "href": "modules/02-steps/04-fourth-step-slides.html#creating-system-service",
+    "title": "Deploy Spring Boot Application to Lightsail Server",
+    "section": "Creating System Service",
+    "text": "Creating System Service\nSystemd Service File\nsudo nano /etc/systemd/system/myapp.service\n[Unit]\nDescription=My Spring Boot Application\nAfter=network.target\n\n[Service]\nType=exec\nUser=myapp\nGroup=myapp\nExecStart=/usr/bin/java -jar /opt/myapp/myapp.jar\nEnvironmentFile=/opt/myapp/application.env\nWorkingDirectory=/opt/myapp\nRestart=always\n\nSystemd services provide automatic startup, restart on failure, and integration with the system’s logging infrastructure. The service runs as the dedicated application user for security."
+  },
+  {
+    "objectID": "modules/02-steps/04-fourth-step-slides.html#enable-and-start-service",
+    "href": "modules/02-steps/04-fourth-step-slides.html#enable-and-start-service",
+    "title": "Deploy Spring Boot Application to Lightsail Server",
+    "section": "Enable and Start Service",
+    "text": "Enable and Start Service\nService Management Commands\n# Reload systemd configuration\nsudo systemctl daemon-reload\n\n# Enable service to start on boot\nsudo systemctl enable myapp.service\n\n# Start the service\nsudo systemctl start myapp.service\n\n# Check service status\nsudo systemctl status myapp.service\n\nEnabling the service ensures it starts automatically when the server boots. The status command shows you if the service is running and any recent log entries."
+  },
+  {
+    "objectID": "modules/02-steps/04-fourth-step-slides.html#production-application-properties",
+    "href": "modules/02-steps/04-fourth-step-slides.html#production-application-properties",
+    "title": "Deploy Spring Boot Application to Lightsail Server",
+    "section": "Production Application Properties",
+    "text": "Production Application Properties\nDatabase Configuration\n# application-prod.properties\nspring.datasource.url=jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}\nspring.datasource.username=${DB_USERNAME}\nspring.datasource.password=${DB_PASSWORD}\n\n# Production optimizations\nspring.jpa.hibernate.ddl-auto=validate\nspring.jpa.show-sql=false\n\n# Logging\nlogging.file.name=/var/log/myapp/application.log\n\nProduction properties use environment variables for configuration and disable development features like SQL logging. The ddl-auto setting is set to validate to prevent accidental schema changes."
+  },
+  {
+    "objectID": "modules/02-steps/04-fourth-step-slides.html#testing-your-deployment",
+    "href": "modules/02-steps/04-fourth-step-slides.html#testing-your-deployment",
+    "title": "Deploy Spring Boot Application to Lightsail Server",
+    "section": "Testing Your Deployment",
+    "text": "Testing Your Deployment\nVerification Steps\n\nCheck service status: sudo systemctl status myapp.service\nView logs: sudo tail -f /var/log/myapp/application.log\nTest health endpoint: curl http://localhost:8080/actuator/health\nVerify port listening: sudo netstat -tlnp | grep :8080\n\nConfigure Lightsail Firewall\nOpen port 8080 in Lightsail console → Networking tab\n\nThese verification steps help ensure the application is running correctly and accessible. The firewall configuration is temporary - we’ll use Nginx as a reverse proxy in the next step."
+  },
+  {
+    "objectID": "modules/02-steps/04-fourth-step-slides.html#monitoring-and-log-management",
+    "href": "modules/02-steps/04-fourth-step-slides.html#monitoring-and-log-management",
+    "title": "Deploy Spring Boot Application to Lightsail Server",
+    "section": "Monitoring and Log Management",
+    "text": "Monitoring and Log Management\nLog Rotation Configuration\n# /etc/logrotate.d/myapp\n/var/log/myapp/*.log {\n    daily\n    rotate 30\n    compress\n    delaycompress\n    missingok\n    notifempty\n    create 0644 myapp myapp\n}\nEssential Monitoring Commands\n\nsudo systemctl status myapp.service\nsudo journalctl -u myapp.service -f\nfree -h (memory usage)\ndf -h (disk usage)\n\n\nLog rotation prevents disk space issues by automatically compressing and removing old log files. These monitoring commands help you keep track of application health and system resources."
+  },
+  {
+    "objectID": "modules/02-steps/04-fourth-step-slides.html#troubleshooting-common-issues",
+    "href": "modules/02-steps/04-fourth-step-slides.html#troubleshooting-common-issues",
+    "title": "Deploy Spring Boot Application to Lightsail Server",
+    "section": "Troubleshooting Common Issues",
+    "text": "Troubleshooting Common Issues\n\n\nApplication Won’t Start\n\nCheck Java installation\nVerify JAR permissions\nReview systemd logs\nCheck environment file syntax\n\n\nDatabase Connection Issues\n\nTest database connectivity\nVerify connection strings\nCheck firewall rules\nValidate credentials\n\n\nMemory Issues\n\nMonitor usage with free -h\nAdjust JVM heap settings\nConsider instance upgrade\n\n\nMost deployment issues fall into these categories. Systematic troubleshooting using these checkpoints helps identify and resolve problems quickly."
+  },
+  {
+    "objectID": "modules/02-steps/04-fourth-step-slides.html#summary-what-youve-accomplished",
+    "href": "modules/02-steps/04-fourth-step-slides.html#summary-what-youve-accomplished",
+    "title": "Deploy Spring Boot Application to Lightsail Server",
+    "section": "Summary: What You’ve Accomplished",
+    "text": "Summary: What You’ve Accomplished\nSuccessfully Deployed ✅\n\nInstalled Java 17 on Lightsail server\nCreated secure directory structure\nTransferred application JAR file\nConfigured production environment variables\nSet up systemd service for automatic startup\nImplemented logging with rotation\nConfigured basic monitoring tools\n\nNext Step Preview\nConfigure Nginx reverse proxy for HTTP/HTTPS traffic on standard ports\n\nYour Spring Boot application is now running in production on AWS Lightsail with proper security, monitoring, and automatic startup. The next step will add Nginx for better performance and standard web ports."
+  },
+  {
+    "objectID": "modules/02-steps/03-third-step-slides.html#overview",
+    "href": "modules/02-steps/03-third-step-slides.html#overview",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Overview",
+    "text": "Overview\nSetting up MySQL database on AWS Lightsail for Spring Boot production deployment\n\nDatabase installation and security\nUser and database creation\nPerformance optimization\nBackup configuration\nSpring Boot integration\n\n\nThis lesson covers complete MySQL setup on Lightsail instance, from installation through production configuration."
+  },
+  {
+    "objectID": "modules/02-steps/03-third-step-slides.html#database-options-on-lightsail",
+    "href": "modules/02-steps/03-third-step-slides.html#database-options-on-lightsail",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Database Options on Lightsail",
+    "text": "Database Options on Lightsail\n\n\nMySQL on Lightsail Instance - Full control over configuration - No additional charges - Simplified networking - Cost-effective for smaller apps\n\nWhen to Use RDS - Thousands of concurrent users - High availability requirements - Automated scaling needs - Enterprise-level backup requirements\n\n\nLightsail MySQL is perfect for small to medium applications. RDS becomes valuable at scale."
+  },
+  {
+    "objectID": "modules/02-steps/03-third-step-slides.html#installing-mysql",
+    "href": "modules/02-steps/03-third-step-slides.html#installing-mysql",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Installing MySQL",
+    "text": "Installing MySQL\nConnect to your Lightsail instance and install MySQL:\n# Update system packages\nsudo apt update && sudo apt upgrade -y\n\n# Install MySQL server and client\nsudo apt install mysql-server mysql-client -y\nInstallation takes 2-3 minutes and automatically starts MySQL service\n\nAlways start with system updates for security. MySQL installation includes both server and client components."
+  },
+  {
+    "objectID": "modules/02-steps/03-third-step-slides.html#securing-mysql-installation",
+    "href": "modules/02-steps/03-third-step-slides.html#securing-mysql-installation",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Securing MySQL Installation",
+    "text": "Securing MySQL Installation\nRun the security script to remove insecure defaults:\nsudo mysql_secure_installation\nConfigure these settings: {.incremental}\n\nVALIDATE PASSWORD COMPONENT: Y\nPassword validation policy: 2 (STRONG)\nSet strong root password\nRemove anonymous users: Y\nDisallow root remote login: Y\nRemove test database: Y\n\n\nThe security script is crucial for production deployments. Save the root password securely - you’ll need it for administration."
+  },
+  {
+    "objectID": "modules/02-steps/03-third-step-slides.html#creating-application-database",
+    "href": "modules/02-steps/03-third-step-slides.html#creating-application-database",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Creating Application Database",
+    "text": "Creating Application Database\nAccess MySQL and create dedicated resources:\n-- Create database with proper charset\nCREATE DATABASE myapp_prod CHARACTER SET utf8mb4 \nCOLLATE utf8mb4_unicode_ci;\n\n-- Create application user\nCREATE USER 'springapp'@'localhost' \nIDENTIFIED BY 'your-secure-app-password';\n\n-- Grant privileges\nGRANT ALL PRIVILEGES ON myapp_prod.* TO 'springapp'@'localhost';\nFLUSH PRIVILEGES;\n\nUse utf8mb4 charset for full Unicode support. Create dedicated user with minimal required privileges for security."
+  },
+  {
+    "objectID": "modules/02-steps/03-third-step-slides.html#testing-database-setup",
+    "href": "modules/02-steps/03-third-step-slides.html#testing-database-setup",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Testing Database Setup",
+    "text": "Testing Database Setup\nVerify your configuration works:\n-- Switch to new database\nUSE myapp_prod;\n\n-- Check current user and database\nSELECT USER(), DATABASE();\n\n-- Test table operations\nCREATE TABLE test_connection (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    message VARCHAR(255),\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);\n\nAlways test database operations before proceeding. This ensures connectivity and permissions are correct."
+  },
+  {
+    "objectID": "modules/02-steps/03-third-step-slides.html#mysql-performance-configuration",
+    "href": "modules/02-steps/03-third-step-slides.html#mysql-performance-configuration",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "MySQL Performance Configuration",
+    "text": "MySQL Performance Configuration\nEdit MySQL configuration file:\nsudo nano /etc/mysql/mysql.conf.d/mysqld.cnf\nAdd performance settings:\n# Performance tuning\ninnodb_buffer_pool_size = 256M\ninnodb_log_file_size = 64M\nmax_connections = 100\n\n# Character set\ncharacter-set-server = utf8mb4\ncollation-server = utf8mb4_unicode_ci\n\nThese settings optimize MySQL for small to medium applications on Lightsail instances."
+  },
+  {
+    "objectID": "modules/02-steps/03-third-step-slides.html#apply-configuration-changes",
+    "href": "modules/02-steps/03-third-step-slides.html#apply-configuration-changes",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Apply Configuration Changes",
+    "text": "Apply Configuration Changes\nRestart MySQL to apply new settings:\n# Restart MySQL service\nsudo systemctl restart mysql\n\n# Verify service status\nsudo systemctl status mysql\nStatus should show “active (running)” in green\n\nAlways verify service status after configuration changes. Green “active (running)” indicates successful restart."
+  },
+  {
+    "objectID": "modules/02-steps/03-third-step-slides.html#setting-up-automated-backups",
+    "href": "modules/02-steps/03-third-step-slides.html#setting-up-automated-backups",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Setting Up Automated Backups",
+    "text": "Setting Up Automated Backups\n\n\nCreate backup directory:\nsudo mkdir -p /backup/mysql\nsudo chown mysql:mysql /backup/mysql\n\nCreate backup script:\nsudo nano /usr/local/bin/mysql-backup.sh\n\nScript includes: - Daily database dumps - 7-day retention policy - Automated cleanup\n\nAutomated backups are essential for production databases. This simple script provides basic backup functionality."
+  },
+  {
+    "objectID": "modules/02-steps/03-third-step-slides.html#spring-boot-database-configuration",
+    "href": "modules/02-steps/03-third-step-slides.html#spring-boot-database-configuration",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Spring Boot Database Configuration",
+    "text": "Spring Boot Database Configuration\nUpdate production properties:\n# Production MySQL configuration\nspring.datasource.url=jdbc:mysql://localhost:3306/myapp_prod\nspring.datasource.username=springapp\nspring.datasource.password=your-secure-app-password\nspring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver\n\n# Production JPA settings\nspring.jpa.hibernate.ddl-auto=validate\nspring.jpa.show-sql=false\n\nProduction configuration should use validate mode for ddl-auto and disable SQL logging for performance."
+  },
+  {
+    "objectID": "modules/02-steps/03-third-step-slides.html#security-best-practices",
+    "href": "modules/02-steps/03-third-step-slides.html#security-best-practices",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Security Best Practices",
+    "text": "Security Best Practices\n{.incremental}\n\nUse strong, unique passwords\nCreate dedicated application users\nLimit user privileges to required databases\nKeep database local to instance\nRegular security updates\nImplement backup verification\n\n\nSecurity should be built in from the start. These practices prevent common security vulnerabilities."
+  },
+  {
+    "objectID": "modules/02-steps/03-third-step-slides.html#summary",
+    "href": "modules/02-steps/03-third-step-slides.html#summary",
+    "title": "Step 3: Set Up MySQL Database on Lightsail",
+    "section": "Summary",
+    "text": "Summary\n✅ Completed Tasks:\n\nInstalled and secured MySQL server\nCreated production database and user\nConfigured performance optimizations\nSet up automated backup system\nPrepared Spring Boot configuration\n\nNext: Deploy Spring Boot application and connect to MySQL database\n\nYour Lightsail instance now has a production-ready MySQL database configured for optimal performance and security."
   },
   {
     "objectID": "modules/01-prerequisites/slides.html#what-well-cover-today",
@@ -1548,17 +1795,6 @@
     "title": "Prerequisites",
     "section": "Summary and Key Takeaways",
     "text": "Summary and Key Takeaways\n\nAWS Account: Essential for creating Lightsail instances\nDevelopment Tools: JDK 17+, Maven/Gradle, and a good IDE\nCommand Line Skills: SSH, Git, and basic Linux commands\nSpring Boot Knowledge: Profiles, configuration, and basic web development\nServer Basics: Understanding ports, services, and file permissions\n\nHaving these prerequisites covered ensures you can follow along with confidence and troubleshoot issues independently. Take time to verify each requirement before moving forward—it will save you time and frustration in the later stages of deployment.",
-    "crumbs": [
-      "Prerequisites",
-      "Prerequisites"
-    ]
-  },
-  {
-    "objectID": "modules/01-prerequisites/01-prerequisites.html#feedback",
-    "href": "modules/01-prerequisites/01-prerequisites.html#feedback",
-    "title": "Prerequisites",
-    "section": "Feedback",
-    "text": "Feedback\nhttps://www.coursefoundry.com/feedback/content/fecce23fccba0a63db2934f90079b4c8",
     "crumbs": [
       "Prerequisites",
       "Prerequisites"

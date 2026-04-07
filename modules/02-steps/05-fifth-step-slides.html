@@ -10,9 +10,9 @@
 <link href="../../site_libs/quarto-contrib/naquiz-styles-1.0.4/buttons.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.36">
 
-  <meta name="author" content="AWS Lightsail Deployment Course">
+  <meta name="author" content="Deploy Spring Boot Apps to AWS Lightsail">
   <meta name="dcterms.date" content="2026-04-07">
-  <title>Deploy Spring Boot Apps to AWS Lightsail – Step 1: Configure Development and Production Profiles in Spring Boot</title>
+  <title>Deploy Spring Boot Apps to AWS Lightsail – Step 5: Configure Reverse Proxy with Nginx</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -192,7 +192,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Step 1: Configure Development and Production Profiles in Spring Boot – Deploy Spring Boot Apps to AWS Lightsail">
+<meta property="og:title" content="Step 5: Configure Reverse Proxy with Nginx – Deploy Spring Boot Apps to AWS Lightsail">
 <meta property="og:site_name" content="Deploy Spring Boot Apps to AWS Lightsail">
 </head>
 <body class="quarto-light">
@@ -200,55 +200,40 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Step 1: Configure Development and Production Profiles in Spring Boot</h1>
+  <h1 class="title">Step 5: Configure Reverse Proxy with Nginx</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-AWS Lightsail Deployment Course 
+Deploy Spring Boot Apps to AWS Lightsail 
 </div>
 </div>
 </div>
 
   <p class="date">2026-04-07</p>
 </section>
-<section id="configure-development-and-production-profiles-in-spring-boot" class="slide level2">
-<h2>Configure Development and Production Profiles in Spring Boot</h2>
-<p>Preparing your Spring Boot application for seamless deployment to AWS Lightsail</p>
-<aside class="notes">
-<p>Welcome to step 1 of deploying Spring Boot apps to AWS Lightsail. Today we’ll configure separate application profiles for development and production environments.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="why-spring-boot-profiles-matter" class="slide level2">
-<h2>Why Spring Boot Profiles Matter</h2>
+<section id="overview" class="slide level2">
+<h2>Overview</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Development Environment</strong></p>
+<p><strong>What We’ll Cover:</strong></p>
 <ul>
-<li>Local database connections</li>
-<li>Debug logging enabled</li>
-<li>Development-friendly settings</li>
+<li>Understanding reverse proxy architecture</li>
+<li>Installing and configuring Nginx</li>
+<li>Advanced configuration options</li>
+<li>Testing and monitoring</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Production Environment</strong></p>
+<p><strong>Learning Objectives:</strong></p>
 <ul>
-<li>Cloud database connections</li>
-<li>Optimized performance settings</li>
-<li>Security-focused configuration</li>
+<li>Set up Nginx as reverse proxy</li>
+<li>Implement security headers</li>
+<li>Configure rate limiting</li>
+<li>Optimize performance</li>
 </ul>
 </div></div>
 <aside class="notes">
-<p>Profiles allow you to segregate application configuration and make it available only in certain environments. This prevents hardcoding production credentials and enables local testing with development databases.</p>
+<p>Today we’ll learn how to configure Nginx as a reverse proxy for your Spring Boot application. This is a crucial step for production deployments that provides security, performance, and scalability benefits.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -261,246 +246,16 @@ AWS Lightsail Deployment Course
           display:block!important;
       }</style></aside>
 </section>
-<section id="base-configuration-setup" class="slide level2">
-<h2>Base Configuration Setup</h2>
-<p>Create <code>application.properties</code> with common settings:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource properties number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a># Application name and basic settings</span>
-<span id="cb1-2"><a></a>spring.application.name=my-spring-app</span>
-<span id="cb1-3"><a></a>server.servlet.context-path=/</span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a># Default active profile</span>
-<span id="cb1-6"><a></a>spring.profiles.active=dev</span>
-<span id="cb1-7"><a></a></span>
-<span id="cb1-8"><a></a># JPA/Hibernate common settings</span>
-<span id="cb1-9"><a></a>spring.jpa.hibernate.ddl-auto=update</span>
-<span id="cb1-10"><a></a>spring.jpa.show-sql=false</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<aside class="notes">
-<p>The base configuration contains settings that apply to all environments. Notice we set the default profile to ‘dev’ for local development convenience.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="development-profile-configuration" class="slide level2">
-<h2>Development Profile Configuration</h2>
-<p>Create <code>application-dev.properties</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource properties number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a># Local MySQL database configuration</span>
-<span id="cb2-2"><a></a>spring.datasource.url=jdbc:mysql://localhost:3306/myapp_dev</span>
-<span id="cb2-3"><a></a>spring.datasource.username=dev_user</span>
-<span id="cb2-4"><a></a>spring.datasource.password=dev_password</span>
-<span id="cb2-5"><a></a></span>
-<span id="cb2-6"><a></a># Development-specific settings</span>
-<span id="cb2-7"><a></a>spring.jpa.show-sql=true</span>
-<span id="cb2-8"><a></a>logging.level.org.springframework.web=DEBUG</span>
-<span id="cb2-9"><a></a>server.port=8080</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<aside class="notes">
-<p>The development profile uses local database connections and enables verbose logging to help with debugging during development.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="production-profile-configuration" class="slide level2">
-<h2>Production Profile Configuration</h2>
-<p>Create <code>application-prod.properties</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource properties number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a># Production database with environment variables</span>
-<span id="cb3-2"><a></a>spring.datasource.url=${DB_URL:jdbc:mysql://localhost:3306/myapp_prod}</span>
-<span id="cb3-3"><a></a>spring.datasource.username=${DB_USERNAME:prod_user}</span>
-<span id="cb3-4"><a></a>spring.datasource.password=${DB_PASSWORD:secure_password}</span>
-<span id="cb3-5"><a></a></span>
-<span id="cb3-6"><a></a># Production optimizations</span>
-<span id="cb3-7"><a></a>spring.jpa.show-sql=false</span>
-<span id="cb3-8"><a></a>spring.jpa.hibernate.ddl-auto=validate</span>
-<span id="cb3-9"><a></a>server.compression.enabled=true</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<aside class="notes">
-<p>Production profile uses environment variables for database configuration, enabling secure credential management without hardcoding sensitive information.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="environment-variables-in-production" class="slide level2">
-<h2>Environment Variables in Production</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><strong>Syntax:</strong> <code>${VARIABLE_NAME:default_value}</code></p>
-<p><strong>Benefits:</strong></p>
-<ul>
-<li>Secure credential management</li>
-<li>Environment-specific overrides</li>
-<li>No hardcoded production secrets</li>
-<li>Easy configuration changes</li>
-</ul>
-</div><div class="column" style="width:40%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource properties number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>spring.datasource.url=</span>
-<span id="cb4-2"><a></a>  ${DB_URL:default}</span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a>spring.datasource.username=</span>
-<span id="cb4-5"><a></a>  ${DB_USERNAME:user}</span>
-<span id="cb4-6"><a></a></span>
-<span id="cb4-7"><a></a>spring.datasource.password=</span>
-<span id="cb4-8"><a></a>  ${DB_PASSWORD:pass}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div></div>
-<aside class="notes">
-<p>The ${} syntax allows overriding configuration values with environment variables while providing fallback defaults. This is crucial for cloud deployments.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="build-configuration-updates" class="slide level2">
-<h2>Build Configuration Updates</h2>
-<h3 id="maven-dependencies">Maven Dependencies</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource xml number-lines code-with-copy"><code class="sourceCode xml"><span id="cb5-1"><a></a>&lt;<span class="kw">dependency</span>&gt;</span>
-<span id="cb5-2"><a></a>    &lt;<span class="kw">groupId</span>&gt;mysql&lt;/<span class="kw">groupId</span>&gt;</span>
-<span id="cb5-3"><a></a>    &lt;<span class="kw">artifactId</span>&gt;mysql-connector-java&lt;/<span class="kw">artifactId</span>&gt;</span>
-<span id="cb5-4"><a></a>    &lt;<span class="kw">scope</span>&gt;runtime&lt;/<span class="kw">scope</span>&gt;</span>
-<span id="cb5-5"><a></a>&lt;/<span class="kw">dependency</span>&gt;</span>
-<span id="cb5-6"><a></a></span>
-<span id="cb5-7"><a></a>&lt;<span class="kw">dependency</span>&gt;</span>
-<span id="cb5-8"><a></a>    &lt;<span class="kw">groupId</span>&gt;org.springframework.boot&lt;/<span class="kw">groupId</span>&gt;</span>
-<span id="cb5-9"><a></a>    &lt;<span class="kw">artifactId</span>&gt;spring-boot-starter-data-jpa&lt;/<span class="kw">artifactId</span>&gt;</span>
-<span id="cb5-10"><a></a>&lt;/<span class="kw">dependency</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<aside class="notes">
-<p>Ensure your build configuration includes the necessary dependencies for MySQL connectivity and JPA data access.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="testing-your-profiles" class="slide level2">
-<h2>Testing Your Profiles</h2>
-<h3 id="development-profile">Development Profile</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="co"># Run with development profile (default)</span></span>
-<span id="cb6-2"><a></a><span class="ex">mvn</span> spring-boot:run</span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a><span class="co"># Or explicitly specify</span></span>
-<span id="cb6-5"><a></a><span class="ex">mvn</span> spring-boot:run <span class="at">-Dspring-boot.run.profiles</span><span class="op">=</span>dev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<h3 id="production-profile-testing">Production Profile Testing</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="co"># Set environment variables</span></span>
-<span id="cb7-2"><a></a><span class="bu">export</span> <span class="va">DB_URL</span><span class="op">=</span><span class="st">"jdbc:mysql://localhost:3306/myapp_test"</span></span>
-<span id="cb7-3"><a></a><span class="bu">export</span> <span class="va">DB_USERNAME</span><span class="op">=</span><span class="st">"test_user"</span></span>
-<span id="cb7-4"><a></a></span>
-<span id="cb7-5"><a></a><span class="co"># Run with production profile</span></span>
-<span id="cb7-6"><a></a><span class="ex">mvn</span> spring-boot:run <span class="at">-Dspring-boot.run.profiles</span><span class="op">=</span>prod</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<aside class="notes">
-<p>Testing both profiles locally ensures your configuration works correctly before deployment. The production profile test helps verify environment variable substitution works.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="building-for-production" class="slide level2">
-<h2>Building for Production</h2>
-<p>Create deployment-ready JAR:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="co"># Clean and build the project</span></span>
-<span id="cb8-2"><a></a><span class="ex">mvn</span> clean package</span>
-<span id="cb8-3"><a></a></span>
-<span id="cb8-4"><a></a><span class="co"># Verify the JAR was created</span></span>
-<span id="cb8-5"><a></a><span class="fu">ls</span> <span class="at">-la</span> target/<span class="pp">*</span>.jar</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Output:</strong></p>
-<pre><code>-rw-r--r-- 1 user user 45M Dec  1 10:30 my-spring-app-1.0.0.jar</code></pre>
-<aside class="notes">
-<p>The executable JAR contains your application and all dependencies, making it perfect for cloud deployment. This single file can be transferred to your Lightsail instance.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="configuration-verification-checklist" class="slide level2">
-<h2>Configuration Verification Checklist</h2>
-<ul>
-<li class="fragment">✓ Created <code>application.properties</code>, <code>application-dev.properties</code>, and <code>application-prod.properties</code></li>
-<li class="fragment">✓ Application starts successfully with development profile</li>
-<li class="fragment">✓ Executable JAR builds without errors</li>
-<li class="fragment">✓ Database dependencies configured in build file</li>
-<li class="fragment">✓ Environment variable syntax working in production profile</li>
-</ul>
-<aside class="notes">
-<p>Before proceeding to the next step, ensure all these checkpoints are completed. This foundation is crucial for successful deployment.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="key-benefits-achieved" class="slide level2">
-<h2>Key Benefits Achieved</h2>
+<section id="why-use-a-reverse-proxy" class="slide level2">
+<h2>Why Use a Reverse Proxy?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Development Benefits</strong></p>
-<ul>
-<li>Local development database</li>
-<li>Debug logging enabled</li>
-<li>Fast development cycle</li>
-<li>Easy configuration changes</li>
-</ul>
+<p><strong>Performance Benefits:</strong> - Serve static content directly - Cache responses - Gzip compression - Load balancing capability</p>
 </div><div class="column" style="width:50%;">
-<p><strong>Production Benefits</strong></p>
-<ul>
-<li>Secure credential management</li>
-<li>Optimized performance settings</li>
-<li>Environment-specific configurations</li>
-<li>Cloud-ready deployment package</li>
-</ul>
+<p><strong>Security Benefits:</strong> - Hide application server details - SSL termination - Request filtering - Security headers</p>
 </div></div>
 <aside class="notes">
-<p>This profile configuration provides the foundation for a professional deployment workflow, separating concerns between development and production environments.</p>
+<p>While Spring Boot has an embedded Tomcat server, using Nginx as a front-end proxy is a production best practice. It acts as an intermediary between clients and your application, providing multiple layers of optimization and security.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -513,18 +268,377 @@ AWS Lightsail Deployment Course
           display:block!important;
       }</style></aside>
 </section>
-<section id="whats-next" class="slide level2">
-<h2>What’s Next?</h2>
-<p><strong>Coming Up in Step 2:</strong></p>
-<ul>
-<li>Create AWS Lightsail instance</li>
-<li>Configure Linux environment</li>
-<li>Set up MySQL database</li>
-<li>Prepare for application deployment</li>
-</ul>
-<p>Your Spring Boot application is now <strong>production-ready</strong> with proper profile configuration!</p>
+<section id="reverse-proxy-architecture" class="slide level2">
+<h2>Reverse Proxy Architecture</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource mermaid number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>graph LR</span>
+<span id="cb1-2"><a></a>    A[Client] --&gt; B[Nginx :80]</span>
+<span id="cb1-3"><a></a>    B --&gt; C[Spring Boot :8080]</span>
+<span id="cb1-4"><a></a>    B --&gt; D[Static Files]</span>
+<span id="cb1-5"><a></a>    B --&gt; E[Cache]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Flow:</strong> Client → Nginx (Port 80) → Spring Boot (Port 8080)</p>
 <aside class="notes">
-<p>With profiles configured, your application can seamlessly transition from local development to AWS Lightsail. Next, we’ll create the cloud infrastructure to host your application.</p>
+<p>This diagram shows how requests flow through our architecture. Nginx receives all client requests on port 80, then either serves static content directly or forwards dynamic requests to Spring Boot running on port 8080.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="install-nginx" class="slide level2">
+<h2>Install Nginx</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="co"># Update package lists</span></span>
+<span id="cb2-2"><a></a><span class="fu">sudo</span> apt update</span>
+<span id="cb2-3"><a></a></span>
+<span id="cb2-4"><a></a><span class="co"># Install Nginx</span></span>
+<span id="cb2-5"><a></a><span class="fu">sudo</span> apt install nginx <span class="at">-y</span></span>
+<span id="cb2-6"><a></a></span>
+<span id="cb2-7"><a></a><span class="co"># Check if Nginx is running</span></span>
+<span id="cb2-8"><a></a><span class="fu">sudo</span> systemctl status nginx</span>
+<span id="cb2-9"><a></a></span>
+<span id="cb2-10"><a></a><span class="co"># Enable Nginx to start on boot</span></span>
+<span id="cb2-11"><a></a><span class="fu">sudo</span> systemctl enable nginx</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>First, we need to install Nginx on our Lightsail instance. These commands will install Nginx, check its status, and ensure it starts automatically when the server reboots.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="configure-firewall" class="slide level2">
+<h2>Configure Firewall</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="co"># Allow HTTP traffic (port 80)</span></span>
+<span id="cb3-2"><a></a><span class="fu">sudo</span> ufw allow <span class="st">'Nginx HTTP'</span></span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="co"># Allow HTTPS traffic (port 443)</span></span>
+<span id="cb3-5"><a></a><span class="fu">sudo</span> ufw allow <span class="st">'Nginx HTTPS'</span></span>
+<span id="cb3-6"><a></a></span>
+<span id="cb3-7"><a></a><span class="co"># Check firewall status</span></span>
+<span id="cb3-8"><a></a><span class="fu">sudo</span> ufw status</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Don’t forget:</strong> Also open ports 80 and 443 in Lightsail’s Networking tab!</p>
+<aside class="notes">
+<p>Security is crucial, so we need to properly configure the firewall to allow HTTP and HTTPS traffic. Remember to also check your Lightsail instance’s networking settings in the AWS console.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="create-nginx-configuration" class="slide level2">
+<h2>Create Nginx Configuration</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="co"># Create configuration file</span></span>
+<span id="cb4-2"><a></a><span class="fu">sudo</span> nano /etc/nginx/sites-available/spring-boot-app</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Key Configuration Sections:</strong> - Server block and domain settings - Security headers - Gzip compression - Proxy settings</p>
+<aside class="notes">
+<p>Now we’ll create a custom Nginx configuration specifically for our Spring Boot application. This configuration will include several important sections for security, performance, and proper request forwarding.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="basic-server-configuration" class="slide level2">
+<h2>Basic Server Configuration</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource nginx number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>server {</span>
+<span id="cb5-2"><a></a>    listen 80;</span>
+<span id="cb5-3"><a></a>    server_name your-domain.com www.your-domain.com;</span>
+<span id="cb5-4"><a></a>    </span>
+<span id="cb5-5"><a></a>    # Security headers</span>
+<span id="cb5-6"><a></a>    add_header X-Frame-Options "SAMEORIGIN" always;</span>
+<span id="cb5-7"><a></a>    add_header X-Content-Type-Options "nosniff" always;</span>
+<span id="cb5-8"><a></a>    add_header X-XSS-Protection "1; mode=block" always;</span>
+<span id="cb5-9"><a></a>    </span>
+<span id="cb5-10"><a></a>    # Main application proxy</span>
+<span id="cb5-11"><a></a>    location / {</span>
+<span id="cb5-12"><a></a>        proxy_pass http://localhost:8080;</span>
+<span id="cb5-13"><a></a>        proxy_set_header Host $host;</span>
+<span id="cb5-14"><a></a>        proxy_set_header X-Real-IP $remote_addr;</span>
+<span id="cb5-15"><a></a>        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span>
+<span id="cb5-16"><a></a>    }</span>
+<span id="cb5-17"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>This is the basic server configuration that listens on port 80, includes essential security headers, and forwards all requests to our Spring Boot application running on port 8080. The proxy headers ensure your application receives proper client information.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="enable-gzip-compression" class="slide level2">
+<h2>Enable Gzip Compression</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource nginx number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a># Gzip compression</span>
+<span id="cb6-2"><a></a>gzip on;</span>
+<span id="cb6-3"><a></a>gzip_vary on;</span>
+<span id="cb6-4"><a></a>gzip_min_length 1024;</span>
+<span id="cb6-5"><a></a>gzip_proxied any;</span>
+<span id="cb6-6"><a></a>gzip_comp_level 6;</span>
+<span id="cb6-7"><a></a>gzip_types text/plain text/css text/xml </span>
+<span id="cb6-8"><a></a>           text/javascript application/javascript </span>
+<span id="cb6-9"><a></a>           application/xml+rss application/json;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Benefits:</strong> Reduces bandwidth usage by up to 70%</p>
+<aside class="notes">
+<p>Gzip compression significantly reduces the size of responses sent to clients, improving load times and reducing bandwidth costs. This configuration compresses various file types while avoiding very small files where compression overhead isn’t worth it.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="static-content-optimization" class="slide level2">
+<h2>Static Content Optimization</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource nginx number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a># Static content location</span>
+<span id="cb7-2"><a></a>location /static/ {</span>
+<span id="cb7-3"><a></a>    alias /home/ubuntu/app/static/;</span>
+<span id="cb7-4"><a></a>    expires 1y;</span>
+<span id="cb7-5"><a></a>    add_header Cache-Control "public, immutable";</span>
+<span id="cb7-6"><a></a>}</span>
+<span id="cb7-7"><a></a></span>
+<span id="cb7-8"><a></a># Optimize static assets</span>
+<span id="cb7-9"><a></a>location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg)$ {</span>
+<span id="cb7-10"><a></a>    expires 1y;</span>
+<span id="cb7-11"><a></a>    add_header Cache-Control "public, immutable";</span>
+<span id="cb7-12"><a></a>    access_log off;</span>
+<span id="cb7-13"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>For better performance, we can configure Nginx to serve static content directly instead of forwarding these requests to Spring Boot. This includes setting appropriate cache headers to reduce server load.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="enable-the-configuration" class="slide level2">
+<h2>Enable the Configuration</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="co"># Create symbolic link to enable the site</span></span>
+<span id="cb8-2"><a></a><span class="fu">sudo</span> ln <span class="at">-s</span> /etc/nginx/sites-available/spring-boot-app <span class="dt">\</span></span>
+<span id="cb8-3"><a></a>           /etc/nginx/sites-enabled/</span>
+<span id="cb8-4"><a></a></span>
+<span id="cb8-5"><a></a><span class="co"># Remove default Nginx site</span></span>
+<span id="cb8-6"><a></a><span class="fu">sudo</span> rm /etc/nginx/sites-enabled/default</span>
+<span id="cb8-7"><a></a></span>
+<span id="cb8-8"><a></a><span class="co"># Test Nginx configuration</span></span>
+<span id="cb8-9"><a></a><span class="fu">sudo</span> nginx <span class="at">-t</span></span>
+<span id="cb8-10"><a></a></span>
+<span id="cb8-11"><a></a><span class="co"># Reload Nginx to apply changes</span></span>
+<span id="cb8-12"><a></a><span class="fu">sudo</span> systemctl reload nginx</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>After creating our configuration, we need to enable it by creating a symbolic link, remove the default site, test our configuration for syntax errors, and reload Nginx to apply the changes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="implement-rate-limiting" class="slide level2">
+<h2>Implement Rate Limiting</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource nginx number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a># Add to /etc/nginx/nginx.conf http block</span>
+<span id="cb9-2"><a></a>limit_req_zone $binary_remote_addr zone=login:10m rate=5r/m;</span>
+<span id="cb9-3"><a></a>limit_req_zone $binary_remote_addr zone=api:10m rate=10r/s;</span>
+<span id="cb9-4"><a></a>limit_req_zone $binary_remote_addr zone=general:10m rate=1r/s;</span>
+<span id="cb9-5"><a></a></span>
+<span id="cb9-6"><a></a># In server block</span>
+<span id="cb9-7"><a></a>location /api/auth/login {</span>
+<span id="cb9-8"><a></a>    limit_req zone=login burst=3 nodelay;</span>
+<span id="cb9-9"><a></a>    proxy_pass http://localhost:8080;</span>
+<span id="cb9-10"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Protection against:</strong> DDoS attacks, brute force attempts, API abuse</p>
+<aside class="notes">
+<p>Rate limiting is crucial for protecting your application from abuse. We can set different limits for different endpoints - stricter limits for login attempts and more generous limits for general API usage.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="custom-error-pages" class="slide level2">
+<h2>Custom Error Pages</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource nginx number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a></a># Custom error pages</span>
+<span id="cb10-2"><a></a>error_page 502 503 504 /50x.html;</span>
+<span id="cb10-3"><a></a>location = /50x.html {</span>
+<span id="cb10-4"><a></a>    root /var/www/html;</span>
+<span id="cb10-5"><a></a>}</span>
+<span id="cb10-6"><a></a></span>
+<span id="cb10-7"><a></a># Health check endpoint (bypass proxy for quick responses)</span>
+<span id="cb10-8"><a></a>location /actuator/health {</span>
+<span id="cb10-9"><a></a>    proxy_pass http://localhost:8080;</span>
+<span id="cb10-10"><a></a>    proxy_connect_timeout 2s;</span>
+<span id="cb10-11"><a></a>    proxy_read_timeout 2s;</span>
+<span id="cb10-12"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>Professional applications need proper error handling. We can configure custom error pages and set up dedicated health check endpoints that respond quickly for monitoring systems.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="testing-your-configuration" class="slide level2">
+<h2>Testing Your Configuration</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Server Tests:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a></a><span class="co"># Check Nginx status</span></span>
+<span id="cb11-2"><a></a><span class="fu">sudo</span> systemctl status nginx</span>
+<span id="cb11-3"><a></a></span>
+<span id="cb11-4"><a></a><span class="co"># Verify port listening</span></span>
+<span id="cb11-5"><a></a><span class="fu">sudo</span> netstat <span class="at">-tlnp</span> <span class="kw">|</span> <span class="fu">grep</span> :80</span>
+<span id="cb11-6"><a></a></span>
+<span id="cb11-7"><a></a><span class="co"># Test locally</span></span>
+<span id="cb11-8"><a></a><span class="ex">curl</span> <span class="at">-I</span> http://localhost</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>Browser Tests:</strong> - Navigate to public IP - Check developer tools for headers - Verify application loads correctly - Test static content serving</p>
+</div></div>
+<aside class="notes">
+<p>Testing is crucial to ensure everything works correctly. We should test both from the server itself and from external browsers to verify that requests are being properly forwarded and responses include our security headers.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="troubleshooting-common-issues" class="slide level2">
+<h2>Troubleshooting Common Issues</h2>
+<ul>
+<li><strong>502 Bad Gateway</strong> → Spring Boot app not running on port 8080</li>
+<li><strong>Connection refused</strong> → Firewall blocking ports 80/443</li>
+<li><strong>Configuration errors</strong> → Run <code>sudo nginx -t</code> to validate</li>
+<li><strong>Performance issues</strong> → Check logs and system resources</li>
+</ul>
+<p><strong>Log Locations:</strong> - <code>/var/log/nginx/access.log</code> - <code>/var/log/nginx/error.log</code></p>
+<aside class="notes">
+<p>When things go wrong, these are the most common issues you’ll encounter. Always check the logs first, and remember that Nginx configuration validation can catch syntax errors before they cause problems.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="monitoring-and-maintenance" class="slide level2">
+<h2>Monitoring and Maintenance</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a></a><span class="co"># Set up log rotation</span></span>
+<span id="cb12-2"><a></a><span class="fu">sudo</span> nano /etc/logrotate.d/nginx-spring-boot</span>
+<span id="cb12-3"><a></a></span>
+<span id="cb12-4"><a></a><span class="co"># Monitor performance</span></span>
+<span id="cb12-5"><a></a><span class="fu">ps</span> aux <span class="kw">|</span> <span class="fu">grep</span> nginx</span>
+<span id="cb12-6"><a></a><span class="ex">curl</span> http://localhost/nginx_status</span>
+<span id="cb12-7"><a></a><span class="ex">htop</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Best Practices:</strong> - Regular log rotation - Monitor system resources - Track response times - Set up alerting</p>
+<aside class="notes">
+<p>Ongoing maintenance is important for production systems. Set up log rotation to prevent disk space issues, monitor system resources, and consider implementing alerting for critical issues.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="security-headers-explained" class="slide level2">
+<h2>Security Headers Explained</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource nginx number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a></a>X-Frame-Options: "SAMEORIGIN"</span>
+<span id="cb13-2"><a></a>X-Content-Type-Options: "nosniff"</span>
+<span id="cb13-3"><a></a>X-XSS-Protection: "1; mode=block"</span>
+<span id="cb13-4"><a></a>Referrer-Policy: "no-referrer-when-downgrade"</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>Protection Against:</strong> - Clickjacking attacks - MIME type sniffing - Cross-site scripting - Information leakage</p>
+</div></div>
+<aside class="notes">
+<p>Security headers are essential for protecting your application against common web vulnerabilities. Each header serves a specific purpose in hardening your application against attacks.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="performance-optimization-tips" class="slide level2">
+<h2>Performance Optimization Tips</h2>
+<p>{.incremental} - Enable gzip compression for text content - Set appropriate cache headers for static assets - Use separate location blocks for different content types - Implement connection keep-alive for better performance - Configure proper timeout values - Monitor and tune worker processes</p>
+<aside class="notes">
+<p>These optimization techniques can significantly improve your application’s performance. The key is to understand your traffic patterns and configure Nginx accordingly.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -539,15 +653,28 @@ AWS Lightsail Deployment Course
 </section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
-<ul>
-<li><strong>Spring Boot profiles</strong> enable environment-specific configurations</li>
-<li><strong>Environment variables</strong> provide secure credential management</li>
-<li><strong>Executable JARs</strong> simplify deployment processes</li>
-<li><strong>Proper configuration</strong> is essential for cloud deployments</li>
-</ul>
-<p><strong>Your application is now ready for AWS Lightsail deployment!</strong></p>
+<p><strong>What We Accomplished:</strong> - ✅ Installed and configured Nginx as reverse proxy - ✅ Implemented security headers and rate limiting - ✅ Optimized performance with compression and caching - ✅ Set up proper error handling and monitoring</p>
+<p><strong>Key Benefits:</strong> - Enhanced security and performance - Professional error handling - Production-ready architecture - Better monitoring and maintenance</p>
 <aside class="notes">
-<p>You’ve successfully configured a Spring Boot application with separate development and production profiles, created a deployment-ready JAR, and established the foundation for secure cloud deployment.</p>
+<p>We’ve successfully set up a professional-grade reverse proxy configuration that provides security, performance, and monitoring capabilities. Your Spring Boot application is now running behind a robust web server that can handle production traffic effectively.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="next-steps" class="slide level2">
+<h2>Next Steps</h2>
+<p><strong>Coming Up in Step 6:</strong> - Add custom domain configuration - Implement SSL/TLS certificates - Configure HTTPS redirects - Final security hardening</p>
+<p><strong>Your application is now:</strong> - Accessible through Nginx on port 80 - Protected with security headers - Optimized for performance - Ready for domain and SSL setup</p>
+<aside class="notes">
+<p>With Nginx configured as our reverse proxy, we’re ready to move on to the final step of adding a custom domain and SSL certificate to complete our professional deployment setup.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
