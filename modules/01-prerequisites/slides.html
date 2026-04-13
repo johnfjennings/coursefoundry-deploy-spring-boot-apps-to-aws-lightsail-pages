@@ -221,11 +221,30 @@ Spring Boot Deployment Course
 <h2>What We’ll Cover Today</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Accounts &amp; Services</strong> - AWS Account setup - Domain registration options</p>
-<p><strong>Development Environment</strong> - Java JDK requirements - Build tools (Maven/Gradle) - IDE recommendations</p>
+<p><strong>Accounts &amp; Services</strong></p>
+<ul>
+<li class="fragment">AWS Account setup</li>
+<li class="fragment">Domain registration options</li>
+</ul>
+<p><strong>Development Environment</strong></p>
+<ul>
+<li class="fragment">Java JDK requirements</li>
+<li class="fragment">Build tools (Maven/Gradle)</li>
+<li class="fragment">IDE recommendations</li>
+</ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Command Line Tools</strong> - SSH client setup - Git version control - AWS CLI (optional)</p>
-<p><strong>Knowledge Prerequisites</strong> - Spring Boot fundamentals - Basic Linux commands - Network concepts</p>
+<p><strong>Command Line Tools</strong></p>
+<ul>
+<li class="fragment">SSH client setup</li>
+<li class="fragment">Git version control</li>
+<li class="fragment">AWS CLI (optional)</li>
+</ul>
+<p><strong>Knowledge Prerequisites</strong></p>
+<ul>
+<li class="fragment">Spring Boot fundamentals</li>
+<li class="fragment">Basic Linux commands</li>
+<li class="fragment">Network concepts</li>
+</ul>
 </div></div>
 <aside class="notes">
 <p>This lesson establishes the foundation for our deployment journey. We’ll ensure everyone has the necessary tools and knowledge before diving into the actual deployment process.</p>
@@ -255,12 +274,16 @@ Spring Boot Deployment Course
 <div class="column" style="width:60%;">
 <p><strong>Steps to get started:</strong></p>
 <ol type="1">
-<li class="fragment">Visit <a href="https://aws.amazon.com">aws.amazon.com</a></li>
+<li class="fragment">Visit <a href="https://aws.amazon.com" class="uri">https://aws.amazon.com</a></li>
 <li class="fragment">Click “Create an AWS Account”</li>
 <li class="fragment">Complete registration process</li>
 <li class="fragment">Add payment information (required)</li>
 </ol>
-<p><strong>Free Tier Benefits:</strong> - 750 hours/month for first month - Perfect for learning and testing</p>
+<p><strong>Free Tier Benefits:</strong></p>
+<ul>
+<li class="fragment">750 hours/month for first 12 months</li>
+<li class="fragment">Perfect for learning and testing</li>
+</ul>
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -292,7 +315,12 @@ Spring Boot Deployment Course
 <li class="fragment">GoDaddy (widely recognized)</li>
 <li class="fragment">Cloudflare (includes CDN benefits)</li>
 </ul>
-<p><strong>Why register a domain?</strong> - Professional appearance - Easier to remember than IP addresses - SSL certificate setup is simpler</p>
+<p><strong>Why register a domain?</strong></p>
+<ul>
+<li class="fragment">Professional appearance</li>
+<li class="fragment">Easier to remember than IP addresses</li>
+<li class="fragment">SSL certificate setup is simpler</li>
+</ul>
 <aside class="notes">
 <p>While optional, having a custom domain significantly improves the professional appearance of deployed applications and makes SSL certificate management easier.</p>
 <style type="text/css">
@@ -321,7 +349,12 @@ Spring Boot Deployment Course
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="co"># Check your current Java version</span></span>
 <span id="cb1-2"><a></a><span class="ex">java</span> <span class="at">-version</span></span>
 <span id="cb1-3"><a></a><span class="ex">javac</span> <span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Installation Options:</strong> - <strong>Oracle JDK</strong>: Commercial support available - <strong>OpenJDK</strong>: Open source, free to use - <strong>Package Managers</strong>: Easy installation and updates</p>
+<p><strong>Installation Options:</strong></p>
+<ul>
+<li class="fragment"><strong>Oracle JDK</strong>: Commercial support available</li>
+<li class="fragment"><strong>OpenJDK</strong>: Open source, free to use</li>
+<li class="fragment"><strong>Package Managers</strong>: Easy installation and updates</li>
+</ul>
 <aside class="notes">
 <p>JDK 17 is the current Long Term Support (LTS) version and is recommended for production deployments. It provides stability and long-term support from the Java community.</p>
 <style type="text/css">
@@ -383,7 +416,12 @@ Spring Boot Deployment Course
 <li class="fragment"><strong>Eclipse + Spring Tools Suite</strong> - Free and powerful</li>
 <li class="fragment"><strong>Spring Tool Suite (STS)</strong> - Purpose-built for Spring</li>
 </ul>
-<p><strong>Key Features to Look For:</strong> - Spring Boot run configurations - Application property auto-completion - Built-in Maven/Gradle support</p>
+<p><strong>Key Features to Look For:</strong></p>
+<ul>
+<li class="fragment">Spring Boot run configurations</li>
+<li class="fragment">Application property auto-completion</li>
+<li class="fragment">Built-in Maven/Gradle support</li>
+</ul>
 <aside class="notes">
 <p>The choice of IDE is largely personal preference, but having good Spring Boot tooling support will significantly improve your development experience and productivity.</p>
 <style type="text/css">
@@ -410,12 +448,22 @@ Spring Boot Deployment Course
 <h2>SSH Client Setup</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Windows:</strong> - Built-in OpenSSH (Windows 10+) - PuTTY (traditional option) - Windows Subsystem for Linux</p>
+<p><strong>Windows:</strong></p>
+<ul>
+<li class="fragment">Built-in OpenSSH (Windows 10+)</li>
+<li class="fragment">PuTTY (traditional option)</li>
+<li class="fragment">Windows Subsystem for Linux</li>
+</ul>
 <p><strong>macOS/Linux:</strong> - Built-in OpenSSH client</p>
 </div><div class="column" style="width:50%;">
 <p><strong>Test SSH availability:</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="fu">ssh</span> <span class="at">-V</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>You’ll use SSH to:</strong> - Connect to Lightsail instances - Deploy applications - Monitor server performance</p>
+<p><strong>You’ll use SSH to:</strong></p>
+<ul>
+<li class="fragment">Connect to Lightsail instances</li>
+<li class="fragment">Deploy applications</li>
+<li class="fragment">Monitor server performance</li>
+</ul>
 </div></div>
 <aside class="notes">
 <p>SSH is crucial for server management. Modern Windows includes OpenSSH by default, but older versions might need PuTTY or WSL installation.</p>
@@ -441,7 +489,12 @@ Spring Boot Deployment Course
 <span id="cb5-5"><a></a><span class="fu">git</span> add .</span>
 <span id="cb5-6"><a></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Deploy ready"</span></span>
 <span id="cb5-7"><a></a><span class="fu">git</span> push origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Installation:</strong> - Windows: Download from <a href="https://git-scm.com/">git-scm.com</a> - macOS: Homebrew or Xcode Command Line Tools - Linux: Package manager (<code>apt install git</code>)</p>
+<p><strong>Installation:</strong></p>
+<ul>
+<li class="fragment">Windows: Download from <a href="https://git-scm.com/">git-scm.com</a></li>
+<li class="fragment">macOS: Homebrew or Xcode Command Line Tools</li>
+<li class="fragment">Linux: Package manager (<code>apt install git</code>)</li>
+</ul>
 <aside class="notes">
 <p>Git isn’t just for code storage—we’ll use it to deploy code to our servers and manage different versions of our applications across environments.</p>
 <style type="text/css">
@@ -490,8 +543,15 @@ Spring Boot Deployment Course
 </section>
 <section id="core-spring-boot-concepts" class="slide level2 incremental">
 <h2>Core Spring Boot Concepts</h2>
-<p><strong>Essential understanding:</strong> - <strong>Spring Boot Starters</strong>: Dependency management made easy - <strong>Application Properties</strong>: Environment-specific configurations - <strong>Profiles</strong>: Different settings for dev/prod environments<br>
-- <strong>Auto-configuration</strong>: Spring Boot’s “magic” explained - <strong>Embedded Servers</strong>: Tomcat, Jetty, Undertow options</p>
+<p><strong>Essential understanding:</strong></p>
+<ul>
+<li class="fragment"><strong>Spring Boot Starters</strong>: Dependency management made easy</li>
+<li class="fragment"><strong>Application Properties</strong>: Environment-specific configurations</li>
+<li class="fragment"><strong>Profiles</strong>: Different settings for dev/prod environments<br>
+</li>
+<li class="fragment"><strong>Auto-configuration</strong>: Spring Boot’s “magic” explained</li>
+<li class="fragment"><strong>Embedded Servers</strong>: Tomcat, Jetty, Undertow options</li>
+</ul>
 <p><strong>Configuration Example:</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a></a><span class="co"># application-prod.yml</span></span>
 <span id="cb7-2"><a></a><span class="fu">server</span><span class="kw">:</span></span>
@@ -517,7 +577,12 @@ Spring Boot Deployment Course
 <h2>Database and REST Knowledge</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Database Integration:</strong> - Spring Data JPA basics - JDBC connection configuration - Database migration tools (Flyway/Liquibase)</p>
+<p><strong>Database Integration:</strong></p>
+<ul>
+<li class="fragment">Spring Data JPA basics</li>
+<li class="fragment">JDBC connection configuration</li>
+<li class="fragment">Database migration tools (Flyway/Liquibase)</li>
+</ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource java number-lines code-with-copy"><code class="sourceCode java"><span id="cb8-1"><a></a><span class="at">@Entity</span></span>
 <span id="cb8-2"><a></a><span class="kw">public</span> <span class="kw">class</span> User <span class="op">{</span></span>
 <span id="cb8-3"><a></a>    <span class="at">@Id</span></span>
@@ -526,7 +591,12 @@ Spring Boot Deployment Course
 <span id="cb8-6"><a></a>    <span class="kw">private</span> <span class="bu">String</span> name<span class="op">;</span></span>
 <span id="cb8-7"><a></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
-<p><strong>RESTful Services:</strong> - <code>@RestController</code> usage - HTTP methods (GET, POST, PUT, DELETE) - JSON serialization with Jackson</p>
+<p><strong>RESTful Services:</strong></p>
+<ul>
+<li class="fragment"><code>@RestController</code> usage</li>
+<li class="fragment">HTTP methods (GET, POST, PUT, DELETE)</li>
+<li class="fragment">JSON serialization with Jackson</li>
+</ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource java number-lines code-with-copy"><code class="sourceCode java"><span id="cb9-1"><a></a><span class="at">@RestController</span></span>
 <span id="cb9-2"><a></a><span class="kw">public</span> <span class="kw">class</span> UserController <span class="op">{</span></span>
 <span id="cb9-3"><a></a>    <span class="at">@GetMapping</span><span class="op">(</span><span class="st">"/users"</span><span class="op">)</span></span>
@@ -668,7 +738,12 @@ Spring Boot Deployment Course
 </tr>
 </tbody>
 </table>
-<p><strong>Firewall Concepts:</strong> - Inbound vs.&nbsp;Outbound rules - Port ranges and protocols - Source IP restrictions</p>
+<p><strong>Firewall Concepts:</strong></p>
+<ul>
+<li class="fragment">Inbound vs.&nbsp;Outbound rules</li>
+<li class="fragment">Port ranges and protocols</li>
+<li class="fragment">Source IP restrictions</li>
+</ul>
 <aside class="notes">
 <p>Understanding ports is essential for configuring firewalls and ensuring your applications are accessible. AWS Lightsail has a simple firewall interface that makes this manageable.</p>
 <style type="text/css">
@@ -722,7 +797,14 @@ Spring Boot Deployment Course
 <section id="sample-application-ready" class="slide level2">
 <h2>Sample Application Ready</h2>
 <p><strong>Don’t have a Spring Boot app?</strong></p>
-<p>We’ll provide a sample application that includes: - REST endpoints for testing - Database integration examples - Production-ready configuration - Health check endpoints - Logging configuration</p>
+<p>We’ll provide a sample application that includes:</p>
+<ul>
+<li class="fragment">REST endpoints for testing</li>
+<li class="fragment">Database integration examples</li>
+<li class="fragment">Production-ready configuration</li>
+<li class="fragment">Health check endpoints</li>
+<li class="fragment">Logging configuration</li>
+</ul>
 <p><strong>Quick Test:</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a></a><span class="ex">./mvnw</span> spring-boot:run</span>
 <span id="cb16-2"><a></a><span class="co"># Visit http://localhost:8080</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -752,9 +834,21 @@ Spring Boot Deployment Course
 <h2>Key Takeaways</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Essential Requirements:</strong> - AWS account for cloud resources - Java development environment - Command line tool proficiency - Basic Spring Boot knowledge</p>
+<p><strong>Essential Requirements:</strong></p>
+<ul>
+<li class="fragment">AWS account for cloud resources</li>
+<li class="fragment">Java development environment</li>
+<li class="fragment">Command line tool proficiency</li>
+<li class="fragment">Basic Spring Boot knowledge</li>
+</ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Success Factors:</strong> - Understanding of Linux basics - Network and security concepts - Version control with Git - Service management principles</p>
+<p><strong>Success Factors:</strong></p>
+<ul>
+<li class="fragment">Understanding of Linux basics</li>
+<li class="fragment">Network and security concepts</li>
+<li class="fragment">Version control with Git</li>
+<li class="fragment">Service management principles</li>
+</ul>
 </div></div>
 <p><strong>You’re Ready When:</strong> All checklist items are complete and you can run a Spring Boot application locally</p>
 <aside class="notes">
