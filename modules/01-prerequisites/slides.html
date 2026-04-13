@@ -279,11 +279,6 @@ Spring Boot Deployment Course
 <li class="fragment">Complete registration process</li>
 <li class="fragment">Add payment information (required)</li>
 </ol>
-<p><strong>Free Tier Benefits:</strong></p>
-<ul>
-<li class="fragment">750 hours/month for first 12 months</li>
-<li class="fragment">Perfect for learning and testing</li>
-</ul>
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -291,6 +286,11 @@ Spring Boot Deployment Course
 <figcaption>AWS Logo</figcaption>
 </figure>
 </div>
+<p><strong>Free Tier Benefits:</strong></p>
+<ul>
+<li class="fragment">750 hours/month for first 12 months</li>
+<li class="fragment">Perfect for learning and testing</li>
+</ul>
 </div></div>
 <aside class="notes">
 <p>Even though we mention payment information is required, emphasize that the free tier provides substantial resources for learning. Students won’t incur charges if they stay within free tier limits.</p>
@@ -454,7 +454,10 @@ Spring Boot Deployment Course
 <li class="fragment">PuTTY (traditional option)</li>
 <li class="fragment">Windows Subsystem for Linux</li>
 </ul>
-<p><strong>macOS/Linux:</strong> - Built-in OpenSSH client</p>
+<p><strong>macOS/Linux:</strong></p>
+<ul>
+<li class="fragment">Built-in OpenSSH client</li>
+</ul>
 </div><div class="column" style="width:50%;">
 <p><strong>Test SSH availability:</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="fu">ssh</span> <span class="at">-V</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -517,8 +520,13 @@ Spring Boot Deployment Course
 <span id="cb6-3"><a></a></span>
 <span id="cb6-4"><a></a><span class="co"># Configure credentials</span></span>
 <span id="cb6-5"><a></a><span class="ex">aws</span> configure</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Benefits:</strong> - Automate AWS resource management - Script deployment processes<br>
-- Access services not available in web console</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li class="fragment">Automate AWS resource management</li>
+<li class="fragment">Script deployment processes<br>
+</li>
+<li class="fragment">Access services not available in web console</li>
+</ul>
 <aside class="notes">
 <p>While not strictly required for basic deployments, AWS CLI becomes invaluable for automating deployment processes and managing resources programmatically.</p>
 <style type="text/css">
@@ -541,7 +549,7 @@ Spring Boot Deployment Course
 <h1>Spring Boot Knowledge Prerequisites</h1>
 
 </section>
-<section id="core-spring-boot-concepts" class="slide level2 incremental">
+<section id="core-spring-boot-concepts" class="slide level2 smaller">
 <h2>Core Spring Boot Concepts</h2>
 <p><strong>Essential understanding:</strong></p>
 <ul>
@@ -552,6 +560,9 @@ Spring Boot Deployment Course
 <li class="fragment"><strong>Auto-configuration</strong>: Spring Boot’s “magic” explained</li>
 <li class="fragment"><strong>Embedded Servers</strong>: Tomcat, Jetty, Undertow options</li>
 </ul>
+</section>
+<section id="core-spring-boot-concepts-1" class="slide level2 smaller">
+<h2>Core Spring Boot Concepts</h2>
 <p><strong>Configuration Example:</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a></a><span class="co"># application-prod.yml</span></span>
 <span id="cb7-2"><a></a><span class="fu">server</span><span class="kw">:</span></span>
@@ -699,7 +710,7 @@ Spring Boot Deployment Course
 <h1>Network and Security Basics</h1>
 
 </section>
-<section id="understanding-ports-and-firewalls" class="slide level2">
+<section id="understanding-ports-and-firewalls" class="slide level2 smaller">
 <h2>Understanding Ports and Firewalls</h2>
 <p><strong>Common Ports You’ll Use:</strong></p>
 <table class="caption-top">
@@ -769,7 +780,7 @@ Spring Boot Deployment Course
 <section id="verify-your-setup" class="slide level2">
 <h2>Verify Your Setup</h2>
 <p><strong>Complete this checklist before proceeding:</strong></p>
-<ul class="task-list">
+<ul>
 <li class="fragment"><label><input type="checkbox">AWS account with billing information configured</label></li>
 <li class="fragment"><label><input type="checkbox">JDK 17+ installed and working</label></li>
 <li class="fragment"><label><input type="checkbox">Maven or Gradle build tool available</label></li>
@@ -777,9 +788,8 @@ Spring Boot Deployment Course
 <li class="fragment"><label><input type="checkbox">SSH client tested and functional</label></li>
 <li class="fragment"><label><input type="checkbox">Basic Spring Boot application available</label></li>
 <li class="fragment"><label><input type="checkbox">Understanding of Spring Boot profiles</label></li>
+<li class="fragment"><strong>Test Command:</strong><code>bash java -version &amp;&amp; mvn -version &amp;&amp; git --version &amp;&amp; ssh -V</code></li>
 </ul>
-<p><strong>Test Command:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a></a><span class="ex">java</span> <span class="at">-version</span> <span class="kw">&amp;&amp;</span> <span class="ex">mvn</span> <span class="at">-version</span> <span class="kw">&amp;&amp;</span> <span class="fu">git</span> <span class="at">--version</span> <span class="kw">&amp;&amp;</span> <span class="fu">ssh</span> <span class="at">-V</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
 <p>Taking time to verify your setup now will save hours of troubleshooting later. Each tool plays a crucial role in the deployment process.</p>
 <style type="text/css">
@@ -806,8 +816,8 @@ Spring Boot Deployment Course
 <li class="fragment">Logging configuration</li>
 </ul>
 <p><strong>Quick Test:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a></a><span class="ex">./mvnw</span> spring-boot:run</span>
-<span id="cb16-2"><a></a><span class="co"># Visit http://localhost:8080</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a></a><span class="ex">./mvnw</span> spring-boot:run</span>
+<span id="cb15-2"><a></a><span class="co"># Visit http://localhost:8080</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
 <p>Even if students don’t have their own application ready, our sample application will demonstrate all the concepts they need to apply to their own projects.</p>
 <style type="text/css">

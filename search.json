@@ -586,7 +586,7 @@
     "href": "modules/01-prerequisites/slides.html#aws-account-setup",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "AWS Account Setup",
-    "text": "AWS Account Setup\n\n\nSteps to get started:\n\nVisit https://aws.amazon.com\nClick “Create an AWS Account”\nComplete registration process\nAdd payment information (required)\n\nFree Tier Benefits:\n\n750 hours/month for first 12 months\nPerfect for learning and testing\n\n\n\n\n\nAWS Logo\n\n\n\n\nEven though we mention payment information is required, emphasize that the free tier provides substantial resources for learning. Students won’t incur charges if they stay within free tier limits.",
+    "text": "AWS Account Setup\n\n\nSteps to get started:\n\nVisit https://aws.amazon.com\nClick “Create an AWS Account”\nComplete registration process\nAdd payment information (required)\n\n\n\n\n\nAWS Logo\n\n\nFree Tier Benefits:\n\n750 hours/month for first 12 months\nPerfect for learning and testing\n\n\n\nEven though we mention payment information is required, emphasize that the free tier provides substantial resources for learning. Students won’t incur charges if they stay within free tier limits.",
     "crumbs": [
       "Prerequisites",
       "Slides"
@@ -641,7 +641,7 @@
     "href": "modules/01-prerequisites/slides.html#ssh-client-setup",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "SSH Client Setup",
-    "text": "SSH Client Setup\n\n\nWindows:\n\nBuilt-in OpenSSH (Windows 10+)\nPuTTY (traditional option)\nWindows Subsystem for Linux\n\nmacOS/Linux: - Built-in OpenSSH client\n\nTest SSH availability:\nssh -V\nYou’ll use SSH to:\n\nConnect to Lightsail instances\nDeploy applications\nMonitor server performance\n\n\n\nSSH is crucial for server management. Modern Windows includes OpenSSH by default, but older versions might need PuTTY or WSL installation.",
+    "text": "SSH Client Setup\n\n\nWindows:\n\nBuilt-in OpenSSH (Windows 10+)\nPuTTY (traditional option)\nWindows Subsystem for Linux\n\nmacOS/Linux:\n\nBuilt-in OpenSSH client\n\n\nTest SSH availability:\nssh -V\nYou’ll use SSH to:\n\nConnect to Lightsail instances\nDeploy applications\nMonitor server performance\n\n\n\nSSH is crucial for server management. Modern Windows includes OpenSSH by default, but older versions might need PuTTY or WSL installation.",
     "crumbs": [
       "Prerequisites",
       "Slides"
@@ -663,7 +663,7 @@
     "href": "modules/01-prerequisites/slides.html#aws-cli-recommended",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "AWS CLI (Recommended)",
-    "text": "AWS CLI (Recommended)\nHelpful for advanced configurations:\n# Check installation\naws --version\n\n# Configure credentials\naws configure\nBenefits: - Automate AWS resource management - Script deployment processes\n- Access services not available in web console\n\nWhile not strictly required for basic deployments, AWS CLI becomes invaluable for automating deployment processes and managing resources programmatically.",
+    "text": "AWS CLI (Recommended)\nHelpful for advanced configurations:\n# Check installation\naws --version\n\n# Configure credentials\naws configure\nBenefits:\n\nAutomate AWS resource management\nScript deployment processes\n\nAccess services not available in web console\n\n\nWhile not strictly required for basic deployments, AWS CLI becomes invaluable for automating deployment processes and managing resources programmatically.",
     "crumbs": [
       "Prerequisites",
       "Slides"
@@ -674,7 +674,18 @@
     "href": "modules/01-prerequisites/slides.html#core-spring-boot-concepts",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "Core Spring Boot Concepts",
-    "text": "Core Spring Boot Concepts\nEssential understanding:\n\nSpring Boot Starters: Dependency management made easy\nApplication Properties: Environment-specific configurations\nProfiles: Different settings for dev/prod environments\n\nAuto-configuration: Spring Boot’s “magic” explained\nEmbedded Servers: Tomcat, Jetty, Undertow options\n\nConfiguration Example:\n# application-prod.yml\nserver:\n  port: 8080\nspring:\n  profiles:\n    active: prod\n\nThese concepts form the foundation of effective Spring Boot deployment. Understanding profiles is particularly crucial for managing different environments.",
+    "text": "Core Spring Boot Concepts\nEssential understanding:\n\nSpring Boot Starters: Dependency management made easy\nApplication Properties: Environment-specific configurations\nProfiles: Different settings for dev/prod environments\n\nAuto-configuration: Spring Boot’s “magic” explained\nEmbedded Servers: Tomcat, Jetty, Undertow options",
+    "crumbs": [
+      "Prerequisites",
+      "Slides"
+    ]
+  },
+  {
+    "objectID": "modules/01-prerequisites/slides.html#core-spring-boot-concepts-1",
+    "href": "modules/01-prerequisites/slides.html#core-spring-boot-concepts-1",
+    "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
+    "section": "Core Spring Boot Concepts",
+    "text": "Core Spring Boot Concepts\nConfiguration Example:\n# application-prod.yml\nserver:\n  port: 8080\nspring:\n  profiles:\n    active: prod\n\nThese concepts form the foundation of effective Spring Boot deployment. Understanding profiles is particularly crucial for managing different environments.",
     "crumbs": [
       "Prerequisites",
       "Slides"
@@ -729,7 +740,7 @@
     "href": "modules/01-prerequisites/slides.html#verify-your-setup",
     "title": "Prerequisites for Deploying Spring Boot Apps to AWS Lightsail",
     "section": "Verify Your Setup",
-    "text": "Verify Your Setup\nComplete this checklist before proceeding:\n\nAWS account with billing information configured\nJDK 17+ installed and working\nMaven or Gradle build tool available\nGit version control system installed\nSSH client tested and functional\nBasic Spring Boot application available\nUnderstanding of Spring Boot profiles\n\nTest Command:\njava -version && mvn -version && git --version && ssh -V\n\nTaking time to verify your setup now will save hours of troubleshooting later. Each tool plays a crucial role in the deployment process.",
+    "text": "Verify Your Setup\nComplete this checklist before proceeding:\n\nAWS account with billing information configured\nJDK 17+ installed and working\nMaven or Gradle build tool available\nGit version control system installed\nSSH client tested and functional\nBasic Spring Boot application available\nUnderstanding of Spring Boot profiles\nTest Command:bash java -version && mvn -version && git --version && ssh -V\n\n\nTaking time to verify your setup now will save hours of troubleshooting later. Each tool plays a crucial role in the deployment process.",
     "crumbs": [
       "Prerequisites",
       "Slides"
