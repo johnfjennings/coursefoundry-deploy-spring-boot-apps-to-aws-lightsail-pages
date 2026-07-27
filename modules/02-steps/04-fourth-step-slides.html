@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="AWS Lightsail Deployment Course">
-  <meta name="dcterms.date" content="2026-06-18">
+  <meta name="dcterms.date" content="2026-07-27">
   <title>Deploy Spring Boot Apps to AWS Lightsail – Deploy Spring Boot Application to Lightsail Server</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -210,17 +210,17 @@ AWS Lightsail Deployment Course
 </div>
 </div>
 
-  <p class="date">2026-06-18</p>
+  <p class="date">2026-07-27</p>
 </section>
 <section id="step-4-deploy-spring-boot-application" class="slide level2">
 <h2>Step 4: Deploy Spring Boot Application</h2>
-<p>Deploy your Spring Boot application to AWS Lightsail server</p>
+<p>Deploy your Spring Boot application to AWS Lightsail</p>
 <ul>
-<li>Install Java Runtime Environment</li>
-<li>Transfer application files</li>
-<li>Configure production environment</li>
-<li>Set up system service</li>
-<li>Monitor and troubleshoot</li>
+<li class="fragment">Install Java Runtime Environment</li>
+<li class="fragment">Transfer application files</li>
+<li class="fragment">Configure production environment</li>
+<li class="fragment">Set up system service</li>
+<li class="fragment">Monitor and troubleshoot</li>
 </ul>
 <aside class="notes">
 <p>This step covers the complete deployment process from installing Java to monitoring the running application. We’ll create a production-ready deployment with proper security and monitoring.</p>
@@ -248,8 +248,19 @@ AWS Lightsail Deployment Course
 <li>System service configuration</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<h3 id="best-practice">Best Practice</h3>
-<p>Always test your application locally with production profiles before deploying</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Best Practice</strong></p>
+</div>
+<div class="callout-content">
+<p>Always test your application locally with production profiles before deploying.</p>
+</div>
+</div>
+</div>
 </div></div>
 <aside class="notes">
 <p>The deployment process involves several interconnected components that work together to create a robust production environment. Testing locally with production profiles helps catch configuration issues early.</p>
@@ -319,8 +330,8 @@ AWS Lightsail Deployment Course
           display:block!important;
       }</style></aside>
 </section>
-<section id="building-and-transferring-application" class="slide level2">
-<h2>Building and Transferring Application</h2>
+<section id="building-and-transferring-the-application" class="slide level2">
+<h2>Building and Transferring the Application</h2>
 <h3 id="build-jar-file-locally">Build JAR File Locally</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="co"># Using Maven</span></span>
 <span id="cb3-2"><a></a><span class="ex">./mvnw</span> clean package <span class="at">-DskipTests</span></span>
@@ -353,13 +364,13 @@ AWS Lightsail Deployment Course
 <h3 id="create-environment-file">Create Environment File</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="co"># Create environment configuration</span></span>
 <span id="cb5-2"><a></a><span class="fu">sudo</span> nano /opt/myapp/application.env</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<h3 class="incremental" id="environment-variables">Environment Variables</h3>
+<h3 id="environment-variables">Environment Variables</h3>
 <ul>
-<li><code>SPRING_PROFILES_ACTIVE=prod</code></li>
-<li>Database connection settings</li>
-<li>Server configuration</li>
-<li>JVM memory options</li>
-<li>Logging levels</li>
+<li class="fragment"><code>SPRING_PROFILES_ACTIVE=prod</code></li>
+<li class="fragment">Database connection settings</li>
+<li class="fragment">Server configuration</li>
+<li class="fragment">JVM memory options</li>
+<li class="fragment">Logging levels</li>
 </ul>
 <aside class="notes">
 <p>Environment variables allow you to configure the application for different environments without changing code. This includes database settings, memory allocation, and feature flags.</p>
@@ -406,9 +417,8 @@ AWS Lightsail Deployment Course
           display:block!important;
       }</style></aside>
 </section>
-<section id="creating-system-service" class="slide level2">
-<h2>Creating System Service</h2>
-<h3 id="systemd-service-file">Systemd Service File</h3>
+<section id="creating-the-system-service" class="slide level2">
+<h2>Creating the System Service</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="fu">sudo</span> nano /etc/systemd/system/myapp.service</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource ini number-lines code-with-copy"><code class="sourceCode ini"><span id="cb9-1"><a></a><span class="kw">[Unit]</span></span>
 <span id="cb9-2"><a></a><span class="dt">Description</span><span class="ot">=</span><span class="st">My Spring Boot Application</span></span>
@@ -436,8 +446,8 @@ AWS Lightsail Deployment Course
           display:block!important;
       }</style></aside>
 </section>
-<section id="enable-and-start-service" class="slide level2">
-<h2>Enable and Start Service</h2>
+<section id="enable-and-start-the-service" class="slide level2">
+<h2>Enable and Start the Service</h2>
 <h3 id="service-management-commands">Service Management Commands</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="co"># Reload systemd configuration</span></span>
 <span id="cb10-2"><a></a><span class="fu">sudo</span> systemctl daemon-reload</span>
@@ -466,7 +476,6 @@ AWS Lightsail Deployment Course
 </section>
 <section id="production-application-properties" class="slide level2">
 <h2>Production Application Properties</h2>
-<h3 id="database-configuration">Database Configuration</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource properties number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a></a># application-prod.properties</span>
 <span id="cb11-2"><a></a>spring.datasource.url=jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}</span>
 <span id="cb11-3"><a></a>spring.datasource.username=${DB_USERNAME}</span>
@@ -494,15 +503,26 @@ AWS Lightsail Deployment Course
 </section>
 <section id="testing-your-deployment" class="slide level2">
 <h2>Testing Your Deployment</h2>
-<h3 class="incremental" id="verification-steps">Verification Steps</h3>
+<h3 id="verification-steps">Verification Steps</h3>
 <ul>
-<li>Check service status: <code>sudo systemctl status myapp.service</code></li>
-<li>View logs: <code>sudo tail -f /var/log/myapp/application.log</code></li>
-<li>Test health endpoint: <code>curl http://localhost:8080/actuator/health</code></li>
-<li>Verify port listening: <code>sudo netstat -tlnp | grep :8080</code></li>
+<li class="fragment">Check service status: <code>sudo systemctl status myapp.service</code></li>
+<li class="fragment">View logs: <code>sudo tail -f /var/log/myapp/application.log</code></li>
+<li class="fragment">Test health endpoint: <code>curl http://localhost:8080/actuator/health</code></li>
+<li class="fragment">Verify port listening: <code>sudo netstat -tlnp | grep :8080</code></li>
 </ul>
-<h3 id="configure-lightsail-firewall">Configure Lightsail Firewall</h3>
-<p>Open port 8080 in Lightsail console → Networking tab</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Lightsail Firewall</strong></p>
+</div>
+<div class="callout-content">
+<p>Open port 8080 in the Lightsail console → Networking tab to allow external access.</p>
+</div>
+</div>
+</div>
 <aside class="notes">
 <p>These verification steps help ensure the application is running correctly and accessible. The firewall configuration is temporary - we’ll use Nginx as a reverse proxy in the next step.</p>
 <style type="text/css">
@@ -519,6 +539,8 @@ AWS Lightsail Deployment Course
 </section>
 <section id="monitoring-and-log-management" class="slide level2">
 <h2>Monitoring and Log Management</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
 <h3 id="log-rotation-configuration">Log Rotation Configuration</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a></a><span class="co"># /etc/logrotate.d/myapp</span></span>
 <span id="cb12-2"><a></a><span class="ex">/var/log/myapp/*.log</span> {</span>
@@ -530,13 +552,15 @@ AWS Lightsail Deployment Course
 <span id="cb12-8"><a></a>    <span class="ex">notifempty</span></span>
 <span id="cb12-9"><a></a>    <span class="ex">create</span> 0644 myapp myapp</span>
 <span id="cb12-10"><a></a><span class="er">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<h3 class="incremental" id="essential-monitoring-commands">Essential Monitoring Commands</h3>
+</div><div class="column" style="width:45%;">
+<h3 id="essential-commands">Essential Commands</h3>
 <ul>
-<li><code>sudo systemctl status myapp.service</code></li>
-<li><code>sudo journalctl -u myapp.service -f</code></li>
-<li><code>free -h</code> (memory usage)</li>
-<li><code>df -h</code> (disk usage)</li>
+<li class="fragment"><code>sudo systemctl status myapp.service</code></li>
+<li class="fragment"><code>sudo journalctl -u myapp.service -f</code></li>
+<li class="fragment"><code>free -h</code> — memory usage</li>
+<li class="fragment"><code>df -h</code> — disk usage</li>
 </ul>
+</div></div>
 <aside class="notes">
 <p>Log rotation prevents disk space issues by automatically compressing and removing old log files. These monitoring commands help you keep track of application health and system resources.</p>
 <style type="text/css">
@@ -593,18 +617,44 @@ AWS Lightsail Deployment Course
 </section>
 <section id="summary-what-youve-accomplished" class="slide level2">
 <h2>Summary: What You’ve Accomplished</h2>
-<h3 class="incremental" id="successfully-deployed">Successfully Deployed ✅</h3>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>✅ Successfully Deployed</strong></p>
+</div>
+<div class="callout-content">
 <ul>
 <li>Installed Java 17 on Lightsail server</li>
 <li>Created secure directory structure</li>
 <li>Transferred application JAR file</li>
 <li>Configured production environment variables</li>
-<li>Set up systemd service for automatic startup</li>
+<li>Set up systemd service for auto-startup</li>
 <li>Implemented logging with rotation</li>
 <li>Configured basic monitoring tools</li>
 </ul>
-<h3 id="next-step-preview">Next Step Preview</h3>
-<p>Configure Nginx reverse proxy for HTTP/HTTPS traffic on standard ports</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Next Step Preview</strong></p>
+</div>
+<div class="callout-content">
+<p>Configure <strong>Nginx reverse proxy</strong> for HTTP/HTTPS traffic on standard ports.</p>
+</div>
+</div>
+</div>
+</div></div>
 <aside class="notes">
 <p>Your Spring Boot application is now running in production on AWS Lightsail with proper security, monitoring, and automatic startup. The next step will add Nginx for better performance and standard web ports.</p>
 <style type="text/css">
